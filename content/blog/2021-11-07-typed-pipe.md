@@ -23,7 +23,7 @@ Once you have access to large sets of data in a datastore like S3 or HDFS, you c
 
 Here’s the canonical [hello world example](https://scalding.readthedocs.io/en/readthedocs/tutorials/01-Beginner/02-Alice-in-Wonderland.html), that I used to do the Map/Reduce example for wordcount of all the words in my blog. 
 
-{{< gist 783fd4a9ccca555a716de46af698733a >}}
+{{< gist veekaybee 783fd4a9ccca555a716de46af698733a  >}}
 
 
 (By the way, it's fun to see that, once you filter the stop words [out of my top 50](https://gist.github.com/veekaybee/a12e5b7c372d5c5c506b470d92a69c5f), the "real" words are python, data, and people, which I think sums up my blog pretty well.) 
@@ -127,7 +127,7 @@ Second, is reading and adding what "Programmer's Brain" calls beacons in the cod
 Something that helped me with this was installing and using [Ammonite](https://ammonite.io/), a very, very good Scala repl that breaks down syntax and functions in the same way that using a notebook might. For example, here's a small script I put together to actually get the input data for my Scalding job. 
 
 
-{{< gist 562ccb414726bf84cb2b8f7b1f0014ac >}}
+{{< gist veekaybee  562ccb414726bf84cb2b8f7b1f0014ac >}}
 
 What also helped tremendously was reading a lot of other Scalding code in our internal repo for comments and examples. 
 
