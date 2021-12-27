@@ -1,22 +1,15 @@
-# A match made in heaven
 
-There is a website obesity crisis. Bloated websites full of scripts, ads, and trackers are slowing your readers down every time they try to read your well-crafted content.
+Hi! I'm Vicki. I'm a [machine learning engineer at Tumblr.](https://applyingml.com/mentors/vicki-boykis/) 
 
-Hugo Bear Blog is all you need to build a fantastic and optimized site or blog. It works perfectly on **any** viewing device. All you need to focus on is writing good content.
+I also like to think about what technology means in the context of society, and write about that,  as well.  In my spare time, I write, read, run and enjoy Nutella. More at my [main site](http://www.vickiboykis.com). 
 
-[Go to the original bear blog](https://bearblog.dev/).
 
----
+### Contact me
 
-What happens when you combine the worlds' fastest, most lightweight static site generator with a design theme built to provide you with free, no-nonsense, super-fast blogging capabilities?
+You can send me email!
 
-**Use this theme, and find out!**
+[vickiboykis@gmail.com](mailto:vickiboykis@gmail.com)
 
-Made with 💟 by [Jan Raasch](https://www.janraasch.com).
+### Sharing
 
----
-
-Simply publish content online, grow an audience, and keep your pages tiny, fast, and **optimized for search engines**.
-
-Each page is ~5kb, and you can **host your blog yourself**.
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.

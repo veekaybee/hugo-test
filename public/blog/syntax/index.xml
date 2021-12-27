@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>syntax on Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+    <title>syntax on ★★Vicki Boykis★★</title>
     <link>https://veekaybee.github.io/hugo-test/blog/syntax/</link>
-    <description>Recent content in syntax on Hugo ʕ•ᴥ•ʔ Bear Blog</description>
+    <description>Recent content in syntax on ★★Vicki Boykis★★</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2020, Jane Doe.</copyright>
+    <copyright>Copyright © 2021, Vicki Boykis.</copyright>
     <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://veekaybee.github.io/hugo-test/blog/syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown Syntax Guide</title>
