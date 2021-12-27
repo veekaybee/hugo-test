@@ -25,7 +25,7 @@ A TypedPipe is a distributed array that “may or may not have been materialized
 <meta itemprop=description content="A lot of my brain space lately has been occupied by TypedPipes. A TypedPipe is the main object type that you work with in Scalding, a distributed data framework written as a wrapper in Scala around Cascading. Scalding was originally developed at Twitter, and adopted by many companies around the same time Apache Spark became popular.
 A TypedPipe is a distributed array that “may or may not have been materialized to disk”, aka it’s a very large list of elements that exists mainly in the memory space of your program, where the memory space is usually the nodes of a distributed computational cluster."><meta itemprop=datePublished content="2021-11-07T00:00:00+00:00">
 <meta itemprop=dateModified content="2021-11-07T00:00:00+00:00">
-<meta itemprop=wordCount content="2245"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=wordCount content="2237"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
 <meta itemprop=keywords content>
 <meta name=referrer content="no-referrer-when-downgrade">
 <style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
@@ -35,7 +35,6 @@ A TypedPipe is a distributed array that “may or may not have been materialized
 <h2>★★Vicki Boykis★★</h2>
 </a>
 <nav><a href=/hugo-test/>Home</a>
-<a href=/hugo-test/bear/>Bear</a>
 <a href=/hugo-test/blog>Blog</a>
 </nav>
 </header>
@@ -49,11 +48,13 @@ A TypedPipe is a distributed array that “may or may not have been materialized
 </i>
 </p>
 <content>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png alt="wheat field" width=600px>
+</figure>
 <p>A lot of my brain space lately has been occupied by <a href=https://appdoc.app/artifact/com.twitter/scalding-core_2.9.3/0.9.0/com/twitter/scalding/typed/TypedPipe.html>TypedPipes</a>. A TypedPipe is the main object type that you work with in <a href=https://www.cascading.org/projects/scalding/>Scalding</a>, a distributed data framework written as a wrapper in Scala around <a href=https://www.cascading.org/>Cascading</a>. Scalding was originally developed at Twitter, and adopted by many companies around the same time <a href=https://spark.apache.org/>Apache Spark</a> became popular.</p>
 <p>A TypedPipe is a distributed array that “may or may not have been materialized to disk”, aka it’s a very large list of elements that exists mainly in the memory space of your program, where the memory space is usually the nodes of a distributed computational cluster.</p>
 <p>Once you have access to large sets of data in a datastore like S3 or HDFS, you can work with them as TypedPipes by using <a href=https://scalding.readthedocs.io/en/readthedocs/gen/reference/Type-safe-api-reference.html>functional programming methods: map, flatMap, collect, grouping, and joins</a>, to either create the dataset you need for a machine learning model or write the modeling code itself.</p>
 <p>Here’s the canonical <a href=https://scalding.readthedocs.io/en/readthedocs/tutorials/01-Beginner/02-Alice-in-Wonderland.html>hello world example</a>, that I used to do the Map/Reduce example for wordcount of all the words in my blog.</p>
-<p>{% gist 783fd4a9ccca555a716de46af698733a %}</p>
+<script type=application/javascript src=https://gist.github.com/783fd4a9ccca555a716de46af698733a/.js></script>
 <p>(By the way, it&rsquo;s fun to see that, once you filter the stop words <a href=https://gist.github.com/veekaybee/a12e5b7c372d5c5c506b470d92a69c5f>out of my top 50</a>, the &ldquo;real&rdquo; words are python, data, and people, which I think sums up my blog pretty well.)</p>
 <p>On the face of it, it’s a very small and simple example. If you’re just getting started with Scalding, it should be easy to get going. But, when I started learning Scalding for working with <a href=https://applyingml.com/mentors/vicki-boykis/>machine learning code</a> a few months ago and came across this example code, I was completely lost.</p>
 <p>Understanding the concepts that underly the simple example came extremely hard to me, which was a surprise since I’ve now been writing production-grade distributed systems code using the standard <a href=http://veekaybee.github.io/2021/06/06/hashaggregate/>hash aggregate</a> workflows, for the last 10 years. And, I was just as interested in understanding why I didn’t understand the code as I was in learning to read it.</p>
@@ -108,7 +109,7 @@ A TypedPipe is a distributed array that “may or may not have been materialized
 <p>Back to our brains: how can we make sure that any codebase we work with becomes less confusing for us? The Programmer’s Brain gives some wonderful high-level ideas about how to combat confusion at work, and there are a couple that have really struck with me as I make my way through Scalding and Scala. First is to write down code syntax so that your brain remembers it for next time, and processes it, instead of copying and pasting, which is something that I’m constantly guilty of.</p>
 <p>Second, is reading and adding what &ldquo;Programmer&rsquo;s Brain&rdquo; calls beacons in the code, which could be comments, but, more generally, are places in the code that your mind can anchor against and do the work of chunking, or <a href=https://techleadjournal.dev/episodes/61/>processing groups of information</a>. These could be very clear variable names, or well-defined methods.</p>
 <p>Something that helped me with this was installing and using <a href=https://ammonite.io/>Ammonite</a>, a very, very good Scala repl that breaks down syntax and functions in the same way that using a notebook might. For example, here&rsquo;s a small script I put together to actually get the input data for my Scalding job.</p>
-<p>{% gist 562ccb414726bf84cb2b8f7b1f0014ac %}</p>
+<script type=application/javascript src=https://gist.github.com/562ccb414726bf84cb2b8f7b1f0014ac/.js></script>
 <p>What also helped tremendously was reading a lot of other Scalding code in our internal repo for comments and examples.</p>
 <p>And third, when you’re overwhelmed, go easy on yourself and understand that you’re overwhelmed and why that’s the case, and then work on addressing that by climbing out of the <a href=http://veekaybee.github.io/2021/08/05/local-minima-of-suckiness/>local minima of suckiness</a>, which is what this post was all about.</p>
 </content>
