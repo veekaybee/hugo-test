@@ -1,0 +1,103 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>Building presentations the hard way with reveal.js and Jupyter | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name=title content="Building presentations the hard way with reveal.js and Jupyter">
+<meta name=description content="I&rsquo;ve been working for a presentation on a talk I&rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations for the past couple years.
+I&rsquo;m thinking it&rsquo;s for a couple reasons:
+ clonable as a GitHub repo beautiful themes and typefaces capitalizing on increase in static pages/ Javascript trend free and available on every machine that&rsquo;s connected to the internet (Powerpoint is not)  Although I was won over by how nice it looked, I wasn&rsquo;t too familiar with reveal and didn&rsquo;t feel like going through the documentation.">
+<meta name=keywords content>
+<meta property="og:title" content="Building presentations the hard way with reveal.js and Jupyter">
+<meta property="og:description" content="I&rsquo;ve been working for a presentation on a talk I&rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations for the past couple years.
+I&rsquo;m thinking it&rsquo;s for a couple reasons:
+ clonable as a GitHub repo beautiful themes and typefaces capitalizing on increase in static pages/ Javascript trend free and available on every machine that&rsquo;s connected to the internet (Powerpoint is not)  Although I was won over by how nice it looked, I wasn&rsquo;t too familiar with reveal and didn&rsquo;t feel like going through the documentation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/building-presentations-the-hard-way-with-reveal.js-and-jupyter/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2016-04-20T00:00:00+00:00">
+<meta property="article:modified_time" content="2016-04-20T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="Building presentations the hard way with reveal.js and Jupyter">
+<meta name=twitter:description content="I&rsquo;ve been working for a presentation on a talk I&rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations for the past couple years.
+I&rsquo;m thinking it&rsquo;s for a couple reasons:
+ clonable as a GitHub repo beautiful themes and typefaces capitalizing on increase in static pages/ Javascript trend free and available on every machine that&rsquo;s connected to the internet (Powerpoint is not)  Although I was won over by how nice it looked, I wasn&rsquo;t too familiar with reveal and didn&rsquo;t feel like going through the documentation.">
+<meta itemprop=name content="Building presentations the hard way with reveal.js and Jupyter">
+<meta itemprop=description content="I&rsquo;ve been working for a presentation on a talk I&rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations for the past couple years.
+I&rsquo;m thinking it&rsquo;s for a couple reasons:
+ clonable as a GitHub repo beautiful themes and typefaces capitalizing on increase in static pages/ Javascript trend free and available on every machine that&rsquo;s connected to the internet (Powerpoint is not)  Although I was won over by how nice it looked, I wasn&rsquo;t too familiar with reveal and didn&rsquo;t feel like going through the documentation."><meta itemprop=datePublished content="2016-04-20T00:00:00+00:00">
+<meta itemprop=dateModified content="2016-04-20T00:00:00+00:00">
+<meta itemprop=wordCount content="596"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>Hugo ʕ•ᴥ•ʔ Bear Blog</h2>
+</a>
+<nav><a href=/hugo-test/>Home</a>
+<a href=/hugo-test/bear/>Bear</a>
+<a href=/hugo-test/blog>Blog</a>
+</nav>
+</header>
+<main>
+<h1>Building presentations the hard way with reveal.js and Jupyter</h1>
+<p>
+<i>
+<time datetime=2016-04-20 pubdate>
+20 Apr, 2016
+</time>
+</i>
+</p>
+<content>
+<p></p>
+<p>I&rsquo;ve been working for a presentation on a talk I&rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations <a href=https://opensource.com/education/13/10/teaching-with-revealjs>for the past couple years</a>.</p>
+<p>I&rsquo;m thinking it&rsquo;s for a couple reasons:</p>
+<ul>
+<li>clonable as a <a href=https://github.com/hakimel/reveal.js/>GitHub repo</a></li>
+<li>beautiful <a href=http://lab.hakim.se/reveal-js/#/themes>themes and typefaces</a></li>
+<li>capitalizing on increase in static pages/ Javascript trend</li>
+<li>free and available on every machine that&rsquo;s connected to the internet (Powerpoint is not)</li>
+</ul>
+<p>Although I was won over by how nice it looked, I wasn&rsquo;t too familiar with reveal and didn&rsquo;t feel like going through the documentation. But, in playing around with the settings on Jupyter notebooks, which I use a lot for work every day, I found that they can render cells as reveal slides. It&rsquo;s now a built-in option in the settings.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/jupyter.png alt=image></p>
+<p>Creating the slides was a breeze. Each cell becomes a slide that you can write in markdown and run in Jupyter, or then compile into the HTML slideshow and serve locally via tornado.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/coexist.png alt=image></p>
+<p><code>jupyter nbconvert techtalk.ipynb --to slides --post serve</code></p>
+<pre><code>mbp-vboykis:techtalk vboykis$ jupyter nbconvert techtalk.ipynb --to slides --post serve
+[NbConvertApp] Converting notebook techtalk.ipynb to slides
+[NbConvertApp] Writing 202825 bytes to techtalk.slides.html
+[NbConvertApp] Redirecting reveal.js requests to https://	cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0
+Serving your slides at http://127.0.0.1:8000/techtalk.slides.html
+Use Control-C to stop this server
+WARNING:tornado.access:404 GET /custom.css (127.0.0.1) 1.74ms
+WARNING:tornado.access:404 GET /favicon.ico (127.0.0.1) 0.57ms
+</code></pre>
+<p>This is really great for <a href=https://www.reddit.com/r/IPython/comments/37yvvd/using_ipython_notebook_for_creating_slides/>serving locally</a>.</p>
+<p>However, when I tried to <a href=https://www.chenhuijing.com/blog/revealjs-and-github-pages/>upload my compiled slides</a> both the HTML and the notebook, to GitPages through the <a href=https://help.github.com/articles/creating-project-pages-manually/>gh-pages branch</a>, I realized that Jupyter <a href=https://github.com/jupyter/nbconvert/blob/9f1795f67b9e85fa3f86c43d1e469fdde2121048/nbconvert/postprocessors/serve.py>renders Reveal through a CDN</a> by default.</p>
+<p>This means, if you don&rsquo;t already have reveal installed, Jupyter&rsquo;s version of the files it gets from CDN through nbconvert is different than what&rsquo;s offered on GitHub, both visually and in the code. This is probably because Jupyter is using a version that is several versions <a href=https://github.com/hakimel/reveal.js/releases>behind the latest on GitHub</a>.</p>
+<p>Here is the same exact slide, rendered locally:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/locally.png alt=image></p>
+<p>and on GitPages (looks much nicer here, right?)</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/gitpages.png alt=image></p>
+<p>What I ended up having to do was to fork the latest copy of reveal.js and put all my slides into the template from the nbconvert-rendered HTML file, which involved a lot of manual copying and pasting.</p>
+<p>Check out the formatting of a single slide in the GitPages v.s. how nbconvert renders the HTML. In the screenshot below, I left out a lot of the additional code for each Jupyter notebook cell as well, which made things extra-tricky.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/sidebyside.png alt=image></p>
+<p>So it essentially took me three times as long to figure out how to use reveal than my old standby, Powerpoint slides as PDFs, which would have taken me an hour to make if I had all of my talk notes outlined. And by the way, we&rsquo;re now at a point where it&rsquo;s possible to make <a href=http://gazit.me/2012/12/05/designing-presentations.html>really nice-looking Powerpoint slides</a>.</p>
+<p>Powerpoint isn&rsquo;t considered sexy anymore, but there&rsquo;s no messing around with code, everything looks exactly how you want it, you don&rsquo;t need to build a separate library of pictures, and you can easily convert to PDF or other formats (something I still haven&rsquo;t figured out with Jupyter/reveal because of an El Capitan upgrade error that <a href=https://github.com/ipython/ipython/issues/8935>still has me scratching my head</a>)</p>
+<p>It&rsquo;s definitely a nice-to-know for next time, and I&rsquo;m glad I gave myself over a month to get this working, but it&rsquo;s a nice reminder of two things:</p>
+<ul>
+<li>taking shortcuts (in this case, not reading the Reveal documentation to begin with) will always result in more work in the end</li>
+<li>That sometimes just because a tool is shiny and &ldquo;hot&rdquo; doesn&rsquo;t mean it&rsquo;s the easiest to use</li>
+</ul>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>

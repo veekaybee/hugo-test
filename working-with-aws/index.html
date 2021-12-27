@@ -1,0 +1,254 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>Working with AWS | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name=title content="Working with AWS">
+<meta name=description content="Clouds, Isaac Levitan
+TL;DR: AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.
+More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud.">
+<meta name=keywords content>
+<meta property="og:title" content="Working with AWS">
+<meta property="og:description" content="Clouds, Isaac Levitan
+TL;DR: AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.
+More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/working-with-aws/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2018-01-28T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-01-28T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="Working with AWS">
+<meta name=twitter:description content="Clouds, Isaac Levitan
+TL;DR: AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.
+More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud.">
+<meta itemprop=name content="Working with AWS">
+<meta itemprop=description content="Clouds, Isaac Levitan
+TL;DR: AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.
+More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud."><meta itemprop=datePublished content="2018-01-28T00:00:00+00:00">
+<meta itemprop=dateModified content="2018-01-28T00:00:00+00:00">
+<meta itemprop=wordCount content="3247"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>Hugo ʕ•ᴥ•ʔ Bear Blog</h2>
+</a>
+<nav><a href=/hugo-test/>Home</a>
+<a href=/hugo-test/bear/>Bear</a>
+<a href=/hugo-test/blog>Blog</a>
+</nav>
+</header>
+<main>
+<h1>Working with AWS</h1>
+<p>
+<i>
+<time datetime=2018-01-28 pubdate>
+28 Jan, 2018
+</time>
+</i>
+</p>
+<content>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/clouds.jpg!Blog.jpg alt></p>
+<p><strong>Clouds, Isaac Levitan</strong></p>
+<p><em><strong>TL;DR:</strong> AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.</em></p>
+<p>More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud.</p>
+<p>For some context, in my day-to-day, I work with a variety of tools, including Spark,R, Hadoop, and machine learning libraries like scikit-learn, and plain vanilla Python, so my experience with AWS is coming from that perspective.</p>
+<h2 id=get-ready-to-send-a-lot-of-json>Get ready to send a lot of JSON</h2>
+<p>In on-prem environments, I&rsquo;ve usually had direct access to data through direct software interfaces. Some examples of these have been JDBC/ODBC SQL connections, secure FTP folders, or direct connections to on-prem (or vendor-managed, but behind a company firewall) HDFS volumes through Spark.</p>
+<p>The overarching goal of AWS is to abstract away anything that can&rsquo;t be accessed through a REST protocol, meaning that, instead of dealing with SQL UI tools, direct Spark shell access, or RStudio, I found myself dealing with a lot of command line scripts that passed JSON data structures as configurable parameters.</p>
+<p>To understand why AWS does this, check out <a href=https://plus.google.com/+RipRowan/posts/eVeouesvaVX>this fantastic post on the mandate Jeff Bezos&rsquo;s issued around 2002</a></p>
+<pre><code>&gt;  1) All teams will henceforth expose their data and functionality through service interfaces
+&gt; 2) Teams must communicate with each other through these interfaces.
+</code></pre>
+<p>These days, these interfaces are now all customer-facing, and accessible through JSON.</p>
+<p>Here&rsquo;s a specific example. If I wanted to move some data that landed in a shared directory to, say, an Oracle database, I&rsquo;d probably set up an ETL job, either by writing some <a href=https://code.tutsplus.com/tutorials/scheduling-tasks-with-cron-jobs--net-8800>cron</a> scripts, or using a tool like Pentaho <a href=https://wiki.pentaho.com/display/EAI/Move+files>to set up an ETL job</a> to communicate between the data directory and Oracle using JDBC. All of this would involve combination of cron scripts, possibly custom Java for Pentaho, and UI-generated transformation steps.</p>
+<p>In AWS, what I could do would be to set up file movement from S3, the object storage service, by triggering a lambda function (for more on lambdas, <a href=#lambdas>read on</a>) to write to Redshift, <a href=https://aws.amazon.com/redshift/>a common data warehousing solution in S3.</a>.</p>
+<p>My steps would include:</p>
+<ol>
+<li>Creating a <a href=https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>bucket:</a></li>
+</ol>
+<pre tabindex=0><code>aws s3api create-bucket --bucket my-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
+</code></pre><p>The results of which would be:</p>
+<pre tabindex=0><code>{
+    &quot;Location&quot;: &quot;http://my-bucket.s3.amazonaws.com/&quot;
+}
+
+</code></pre><p>Then, I&rsquo;d create a lambda that accesses that bucket:</p>
+<pre tabindex=0><code>aws lambda create-function \
+--region region \
+--function-name helloworld \
+--zip-file fileb://file-path/helloworld.zip \
+--role role-arn \
+--handler helloworld.handler \
+--runtime python3.6 \
+--profile adminuser 
+</code></pre><p>Here&rsquo;s what that POST request syntax looks like behind the scenes in JSON <a href=https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html>based on a script from an S3 bucket:</a></p>
+<pre tabindex=0><code>	{
+   &quot;Code&quot;: { 
+      &quot;S3Bucket&quot;: &quot;string&quot;,
+      &quot;S3Key&quot;: &quot;string&quot;,
+      &quot;S3ObjectVersion&quot;: &quot;string&quot;,
+      &quot;ZipFile&quot;: blob
+   },
+   &quot;DeadLetterConfig&quot;: { 
+      &quot;TargetArn&quot;: &quot;string&quot;
+   },
+   &quot;Description&quot;: &quot;string&quot;,
+   &quot;Environment&quot;: { 
+      &quot;Variables&quot;: { 
+         &quot;string&quot; : &quot;string&quot; 
+      }
+   },
+   &quot;FunctionName&quot;: &quot;string&quot;,
+   &quot;Handler&quot;: &quot;string&quot;,
+   &quot;KMSKeyArn&quot;: &quot;string&quot;,
+   &quot;MemorySize&quot;: number,
+   &quot;Publish&quot;: boolean,
+   &quot;Role&quot;: &quot;string&quot;,
+   &quot;Runtime&quot;: &quot;string&quot;,
+   &quot;Tags&quot;: { 
+      &quot;string&quot; : &quot;string&quot; 
+   },
+   &quot;Timeout&quot;: number,
+   &quot;TracingConfig&quot;: { 
+      &quot;Mode&quot;: &quot;string&quot;
+   },
+   &quot;VpcConfig&quot;: { 
+      &quot;SecurityGroupIds&quot;: [ &quot;string&quot; ],
+      &quot;SubnetIds&quot;: [ &quot;string&quot; ]
+   }
+}
+</code></pre><p>Alternatively, passing it in Python would look <a href=https://boto3.readthedocs.io/en/latest/reference/services/lambda.html#Lambda.Client.create_function>something like this.</a></p>
+<p>As a result, I&rsquo;ve gotten very friendly with all sorts of JSON structures:</p>
+<ul>
+<li>
+<p>simple objects, <code>{'key': 'value}</code> that map directly to Python dictionaries,</p>
+</li>
+<li>
+<p>arrays that map to dicts with list values <code>{key', : [value, value value]}</code></p>
+</li>
+<li>
+<p>and, my favorite, nested arrays that map to lists of dictionaries nested in lists: <code>{'key': [{'inner_key':'inner_value'}]}</code></p>
+</li>
+</ul>
+<p>Fortunately, the Python dictionary is a workhorse data structure that&rsquo;s easy to loop through and reference. Even still, there are a couple of Python dictionary methods that have made working with JSON in AWS much easier for me:</p>
+<ol>
+<li><a href=https://docs.python.org/3/tutorial/datastructures.html#looping-techniques><code>items</code></a> - which accesses keys and values and loops through the dictionary. Remembering this syntax makes accessing elements easier.</li>
+<li>The <code>collections</code> library, particularly <a href=https://docs.python.org/3.3/library/collections.html>OrderedDict and defaultdict</a> which will enforce order and missing values on your dictionaries (although order for dictionaries will be a default in Python 3.6&mldr;<a href=https://mail.python.org/pipermail/python-dev/2016-September/146348.html>kind of</a>)</li>
+<li>The <a href=https://docs.python.org/3/library/json.html><code>json</code> library</a>, particularly <code>load</code> and <code>dump</code>. Usually the AWS SDK and command line tools take care of this for you, but there are times when you&rsquo;ll want to create some JSON in the CLI to test out. This library is specifically designed to convert Python dictionaries to JSON data structures and vice versa, and is good for understanding the internals of JSON structures relative to your code.</li>
+</ol>
+<h2 id=youll-be-interacting-with-the-aws-apis-in-lots-of-different-ways>You&rsquo;ll be interacting with the AWS APIs in lots of different ways</h2>
+<p>There are three main ways to access AWS, from easiest to most involved:</p>
+<ol>
+<li>Management Console - UI</li>
+<li>AWS CLI - Command Line + Some tweaking</li>
+<li>AWS SDKs - Full-on writing code</li>
+</ol>
+<p>The contrast between this and on-prem work is that (usually) there&rsquo;s only one way to access a development endpoint if you&rsquo;re working inside a single data center.</p>
+<p>These three different interfaces mean that, often, I&rsquo;m spending a lot of time split in three different development modes: making one-time manual changes to IAMs in the console, running some Linux file-system like commands doing inventory in AWS CLI (for example, listing bucket directories,) and building an application made of several components using <code>boto3</code> in PyCharm.</p>
+<p>In this way, AWS can really divert your attention if you let it. That is, there is no pre-defined workflow like there can be in on-prem environments, and you really have to make cognizant choices about how you set up your processes and why.</p>
+<p>For example, if you&rsquo;re looking to create an MLLib job doing linear regression in Spark, in an on-prem environment, you&rsquo;d SSH into your Spark cluster edge node, and write a script accessing HDFS data, to be run through spark-submit on the cluster.</p>
+<p>In AWS, you could potentially do the same thing through EMR. You could spin up an EMR cluster using either the management console or CLI, or even the SDK, and run a job any of those three ways, as well. None is inherently better than the other; or at least, Amazon doesn&rsquo;t tell you it is, which is where the issue is - you&rsquo;ll have to figure out what combination of flexiblity/reproduceability works for your given workflow.</p>
+<p>Now, a closer look at each three of the environments:</p>
+<p>First, there&rsquo;s the <strong>Management Console</strong>, which was my first point of entry into AWS. You can do many basic things with the services there, like create lambdas, set triggers, upload files to S3 buckets, set up EC2 instances, and much, much more. But the UI doesn&rsquo;t let you replicate what you&rsquo;ve done or automate certain processes.</p>
+<p>Second, there&rsquo;s <em><strong>AWS CLI</strong></em>. It&rsquo;s a <a href=https://aws.amazon.com/cli/>Python-based tool</a> that you can install (<code>pip install awscli</code>) and run recurrent commands with. Once you run it the first time, it will also configure with your <a href=https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html>local AWS credentials file</a>, which is a must-have for working with AWS.</p>
+<p>For example, you can take a look at all of your S3 buckets with <code>aws s3 ls</code>, or bootstrap <a href=https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html>an EMR instance</a> <code>aws emr create-cluster --release-label emr-5.3.1 --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m3.xlarge InstanceGroupType=CORE,InstanceCount=2,InstanceType=m3.xlarge --auto-terminate</code> . You can customize many of these commands by passing in config files that are stored in - you guessed it- JSON in S3 buckets.</p>
+<p>Since a lot of these commands get repetitive, or need to be run again and again (for example, spinning up multiple clusters, or continuing to move code to AWS), I&rsquo;ve started to <a href=https://blog.sethbergman.com/aws-ec2-automation-using-bash-scripts/>enrich cli commands</a> with bash scripts.</p>
+<p>Finally, there are SDKs, which allow you to develop more complex applications outside of the command line. I really like using <code>boto3</code>, <a href=http://boto3.readthedocs.io/en/latest/>the Python SDK</a>, because the documentation is pretty nicely done. The only pain point is that there are numerous different ways to do the same thing.</p>
+<p>For example, in order to access an S3 bucket, you can call a resource, a client, or a session. Just to connect to S3, you can do:</p>
+<pre tabindex=0><code>s3 = boto3.resource('s3') # resource
+boto3.session(region_name = 'us-east-1') # session
+s3 = boto3.client('s3')  # client
+
+</code></pre><p>At a high level, resources are similar to objects, sessions manage connections between various AWS profiles, and clients are per-service connections. Crystal clear?</p>
+<p><a href=https://stackoverflow.com/questions/42809096/difference-between-resource-client-and-session>This</a> and <a href=http://www.oznetnerd.com/python-demystifying-aws-boto3/>this</a> are good reads about the top-level differences between the nuances.</p>
+<h2 id=may-i-have-some-permissions-please>May I have some permissions, please?</h2>
+<p>Since you are pushing data to and from someone else&rsquo;s servers, Amazon is very strict about what any given action can do, and each action has fine-grained security permissions, to the point where you sometimes feel like you&rsquo;re navigating through the bureacracy of an embassy trying to get a passport.</p>
+<p>At a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html>high level of abstraction,</a></p>
+<blockquote>
+<p>AWS is composed of collections of resources. An IAM user is a resource. An Amazon S3 bucket is a resource. When you use the AWS API, the AWS CLI, or the AWS Management Console to take an action (such as creating a user), you send a request for that action. Your request specifies an action, a resource, a principal (group, user, or role), a principal account, and any necessary request information. All of this information provides context.</p>
+</blockquote>
+<p>There is also a <a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html>helpful diagram.</a></p>
+<p>At an even more abstract level, it helps to understand that IAM is the central place that manages permissions, and it grants out users, and roles, which can write or read to and from the various services on AWS. There&rsquo;s also the concept of policies, which define what users and roles can access within the context of a service.</p>
+<p>This was a completely new ballgame for me, because, other than setting up Jira tickets to get access to, say, Oracle, or admin access on my laptop, I never really had to think about whether the services I used were secure.</p>
+<p>In this context, since everything is abstracted away from you onto a different server, every POST/GET request you make needs to be authenticated correctly, and services within AWS also need to talk to each other securely in order to keep track of who&rsquo;s accessing what.</p>
+<h2 id=before-you-can-read-the-docs-youll-need-to-find-the-docs>Before you can read the docs, you&rsquo;ll need to find the docs</h2>
+<p>AWS has a LOT of documentation, and it&rsquo;s not great. I&rsquo;ve often riffed on Twitter about how terrible it is as a way of letting off some steam about it,</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/docs1.png alt></p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/aws3.png alt></p>
+<p>but in a way, it makes sense. In the beginning of the post I linked to Bezos&rsquo;s famous edict, decreeing that</p>
+<blockquote>
+<p>All teams will henceforth expose their data and functionality through service interfaces.</p>
+</blockquote>
+<p>meaning that the APIs themselves are extremely well-documented, but what happens after you call an API, and what the implications are, are not. This culture seems to have carried through to the modern day. The JSON parameters and CLI calls do have good documentation, but there are few examples, and few explanations, particularly for newer or less-used services.</p>
+<p>For example, the documentation for creating an S3 bucket <a href=https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html>doesn&rsquo;t explictly have a link to the Python SDK,</a>, probably one of the most common ways to create buckets, and points instead to the &ldquo;Sample Code and Libraries&rdquo; section, which, after some navigation, has a place to download a link to awspylib, which is not the official Python documentation (Boto is).</p>
+<p>Much like the API itself, the documentation is not opinionated, and there is no single, concrete place to get started with anything, no mind map or understanding of how documentation is written and structured. In a way, finding your way through AWS documentation is not unlike being dropped into a library without a map, where the books are not ordered alphabetically, and the pages in the books are constantly being rewritten.</p>
+<p>It makes sense from a business perspective. Writing documentation is often the hardest and most time-consuming part of development with more returns to the end users than to developers. And, since Amazon is the market leader in cloud, it has no incentive to improve it in the way that, say, Digital Ocean has to maintain a competitive edge with friendly and accessible documentation.</p>
+<p>All of this is to say, I spent a lot of time banging my head against finding concrete examples of AWS CLI recipes I wanted to follow, a lot of time sharing snippets of code with other developers on my team, and much, much more time on StackOverflow, in the amazon-web-services tag.</p>
+<p></p>
+<h2 id=learning-to-love-lambdas>Learning to love lambdas</h2>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/bemylambda.png alt></p>
+<p><a href=https://aws.amazon.com/lambda/>Lambdas</a> - not to be confused with Python anonymous lambda functions are fantastic. I&rsquo;ve used them in several projects and each time I find a great new use case for them.</p>
+<p>In short, they are the glue that holds AWS processes together. Lambdas are temporal services that run in response to given triggers in the AWS ecosystem.</p>
+<p>Here&rsquo;s a short list of things they can do (<a href=https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-function.html#intro-core-components-event-sources>much more</a> in the docs):</p>
+<ul>
+<li>Run when a file is placed in an S3 bucket and move the file to another location</li>
+<li>Process logs with Kinesis streams and store the logs in DynamoDB</li>
+<li>Compile a static website based on a new code change and reload the site</li>
+<li>Backup files and put them into cold storage</li>
+</ul>
+<p>And much, much more. Think of them as small functions that can be called across the AWS universe.</p>
+<p>A good thing to keep in mind is the limitations of lambdas:</p>
+<ul>
+<li>512 MB disk space</li>
+<li>Execution timeout after 5 minutes of activity</li>
+<li>128 to 1536 MB</li>
+<li>Have <a href=https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html>boto included</a> as a runtime library</li>
+</ul>
+<p>And, a really neat thing about them is that they have temporary file storage (Each lambda has 500MB of non-persistent disk space in its own /tmp ) so <a href=https://stackoverflow.com/questions/35641994/accessing-local-filesystem-in-aws-lambda/35642189>you can perform operations inside the lambda</a> at runtime.<br>
+<img src=lambda.png alt></p>
+<p>I&rsquo;ve only begun to explore their full capabilities in my projects, but, coming from environments where communication between services was tedious and required a compelte build out of new ETL tools, lambdas are lightweight, relatively easy to use, and one of the few recent development tools that I&rsquo;ve found to be fun.</p>
+<h2 id=i-heard-you-like-services-heres-131-of-them-including-glue>I heard you like services. Here&rsquo;s 131 of them (including Glue)</h2>
+<p>Another interesting service I had the chance to work with is <a href=https://aws.amazon.com/glue/>Glue</a>, one of AWS&rsquo;s newest offerings. <a href="https://www.youtube.com/watch?v=4N_ktE4NFIk">Glue was introduced</a> in December 2016 and launched to consumers late in the spring, so it&rsquo;s just over six months hardened at this point.</p>
+<p>At launch, it was described as an ETL tool that handles data movement through PySpark on auto-generated EMR instances, creating a metadata catalog of all your data in S3 buckets, and being able to manage those jobs from a single interface.</p>
+<p>This is great, except there are already several similar services. It only makes sense that some overlap, given that AWS currently stands at <a href=https://twitter.com/anildash/status/955476924402487296>131 total services.</a> For Glue, the analogous services are EMR, Data Pipeline, Kinesis Analytics, and AWS Batch. Which one to use?</p>
+<p>It turns out, that each one has a slightly different use case, and it takes some playing around to figure out if your specific case is covered by the service, whether your data can move between one and the other correctly.</p>
+<p>I found working with Glue to be relatively straightforward, but the real key was trying to figure out which workflow AWS was optimizing the product for. In my case, Glue felt like the right tool if:</p>
+<p>A) You have sane and clean S3 bucket structures to pull data from
+B) You have standard, scheduled data flows
+C) You just want to move files from S3 into Athena-readable Parquet files or similar
+D) You&rsquo;re comfortable with not knowing what your EMR spin-up will look like, or how long it will take
+E) You&rsquo;re comfortable with working with Spark code that&rsquo;s 2 layers removed from Spark (wrapped in EMR code, which is then wrapped in Glue code)</p>
+<p>My main takeaway is that each service takes time to evaluate, price, and figure out the API for, whereas in an on-prem instance, you&rsquo;re usually limited to a range of 3-4 tools that you then have to get creative with.</p>
+<h2 id=testing-is-harder>Testing is harder</h2>
+<p>For both Lambdas and Glue, and many of the other services I worked with, I discovered that testing is harder.</p>
+<p>In on-prem, in-house applications, you write some code, and then write unit tests against that piece of code. You can then also run integration tests to see how those pieces will work with other pieces of code external to the codebase you&rsquo;re working on.</p>
+<p>For example, you can unit test PySpark code by creating a cluster locally and <a href=https://engblog.nextdoor.com/unit-testing-apache-spark-with-py-test-3b8970dc013b>using pytest fixures</a> to recreate a session and assert your expected results.</p>
+<p>This is harder to do in AWS, because it&rsquo;s next to impossible to recreate an entire AWS environment, with all the services you need, locally. For example, you&rsquo;re trying to put files into an S3 bucket, or create a table in Athena, or stream files through Kinesis, and tie those actions together with Lambdas.</p>
+<p>One way I&rsquo;ve tried to fill this gap is with <a href=https://github.com/spulec/moto>moto</a>, which mocks out (creates dummy copies) of calls to services through boto by making use of Python decorators.</p>
+<p>For example, you can mock out a connection to S3, create a bucket, pass text into that bucket, and, call that &ldquo;fake bucket&rdquo; to return text, and make sure that text matches what you have in your code, all without accessing AWS.</p>
+<p>You can&rsquo;t necessarily test what S3 will pass to other AWS services, but you can at least test parts of your code locally. The rest involves testing job runs in an AWS dev account, meaning that you are racking up costs for each test you run.</p>
+<p>This brings me to:</p>
+<h2 id=youre-paying-amazon-money-every-time-you-make-a-typo><strong>You&rsquo;re paying Amazon money every time you make a typo</strong></h2>
+<p>This was hard to wrap my head around since, in an on-prem environment, you pay for servers up front and depreciate those costs over time. You&rsquo;re not paying to spin up a Hadoop cluster, or for every job run. In AWS, you are.</p>
+<p>So, every time you test something in AWS, and you forget a semicolon or a tab, or point the service to the wrong directory, you&rsquo;re paying money for your mistakes.</p>
+<p><a href=http://calculator.s3.amazonaws.com/index.html>Every single action you perform</a>, from loading, to storing files, to running models, to saving those models back out, incurs some sort of fractional cost that is hard to keep track of. I&rsquo;ve groused before about how hard it is to estimate your AWS costs for the month ahead.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/docs2.png alt></p>
+<p>and I think that still mostly holds. Because AWS is so flexible, there are a million different options to consider for each possible service, each byte of data you move, each user permission, region, and availability zone.</p>
+<p>It&rsquo;s easy to approximate costs, but harder to pinpoint, and even harder to forecast. The best thing I did was set up <a href=https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html>Billing Alerts</a> to monitor proactively.</p>
+<h2 id=summary>Summary</h2>
+<p>Overall, if I had to describe my experience of working with AWS, I&rsquo;d say that it requires a different mindset than on-prem. Instead of having everything included and being locked into a particular environment, AWS is a lot more granular. You&rsquo;re trading lock-in for flexibility, with the caveat that what you get may be too flexible, and with the knowledge that AWS doesn&rsquo;t give you any opinions on how to work with what you have. It&rsquo;s on you to make the right choices, with the consequence that you can also make more mistakes along the way, but once you figure out how to best leverage the environment, you can get a lot out of it.</p>
+<p>Thanks to <a href=https://twitter.com/digitallogic>Mark Roddy</a>, <a href=https://twitter.com/Jowanza>Jowanza Joseph</a>, and <a href=https://twitter.com/austinrochford>Austin Rochford</a> for reading drafts of this post.</p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>

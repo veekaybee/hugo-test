@@ -1,0 +1,239 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>Securely storing configuration credentials in a Jupyter Notebook | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name=title content="Securely storing configuration credentials in a Jupyter Notebook">
+<meta name=description content="Art: Mona Lisa with the Keys, Fernand Leger, 1930
+Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off DCGAN, to generate new artworks in a given style.
+Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project GANdinsky.
+In order for the network to be able to generate new art, you have to feed it samples of art it can generate from.">
+<meta name=keywords content>
+<meta property="og:title" content="Securely storing configuration credentials in a Jupyter Notebook">
+<meta property="og:description" content="Art: Mona Lisa with the Keys, Fernand Leger, 1930
+Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off DCGAN, to generate new artworks in a given style.
+Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project GANdinsky.
+In order for the network to be able to generate new art, you have to feed it samples of art it can generate from.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/securely-storing-configuration-credentials-in-a-jupyter-notebook/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2020-02-25T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-02-25T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="Securely storing configuration credentials in a Jupyter Notebook">
+<meta name=twitter:description content="Art: Mona Lisa with the Keys, Fernand Leger, 1930
+Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off DCGAN, to generate new artworks in a given style.
+Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project GANdinsky.
+In order for the network to be able to generate new art, you have to feed it samples of art it can generate from.">
+<meta itemprop=name content="Securely storing configuration credentials in a Jupyter Notebook">
+<meta itemprop=description content="Art: Mona Lisa with the Keys, Fernand Leger, 1930
+Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off DCGAN, to generate new artworks in a given style.
+Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project GANdinsky.
+In order for the network to be able to generate new art, you have to feed it samples of art it can generate from."><meta itemprop=datePublished content="2020-02-25T00:00:00+00:00">
+<meta itemprop=dateModified content="2020-02-25T00:00:00+00:00">
+<meta itemprop=wordCount content="1928"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>Hugo ʕ•ᴥ•ʔ Bear Blog</h2>
+</a>
+<nav><a href=/hugo-test/>Home</a>
+<a href=/hugo-test/bear/>Bear</a>
+<a href=/hugo-test/blog>Blog</a>
+</nav>
+</header>
+<main>
+<h1>Securely storing configuration credentials in a Jupyter Notebook</h1>
+<p>
+<i>
+<time datetime=2020-02-25 pubdate>
+25 Feb, 2020
+</time>
+</i>
+</p>
+<content>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/mona_lisa_with_the_keys.png alt>
+<em>Art: Mona Lisa with the Keys, Fernand Leger, 1930</em></p>
+<p>Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off <a href=https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html>DCGAN</a>, to generate new artworks in a given style.</p>
+<p>Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project <a href=https://github.com/veekaybee/gandinsky>GANdinsky</a>.</p>
+<p>In order for the network to be able to generate new art, you have to feed it samples of art it can generate from. In other words, you have to create a training set.</p>
+<p>One of the best places to get art data to train your neural net is WikiArt. I&rsquo;ve used the site before for my <a href=http://veekaybee.github.io/2018/02/19/creating-a-twitter-art-bot/>Soviet Art Bot</a>.</p>
+<p>The best way to hit a site like this is usually through its API. However fantastic WikiArt is as a resource, their API doesn&rsquo;t have the best <a href=https://docs.google.com/document/d/1T926unU7mx9Blmx3c8UE0UQTnO3MrDbXTGYVerVQFDU/edit#>documentation</a> , so I wanted to hit the API in a bunch of different ways to explore what I could actually get back and get results to feed into my neural network.</p>
+<p>The best way to do this, in my opinion, is still Jupyter notebooks. There&rsquo;s been <a href="https://twitter.com/joelgrus/status/1033035196428378113?lang=en">a lot of debate</a> <a href=https://odsc.com/speakers/why-i-like-notebooks-a-response-to-joel-grus-talk-why-i-dont-like-notebooks/>about whether</a> <a href=https://yihui.org/en/2018/09/notebook-war/>notebooks are good or bad</a> over the past year or so, but I still find a notebook to be my idea prototyping environment.</p>
+<p>Although I love them, I do have a few criticisms of notebooks. Mainly, they don&rsquo;t do a good job of encouraging best development practices. For example, it&rsquo;s still hard to work with multiple people in notebooks and use version control well.</p>
+<p>Another issue is that you should never store your passwords in the same place as your code. This comes from one of the core tenets of the <a href=https://12factor.net/>12-factor app</a>, which was written a while back by a group of developers at Heroku and walks through best practices for working with code in the modern age.</p>
+<blockquote>
+<p>Apps sometimes store config as constants in the code. This is a violation of twelve-factor, which requires strict separation of config from code. Config varies substantially across deploys, code does not.</p>
+</blockquote>
+<p>(As an aside, I found out that most data people don&rsquo;t know about the 12-factor app, or at least about that exact way of phrasing &ldquo;web development best practices&rdquo;. I only learned about it myself a bit ago.)</p>
+<p>Here&rsquo;s an example of my actual use case. I&rsquo;ll start by walking through what it looks like with a regular IDE/Python module,and then expand to notebooks.</p>
+<h1 id=how-to-store-credentials-in-a-python-program>How to store credentials in a Python program</h1>
+<p>As preparation to train a neural net, I was pulling some information from the WikiArt API, which had me authenticate with a username and token password, which I had to pass into Python&rsquo;s requests module from my code.</p>
+<p>It looked something like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> requests
+
+<span style=color:#75715e># not my actual credentials</span>
+accessCode <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;0928304982jalksjf&#39;</span>
+secretCode <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;q0239840asldkfj&#39;</span>
+
+response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;https://www.wikiart.org/en/Api/2/login?accessCode=</span><span style=color:#e6db74>{</span>accessCode<span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;secretCode=</span><span style=color:#e6db74>{</span>secretCode<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</code></pre></div><p>Now, if you&rsquo;re including this piece of code in an application, there are a couple of different ways to store it.</p>
+<p>First, you can use <a href=https://learn.hashicorp.com/vault/getting-started/first-secret>Vault</a> or <a href=https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html>AWS Parameter Store</a>, or <a href=https://cloud.google.com/solutions/secrets-management>GCP Secrets Manager</a> or <a href=https://azure.microsoft.com/en-us/services/key-vault/>Azure Key Vault</a></p>
+<p>All of these have some assumptions built in, however, and those are that you already have any one of these services enabled, that you have an account that&rsquo;s set up, and that you access them through some sort of development console.</p>
+<p>There is enough friction that it becomes annoying.</p>
+<p>So probably the simplest way is to create an config file in the root directory of your project and call it from the code, like so.</p>
+<pre tabindex=0><code>├── gandinsky
+│   ├── gandinsky.py
+│   ├── config.py
+</code></pre><p>where config.py looks like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+wikiart <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;accessCode&#39;</span>: <span style=color:#e6db74>&#39;0928304982jalksjf&#39;</span>,
+         <span style=color:#e6db74>&#39;secretCode&#39;</span>: <span style=color:#e6db74>&#39;q0239840asldkfj&#39;</span>}
+</code></pre></div><p>and then your main executable looks like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> config <span style=color:#66d9ef>as</span> cfg
+<span style=color:#f92672>import</span> requests
+
+response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;https://www.wikiart.org/en/Api/2/login?accessCode=</span><span style=color:#e6db74>{</span>cfg<span style=color:#f92672>.</span>wikiart[<span style=color:#e6db74>&#39;accessCode&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;secretCode=</span><span style=color:#e6db74>{</span>cfg<span style=color:#f92672>.</span>wikiart[<span style=color:#e6db74>&#39;secretCode&#39;</span>]<span style=color:#e6db74>&#39;)</span>
+</code></pre></div><p>You add the config file to your <code>.gitignore</code> so you don&rsquo;t accidentally upload it to GitHub. This way, your code is cleaner and easier to read. If your variables change, you only have to change them in one place as opposed to throughout the file. And, it&rsquo;s secure.</p>
+<p>There are a <a href=https://martin-thoma.com/configuration-files-in-python/>couple of other different ways</a> to store credentials Pythonically:</p>
+<ol>
+<li>Import from a JSON file</li>
+<li>Import from a YAML file</li>
+<li>Use environment variables with .env</li>
+<li>Use .ini files</li>
+<li>Use ConfigParser</li>
+</ol>
+<h1 id=but-what-about-notebooks>But what about notebooks?</h1>
+<p>But for notebooks, there is a slight issue of ergonomics and UX. By that I mean that notebooks are different from a codebase in that they&rsquo;re meant to be interactive, used by a single person, quickly iterative, and used mostly for throw-away work that gets scrapped and hardened once you go to production.</p>
+<p>Usually what this means for me is that I end up storing passwords in them, forgetting they&rsquo;re in there,and committing them to version control, where everyone else can see them.</p>
+<p>And, when you&rsquo;re working in a notebook as part of Jupyter in the browser, instead of having the list of folders available in your IDE it&rsquo;s just a bit more annoying to get to, unless <a href=https://jupyterlab.readthedocs.io/en/stable/>you use JupyterLab</a> out of the gate.</p>
+<p>I personally still have to get used to running</p>
+<p><code>jupyter lab</code></p>
+<p>instead of</p>
+<p><code>jupyter notebook</code></p>
+<p>at the command line.</p>
+<p>Additionally, Jupyter notebooks don&rsquo;t surface hidden files,like <code>.env</code> or <code>.gitconfig</code> by default - you have to enable them with a command that&rsquo;s so far only available <a href=https://github.com/jupyterlab/jupyterlab/issues/2049>in a GitHub repo</a>:</p>
+<p><code>jupyter lab --ContentManager.allow_hidden=true</code></p>
+<p>With all of this in mind, I went to ask Twitter what their standard way of using credentials in notebooks was, and whether it differed from &ldquo;regular&rdquo; Python development:</p>
+<p>The amount of answers was just as enlightening as the actual answers themselves. It looks like, while everyone agrees that credentials and code should be separated, they&rsquo;re not in agreement on how, exactly.</p>
+<p>A few different trends emerged, depending on whether you&rsquo;re working in locally or in the cloud, and I&rsquo;ve elaborated on them here.</p>
+<h1 id=storing-jupyter-credentials-locally>Storing Jupyter Credentials Locally</h1>
+<h2 id=environment-variables>Environment variables</h2>
+<ol>
+<li>Environment variables are the winner, and the <a href=https://pypi.org/project/python-dotenv/>python-dotenv</a> package makes it easy:</li>
+</ol>
+<p>You first create a .env file, which is just a text file containing variables and comments. The Python dotenv librarly, when you call load_dotenv, detects the file, and passes the variables into your system&rsquo;s environment variables, where you can pull them out with the <code>os</code> library.</p>
+<p>This file needs to be excluded from version control by adding the following to your <a href=https://gist.github.com/GhostofGoes/94580e76cd251972b15b4821c8a06f59><code>.gitignore</code></a>:</p>
+<p>Notebook Example:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/dotenv.png alt></p>
+<p>Code:</p>
+<pre tabindex=0><code># magics for import statements
+%load_ext dotenv
+%dotenv
+
+import os
+import requests
+
+ACCESS_CODE = os.getenv(&quot;accessCode&quot;)
+SECRET_CODE = os.getenv(&quot;secretCode&quot;)
+
+response = requests.get(f'https://www.wikiart.org/en/Api/2/login?accessCode={ACCESS_CODE}&amp;secretCode={SECRET_CODE}')
+</code></pre><p>However, there is a caveat. If you end up using this file on someone else&rsquo;s computer, or sharing it across a server, you&rsquo;ll need to find a way to bring your own .env file with you, either by transferring to the server or putting in the cloud.</p>
+<p>However, since these are API credentials, they should be unique to you, which means that anyone pulling down the codebase won&rsquo;t need to change anything - they&rsquo;ll already have their own <code>.env</code> file that will populate the variables. This is part of the beauty of the 12-factor app: no hard-coding and no searching through notebooks for hard-coded values.</p>
+<p>An even simpler way, without using .env, is to pull directly from your environment variables. If you&rsquo;re operating some kind of *nix or Mac system, they&rsquo;ll be in your <code>~/.bashrc</code> and <code>~/.bashprofile</code>. Then, you can pull them out with <code>os.environ.get()</code> instead of <code>os.getenv</code>. For more on the difference between the two, check out <a href=https://stackoverflow.com/a/10953127>here.</a></p>
+<h2 id=getpass>Getpass</h2>
+<p>This library allows you to interactively type in a password that is hidden unless you call the variable. It&rsquo;s not saved in any envrionment variables, but could be useful for more interactive work.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/getpass.gif alt>
+<a href=http://queirozf.com/entries/interactive-controls-for-jupyter-notebooks-python-examples#password-input-box>Gif source.</a></p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/getpass.png alt></p>
+<p>Code:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> getpass
+ACCESS_CODE <span style=color:#f92672>=</span> getpass<span style=color:#f92672>.</span>getpass()
+SECRET_CODE <span style=color:#f92672>=</span> getpass<span style=color:#f92672>.</span>getpass()
+print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;ACCESS_CODE:</span><span style=color:#e6db74>{</span>ACCESS_CODE<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;SECRET_CODE:</span><span style=color:#e6db74>{</span>SECRET_CODE<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</code></pre></div><h2 id=yaml-or-json-config-file>YAML (or JSON) config file</h2>
+<p>There&rsquo;s a whole plethora of <a href=https://martin-thoma.com/configuration-files-in-python/>external config files</a> you can include with Python, including JSON and YAML.</p>
+<p>There&rsquo;s a little bit of catch here because it&rsquo;s more annoying to work with files outside of Jupyter notebooks, but if you run Jupyter lab, you can see and edit the <code>.yml</code> file in the sidebar.</p>
+<p>In theory, YAML is more complex to generate, but more universally compatible than JSON: <a href=https://yaml.org/spec/1.2/spec.html#id2759572>its spec is a superset of JSON</a>, and it&rsquo;s extremely popular as a templating language these days. <br>
+<a href="https://twitter.com/vboykis/status/1098950011415597056?s=20">https://twitter.com/vboykis/status/1098950011415597056?s=20</a></p>
+<p><code>config.yml</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>api_creds</span>:
+    <span style=color:#f92672>access_code</span>: <span style=color:#ae81ff>0928304982jalksjf</span>
+    <span style=color:#f92672>secret_code</span>: <span style=color:#ae81ff>q0239840asldkfj</span>
+</code></pre></div><p><code>notebook.ipynb</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> yaml
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;config.yml&#34;</span>, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> ymlfile:
+    cfg <span style=color:#f92672>=</span> yaml<span style=color:#f92672>.</span>safe_load(ymlfile)
+
+print(cfg[<span style=color:#e6db74>&#39;api_creds&#39;</span>][<span style=color:#e6db74>&#39;access_code&#39;</span>])
+print(cfg[<span style=color:#e6db74>&#39;api_creds&#39;</span>][<span style=color:#e6db74>&#39;secret_code&#39;</span>])
+</code></pre></div><p>Here&rsquo;s the actual notebook screenshot:
+<img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/yaml.png alt></p>
+<h1 id=keyring>Keyring</h1>
+<p>This is <a href=https://pypi.org/project/keyring/>a way to integrate with</a> your local system&rsquo;s password management system. From <a href=https://alexwlchan.net/2016/11/you-should-use-keyring/>a great exaplanation</a>:</p>
+<blockquote>
+<p>The keyring module provides a wrapper around your system’s password store: for example, the OS X Keychain, or the Windows Credential Vault. These typically provide much more security than keeping the password in source control, or in another file that gets included at runtime. And they’re entirely decoupled from your source code: if you always use keyring, you never have to worry about forgetting to expunge secrets from your code.</p>
+</blockquote>
+<p>You can use it in combination with getpass so you don&rsquo;t type your credentials in plaintext:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> keyring
+<span style=color:#f92672>import</span> getpass
+
+ACCESS_CODE <span style=color:#f92672>=</span> keyring<span style=color:#f92672>.</span>set_password(<span style=color:#e6db74>&#39;wikiart_api&#39;</span>, <span style=color:#e6db74>&#39;ACCESS_CODE&#39;</span>, getpass<span style=color:#f92672>.</span>getpass())
+keyring<span style=color:#f92672>.</span>get_password(<span style=color:#e6db74>&#39;wikiart_api&#39;</span>, <span style=color:#e6db74>&#39;ACCESS_CODE&#39;</span>)
+</code></pre></div><h2 id=papermill>Papermill</h2>
+<p>Papermill is a tool to make notebooks more production-y. From <a href=https://papermill.readthedocs.io/en/latest/>the docs</a>, the main purpose is to parametrize notebooks (aka add parameters that you can pass in when you execute notebooks from the command line), and execute a series of notebooks in concert.</p>
+<p>I&rsquo;m still not entirely clear on how secrets would be handled here since they don&rsquo;t support them explicitly, per <a href=https://github.com/nteract/papermill/issues/271>this GitHub issue</a> but it&rsquo;s worth exploring if you plan on doing more with it, like creating notebooks that can be run at different times with different values. <a href=https://medium.com/y-data-stories/automating-jupyter-notebooks-with-papermill-4b8543ece92f>Here&rsquo;s a good example</a> of that workflow.</p>
+<h1 id=storing-credentials-in-the-cloud>Storing Credentials in the Cloud</h1>
+<p>There is an additional workflow you can use if you&rsquo;re working with notebooks that are in the cloud. In theory, you can use any of the above methods, but what each cloud provider does nicely is store credentials.</p>
+<p>You could also use these credentials if you&rsquo;re working locally, but my personal opinion is that, unless you&rsquo;re sharing code in a repo, all they&rsquo;ll do is provide you unnecessary overhead when any one of the local variants will work.</p>
+<p>I&rsquo;m going to talk about AWS secrets, because it&rsquo;s the one I&rsquo;m most familiar with, but Google and Azure also have variants of this that you can use in a similar way.</p>
+<h2 id=aws-secrets>AWS Secrets</h2>
+<p><a href=https://docs.aws.amazon.com/secretsmanager/latest/userguide/tutorials_basic.html>AWS Secrets</a> is the one I&rsquo;m most familiar with. It&rsquo;s a way to store any credentials in a cryptograhically safe way.</p>
+<p>Don&rsquo;t forget! Cloud services are not free. Current Secrets costs are:</p>
+<pre><code>$0.40 per secret per month
+$0.05 per 10,000 API calls
+</code></pre>
+<p>If you&rsquo;re already either using notebooks in EC2 or Sagemaker, or have the flow hooked up to an online workflow like through GitHub/GitLab or CI/CD, it&rsquo;s worth accessing them here</p>
+<p>You can put them in through the AWS GUI:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/secretstore.png alt></p>
+<p>Ideally you&rsquo;d also rotate these, particularly if you&rsquo;re working with an app that you wrote yourself.</p>
+<p>And then access them in your notebook. As you can see, it&rsquo;s a lot of boilerplate code, so it makes sense if you&rsquo;re already working in the cloud and accessing other services.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> boto3
+<span style=color:#f92672>import</span> base64
+<span style=color:#f92672>import</span> json
+
+<span style=color:#75715e>#specify your name for the secret and the AWS region</span>
+secret_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;WIKIART&#34;</span>
+region_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;us-east-1&#34;</span>
+
+<span style=color:#75715e># connect to AWS</span>
+session <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>session<span style=color:#f92672>.</span>Session()
+client <span style=color:#f92672>=</span> session<span style=color:#f92672>.</span>client(
+    service_name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;secretsmanager&#39;</span>,
+    region_name<span style=color:#f92672>=</span>region_name)
+
+<span style=color:#75715e># pull out the values from the string metadata</span>
+string_meta <span style=color:#f92672>=</span> client<span style=color:#f92672>.</span>get_secret_value(SecretId<span style=color:#f92672>=</span>secret_name)[<span style=color:#e6db74>&#39;SecretString&#39;</span>]
+
+<span style=color:#75715e># convert dictionary string to dictionary </span>
+secret_string_dict <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(string_meta ) 
+
+secret_string_dict[<span style=color:#e6db74>&#39;ACCESS_KEY&#39;</span>]
+</code></pre></div><p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/stringmeta.png alt></p>
+<p>That&rsquo;s it! Go forth and hide your credentials. :)</p>
+<p><em>To edit this post, <a href=https://github.com/veekaybee/veekaybee.github.io>open a pull request</a>.</em></p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>How large should your sample size be? | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name=title content="How large should your sample size be?">
+<meta name=description content="I read a recent interview with Hadley Wickham. Two things stood out to me.
+The first is how down-to-earth he seems, even given how well-known he is in the data science community.
+The second was this quote:
+ Big data problems [are] actually small data problems, once you have the right subset/sample/summary. Inventing numbers on the spot, I’d say 90% of big data problems fall into this category.
+ ##The technical side of sampling">
+<meta name=keywords content>
+<meta property="og:title" content="How large should your sample size be?">
+<meta property="og:description" content="I read a recent interview with Hadley Wickham. Two things stood out to me.
+The first is how down-to-earth he seems, even given how well-known he is in the data science community.
+The second was this quote:
+ Big data problems [are] actually small data problems, once you have the right subset/sample/summary. Inventing numbers on the spot, I’d say 90% of big data problems fall into this category.
+ ##The technical side of sampling">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/how-large-should-your-sample-size-be/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2015-08-04T00:00:00+00:00">
+<meta property="article:modified_time" content="2015-08-04T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="How large should your sample size be?">
+<meta name=twitter:description content="I read a recent interview with Hadley Wickham. Two things stood out to me.
+The first is how down-to-earth he seems, even given how well-known he is in the data science community.
+The second was this quote:
+ Big data problems [are] actually small data problems, once you have the right subset/sample/summary. Inventing numbers on the spot, I’d say 90% of big data problems fall into this category.
+ ##The technical side of sampling">
+<meta itemprop=name content="How large should your sample size be?">
+<meta itemprop=description content="I read a recent interview with Hadley Wickham. Two things stood out to me.
+The first is how down-to-earth he seems, even given how well-known he is in the data science community.
+The second was this quote:
+ Big data problems [are] actually small data problems, once you have the right subset/sample/summary. Inventing numbers on the spot, I’d say 90% of big data problems fall into this category.
+ ##The technical side of sampling"><meta itemprop=datePublished content="2015-08-04T00:00:00+00:00">
+<meta itemprop=dateModified content="2015-08-04T00:00:00+00:00">
+<meta itemprop=wordCount content="1357"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>Hugo ʕ•ᴥ•ʔ Bear Blog</h2>
+</a>
+<nav><a href=/hugo-test/>Home</a>
+<a href=/hugo-test/bear/>Bear</a>
+<a href=/hugo-test/blog>Blog</a>
+</nav>
+</header>
+<main>
+<h1>How large should your sample size be?</h1>
+<p>
+<i>
+<time datetime=2015-08-04 pubdate>
+04 Aug, 2015
+</time>
+</i>
+</p>
+<content>
+<p></p>
+<p>I read a recent interview with <a href=https://peadarcoyle.wordpress.com/2015/08/02/interview-with-a-data-scientist-hadley-wickham/>Hadley Wickham</a>. Two things stood out to me.</p>
+<p>The first is how down-to-earth he seems, even given how well-known he is in the data science community.</p>
+<p>The second was this quote:</p>
+<blockquote>
+<p>Big data problems [are] actually small data problems, once you have the right subset/sample/summary. Inventing numbers on the spot, I’d say 90% of big data problems fall into this category.</p>
+</blockquote>
+<p>##The technical side of sampling</p>
+<p>Even if you don&rsquo;t have huge data sets (defined for me personally as anything over 10GB or 5 million rows, whichever comes first), you usually run into issues where even a fast computer will process too slowly in memory (especially if you&rsquo;re using R). It will go even slower if you&rsquo;re processing data remotely, as is usually the case with pulling down data from relational databases (I&rsquo;m not considering Hadoop or other NoSQL solutions in this post, since they&rsquo;re a different animal entirely.)</p>
+<p>In the cases where pulling down data takes longer than running regressions on it, you&rsquo;ll need to sample.</p>
+<p>But how big a sample is big enough? As I&rsquo;ve been working through a couple of rounds of sampling lately, I&rsquo;ve found that there&rsquo;s no standard rule of thumb, either in the data science community or in specific industries like healthcare and finance. The answer is, as always, <a href=http://stats.stackexchange.com/questions/132536/how-to-choose-a-confidence-level>&ldquo;It depends."</a>.</p>
+<p>Before the rise of computer-generated data collection, statisticians used to have to work up to a large-enough sample. The question was, &ldquo;I have to collect a lot of data. The process of collecting data, usually through paper surveys, will take a long time and be extremely expensive. How much data is enough to be accurate?&rdquo;</p>
+<p>Today, the question is the opposite: &ldquo;How much of this massive amount of data that we&rsquo;ve collected can we throw out and still be accurate?&rdquo;</p>
+<p>That was the question I was trying to answer a couple weeks ago when I was working with a SQL table that had grown to 1+ billion rows.</p>
+<h2 id=the-business-side-of-sampling>The business side of sampling</h2>
+<p>To understand the relationship between an entire population and a subset, let&rsquo;s take a step back to see why someone might ask.</p>
+<p>Let&rsquo;s say you&rsquo;re the data scientist at a start-up - Goatly - that sells artisanal handcrafted medicine boxes monthly to owners of narcoleptic goats (<a href="https://www.youtube.com/watch?v=we9_CdNPuJg">this is a real thing and I could watch this video over and over again</a>.</p>
+<p>Goatly has ~ 100,000 farms already in your system (who knew America had a narcoleptic goat problem?) and the CEO wants to buy a share in a private jet, so she needs the company to keep growing very quickly. A startling number of goats get much better after taking your medicine and hence, the farm leaves your service. The CEO needs you to figure out what makes these goats better and see if you can predict how many farms will be the next to leave, and as a result, how much business she needs to replace them.</p>
+<p>You think you might be able to use <a href=https://www.strath.ac.uk/aer/materials/5furtherquantitativeresearchdesignandanalysis/unit6/whatislogisticregression/>logistic regression</a> to predict whether the farm will cancel Goatly (number of goats, size of goats, color of goats, how much of the pills they buy in a month, how many pills they use in a month, ratio of narcoleptic to regular goats, etc.) But when you try to run the regression on the entire data set, it fails because it&rsquo;s simply too much.</p>
+<p>So you need to sample. How many farms do you need to pick to make sure that they accurately represent the total population of farms? There are some smaller farms, some larger farms, some farms with more narcoleptic goats, some farms where the farmers are more aggressive in giving the goats the medicine, etc. If you pick the wrong sample, it won&rsquo;t be the same as the population, and then all the tests you plan to do later will fail.</p>
+<h2 id=determining-sample-size>Determining sample size</h2>
+<p><a href=https://www.qualtrics.com/blog/determining-sample-size/>Here&rsquo;s the standard equation</a> used to calculate error. It&rsquo;s often the precursor to testing the power of a test (that is, if this equation works in your favor, then you can use power of a test to figure out whether logistic regression or most other tests you use actually work on your sample). More on that at the bottom of the post.</p>
+<p>You need to know:</p>
+<ul>
+<li>Population size - The entire population you&rsquo;re sampling (in our case, 100,000.)</li>
+<li>Margin of error/confidence interval - How far away are you willing to be from the population statistic?</li>
+<li>Confidence level - How confident do you want to be that your sample statistic (the mean, for example) matches your population?</li>
+</ul>
+<p>The two things you have to pass judgment on are:</p>
+<ul>
+<li>
+<p>how large you want your <strong>confidence level</strong> to be: i.e. do you want to be 90% sure that you found all the farms that will cancel Goatly and leave your CEO traveling coach with the peons? 95% or 99%? In settings where you&rsquo;re dealing with medical data, you want this to be 99%. Elsewhere, 95%, or even 90%, depending on what you&rsquo;re doing is good enough. I asked around the <a href=https://datascientists.slack.com>Data Science Slack</a> and the general consensus was most business settings can do with 95%, again, depending on context.</p>
+</li>
+<li>
+<p><strong>margin of error</strong> By what percent the sample deviates from the population. This is the number you usually see in polls: 43% of people voted Yes on this issue, +/- 3%. Again, you&rsquo;ll need to use your judgment. There is no standard of error. <a href=http://www.unc.edu/~rls/s151-2010/class23.pdf>It&rsquo;s usually</a> anything between 1 to 4%. Let&rsquo;s pick 2% for now. Just keep in mind that <a href=https://onlinecourses.science.psu.edu/stat100/node/17>sample size and margin of error are related</a>: the larger margin of error you pick, the smaller sample size you&rsquo;ll need.</p>
+</li>
+</ul>
+<p>##Putting it all together:</p>
+<p>Interpreting the results of the four stats you need for the entire equation: If we have a population size of 100,000, what number of farms can we sample and be sure that they are representative of all of the farms using Goatly 95% of the time, where our sample statistic is at most 2% below or 2% above the population mean?</p>
+<h3 id=calculating-sample-size-with-python>Calculating sample size with Python</h3>
+<p>There are a couple ways to run a quick calculation. The fastest is probably <a href=http://www.surveysystem.com/sscalc.htm>this site</a>. I use it a lot for quick back of the envelope calculations. Normally I would be wary of using a site whose code and methods I didn&rsquo;t know, but this site is generally well-documented, and we&rsquo;ll be cross-checking this value against another method.</p>
+<p>Putting in our numbers there, we get:</p>
+<p>2,345 as the sample size.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/stattest.png alt=image></p>
+<p>There is also a <a href="http://bc-forensics.com/?p=15">really nice Python script</a> that does the same thing.</p>
+<p>Adjusted for my sample size and confidence interval (see <a href=https://github.com/veekaybee/data/blob/master/samplesize.py>my Github</a>):</p>
+<pre tabindex=0><code>def main():
+  sample_sz = 0
+  population_sz = 100000
+  confidence_level = 95.0
+  confidence_interval = 2.0
+</code></pre><p>It also returns the same number:</p>
+<pre><code>vicki$ python samplesize.py 
+SAMPLE SIZE: 2345
+</code></pre>
+<p>There are a couple of ways to get close to it in R, but I haven&rsquo;t found anything in the pwr library so far that only requires those three things: margin of error, confidence level, and population. I also haven&rsquo;t found anything in either SciPy or NumPy that does exactly this, although if I do, I&rsquo;ll be sure to change the post.</p>
+<h2 id=wrapping-up>Wrapping up</h2>
+<p>If you want to select a sample of farms that are representative of the whole Goatly population, you&rsquo;d need to pick about 2.5k, which is much more manageable than looking at 100,000, and will allow you to get your CEO the results much more quickly. You&rsquo;re happy, she&rsquo;s happy, and the narcoleptic goats (the ones that are getting treated, anyway), are also happy.</p>
+<p>##Post-script on the Power of a Test</p>
+<p>Something you might often come across while reading up on picking the right sample size is &ldquo;power of test.&rdquo; (This can be performed once)[https://en.wikipedia.org/wiki/Statistical_power] you actually have your sample size. The power for a test gives you an acceptable Type I error. A Type I error is a false positive, or saying that a farm will leave the Goatly platform when they really won&rsquo;t. What you&rsquo;re really testing for is whether the sample size you&rsquo;re taking matches the population.</p>
+<p><strong>Thanks to <a href=http://www.saberr.com/company>Sandy</a> and <a href=https://twitter.com/perfectalgo>@perfectalgo</a> for editing.</strong></p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>

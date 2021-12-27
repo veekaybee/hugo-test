@@ -1,0 +1,386 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>The Case of the Broken Lambda | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name=title content="The Case of the Broken Lambda">
+<meta name=description content="Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)
+Table of Contents
+ Holmes takes on a new case The Case of the Broken Lambda  Getting S3 Input Events Writing the Lambda Building the Lambda Package The Error Investigating Snappy errors   Holmes is on it How the error was fixed Conclusion   Holmes takes on a new case Holmes and Watson were in Holmes&rsquo;s study.">
+<meta name=keywords content>
+<meta property="og:title" content="The Case of the Broken Lambda">
+<meta property="og:description" content="Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)
+Table of Contents
+ Holmes takes on a new case The Case of the Broken Lambda  Getting S3 Input Events Writing the Lambda Building the Lambda Package The Error Investigating Snappy errors   Holmes is on it How the error was fixed Conclusion   Holmes takes on a new case Holmes and Watson were in Holmes&rsquo;s study.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/the-case-of-the-broken-lambda/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2018-09-24T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-09-24T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="The Case of the Broken Lambda">
+<meta name=twitter:description content="Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)
+Table of Contents
+ Holmes takes on a new case The Case of the Broken Lambda  Getting S3 Input Events Writing the Lambda Building the Lambda Package The Error Investigating Snappy errors   Holmes is on it How the error was fixed Conclusion   Holmes takes on a new case Holmes and Watson were in Holmes&rsquo;s study.">
+<meta itemprop=name content="The Case of the Broken Lambda">
+<meta itemprop=description content="Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)
+Table of Contents
+ Holmes takes on a new case The Case of the Broken Lambda  Getting S3 Input Events Writing the Lambda Building the Lambda Package The Error Investigating Snappy errors   Holmes is on it How the error was fixed Conclusion   Holmes takes on a new case Holmes and Watson were in Holmes&rsquo;s study."><meta itemprop=datePublished content="2018-09-24T00:00:00+00:00">
+<meta itemprop=dateModified content="2018-09-24T00:00:00+00:00">
+<meta itemprop=wordCount content="2578"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>Hugo ʕ•ᴥ•ʔ Bear Blog</h2>
+</a>
+<nav><a href=/hugo-test/>Home</a>
+<a href=/hugo-test/bear/>Bear</a>
+<a href=/hugo-test/blog>Blog</a>
+</nav>
+</header>
+<main>
+<h1>The Case of the Broken Lambda</h1>
+<p>
+<i>
+<time datetime=2018-09-24 pubdate>
+24 Sep, 2018
+</time>
+</i>
+</p>
+<content>
+<p>Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)</p>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href=#holmes-takes-on-a-new-case>Holmes takes on a new case</a></li>
+<li><a href=#the-case-of-the-broken-lambda>The Case of the Broken Lambda</a>
+<ul>
+<li><a href=#getting-s3-input-events>Getting S3 Input Events</a></li>
+<li><a href=#writing-the-lambda>Writing the Lambda</a></li>
+<li><a href=#building-the-lambda-package>Building the Lambda Package</a></li>
+<li><a href=#the-error>The Error</a></li>
+<li><a href=#investigating-snappy-errors>Investigating Snappy errors</a></li>
+</ul>
+</li>
+<li><a href=#holmes-is-on-it>Holmes is on it</a></li>
+<li><a href=#how-the-error-was-fixed>How the error was fixed</a></li>
+<li><a href=#conclusion>Conclusion</a></li>
+</ul>
+<h2 id=a-idholmes-takes-on-a-new-casea></h2>
+<h1 id=holmes-takes-on-a-new-case>Holmes takes on a new case</h1>
+<p>Holmes and Watson were in Holmes&rsquo;s study. It was a grey, damp winter evening in London, but the fire was burning merrily, and tea was on. For a time, they sat in contented silence together. Then, Holmes reached lazily for his pipe.</p>
+<p>&ldquo;Watson,&rdquo; he said, taking a pinch of tobacco and gently tapping it into place. &ldquo;Did I ever tell you about the peculiar case of heinous crimes against Python in the cloud that I encountered recently?&rdquo;</p>
+<p>&ldquo;No, my dear Holmes, what was it?&rdquo;</p>
+<p>&ldquo;The Case of the Broken Lambda,&rdquo; Holmes said evenly, staring into the flickering flames. Watson felt a chill race down his spine, and reached for a poker to stoke the fire. He motioned for Holmes to continue.</p>
+<p>&ldquo;Well, it was back in &lsquo;18 that a Datum Minder called me into her laboratory. When she opened the door, her hair was askance. She looked like she had not slept for several days, and her cabinet was littered with empty coffee cups and Dove chocolate bar wrappers with inspirational sayings on the inside. Soundcloud laid down a soft, thrumming beat in the background. She was at quite a low point.&rdquo;</p>
+<p>&ldquo;I said, &lsquo;Madam, how may I be of assistance.&rsquo; She just kept repeating frantically was that she needed this Lambda to go to prod at the end of the sprint, but that she just couldn&rsquo;t get it to work. "</p>
+<p>&ldquo;I assured her that I was here to help her with all her engineering needs. After all, as I once said, when you have eliminated the impossible, whatever remains, however improbable, must be a Python packaging issue, and whatever the issue is, we&rsquo;ll get to the bottom of it.&rdquo;</p>
+<p>Once she calmed down, she was able to explain her situation.</p>
+<h2 id=a-idthe-case-of-the-broken-lambdaa></h2>
+<h1 id=the-case-of-the-broken-lambda>The Case of the Broken Lambda</h1>
+<p>The case was this. At a high level, I&rsquo;d been ingesting gigabytes of data per day in AWS. Eventually, I wanted to use that data to build machine learning models in Spark and TensorFlow. The data, however, was not in the format I needed. It was coming in as Snappy-compressed JSON files.</p>
+<p>I, instead needed the data in Snappy-compressed Avro files.</p>
+<p>The reason for this particular workflow is that compressed, serialzed data is <a href=https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/>cheaper to store</a> and <a href=https://cloud.netapp.com/blog/optimizing-aws-emr-best-practices>much faster</a> to process downstream in almost all cases.</p>
+<p>I needed these snappy-compressed Avro files to be available downstream for simple ad-hoc analysis in Athena, and then, further on down the workflow, in machine learning jobs through Spark on EMR, and Tensorflow on EC2.</p>
+<p>Having the data partitioned by year-month-day through S3 prefixes (like so: <code>outpath/year={year}/month={month}/day={day}/hour={hour}</code>) means that data would then easier to query in <a href=https://docs.aws.amazon.com/athena/latest/ug/partitions.html>partitioned Athena tables.</a></p>
+<p>So, I was looking to write a simple <a href=http://veekaybee.github.io/2018/02/19/creating-a-twitter-art-bot/>AWS Lambda</a> function in Python. The function would listen on an S3 bucket for incoming JSON files, take each file, introspect it, and convert it on the fly to a Snappy-compressed Avro file. It would then put that Avro file into a different, &ldquo;cleaned&rdquo; S3 bucket, based on the timestamp in the file.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/lambdaflow.jpg alt></p>
+<p>The detailed workflow looked like this:</p>
+<ol>
+<li>
+<p>Input S3 Bucket triggers an S3 PUT event</p>
+</li>
+<li>
+<p>Lambda listening to the bucket picks up the event as a JSON notification and:</p>
+<ul>
+<li>Parses out the filename</li>
+<li>Decompresses the JSON-snappy object</li>
+<li>Opens the JSON file object to get the timestamp for year/month/day of the event to later use in the output directory</li>
+<li>Creates an Avro writer file that converts the file to Avro using the <code>schema_writer</code> and Avro schema associated with the data (for more on Avro conversion, <a href=https://avro.apache.org/docs/1.8.2/>read here</a>)</li>
+<li>Converts the file to Avro and compresses with the snappy codec.</li>
+</ul>
+</li>
+<li>
+<p>Build the Lambda deployment package</p>
+</li>
+<li>
+<p>Move package to AWS and test against an S3 PUT event</p>
+</li>
+</ol>
+<p>The idea for the Lambda was relatively simple.
+But, as is <a href=http://veekaybee.github.io/2018/01/28/working-with-aws/>often the case with AWS</a>, nothing ever is.</p>
+<h2 id=a-idgetting-s3-input-eventsa></h2>
+<h2 id=getting-s3-input-events>Getting S3 Input Events</h2>
+<p>S3 buckets generate <a href=https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTnotification.html>PUT event notifications</a> whenever files are added to the bucket. These events can be configured as <a href=https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-event-notifications.html>Lambda triggers.</a></p>
+<p>Events look like this (Here&rsquo;s a sample event I pulled from Lambda&rsquo;s library of sample event types, which you can see in the <a href=https://aws.amazon.com/blogs/compute/improved-testing-on-the-aws-lambda-console/>Lambda UI</a>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;Records&#34;</span>: [
+    {
+      <span style=color:#f92672>&#34;eventVersion&#34;</span>: <span style=color:#e6db74>&#34;2.0&#34;</span>,
+      <span style=color:#f92672>&#34;eventTime&#34;</span>: <span style=color:#e6db74>&#34;1970-01-01T00:00:00.000Z&#34;</span>,
+      <span style=color:#f92672>&#34;requestParameters&#34;</span>: {
+        <span style=color:#f92672>&#34;sourceIPAddress&#34;</span>: <span style=color:#e6db74>&#34;127.0.0.1&#34;</span>
+      },
+      <span style=color:#f92672>&#34;s3&#34;</span>: {
+        <span style=color:#f92672>&#34;configurationId&#34;</span>: <span style=color:#e6db74>&#34;testConfigRule&#34;</span>,
+        <span style=color:#f92672>&#34;object&#34;</span>: {
+          <span style=color:#f92672>&#34;eTag&#34;</span>: <span style=color:#e6db74>&#34;0123456789abcdef0123456789abcdef&#34;</span>,
+          <span style=color:#f92672>&#34;sequencer&#34;</span>: <span style=color:#e6db74>&#34;0A1B2C3D4E5F678901&#34;</span>,
+          <span style=color:#f92672>&#34;key&#34;</span>: <span style=color:#e6db74>&#34;filename.json&#34;</span>,
+          <span style=color:#f92672>&#34;size&#34;</span>: <span style=color:#ae81ff>1024</span>
+        },
+        <span style=color:#f92672>&#34;bucket&#34;</span>: {
+          <span style=color:#f92672>&#34;arn&#34;</span>: <span style=color:#e6db74>&#34;arn:aws:s3:::mybucket&#34;</span>,
+          <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;sourcebucket&#34;</span>,
+          <span style=color:#f92672>&#34;ownerIdentity&#34;</span>: {
+            <span style=color:#f92672>&#34;principalId&#34;</span>: <span style=color:#e6db74>&#34;EXAMPLE&#34;</span>
+          }
+        },
+        <span style=color:#f92672>&#34;s3SchemaVersion&#34;</span>: <span style=color:#e6db74>&#34;1.0&#34;</span>
+      },
+      <span style=color:#f92672>&#34;responseElements&#34;</span>: {
+        <span style=color:#f92672>&#34;x-amz-id-2&#34;</span>: <span style=color:#e6db74>&#34;EXAMPLE123/5678abcdefghijklambdaisawesome/mnopqrstuvwxyzABCDEFGH&#34;</span>,
+        <span style=color:#f92672>&#34;x-amz-request-id&#34;</span>: <span style=color:#e6db74>&#34;EXAMPLE123456789&#34;</span>
+      },
+      <span style=color:#f92672>&#34;awsRegion&#34;</span>: <span style=color:#e6db74>&#34;us-east-1&#34;</span>,
+      <span style=color:#f92672>&#34;eventName&#34;</span>: <span style=color:#e6db74>&#34;ObjectCreated:Put&#34;</span>,
+      <span style=color:#f92672>&#34;userIdentity&#34;</span>: {
+        <span style=color:#f92672>&#34;principalId&#34;</span>: <span style=color:#e6db74>&#34;EXAMPLE&#34;</span>
+      },
+      <span style=color:#f92672>&#34;eventSource&#34;</span>: <span style=color:#e6db74>&#34;aws:s3&#34;</span>
+    }
+  ]
+}
+</code></pre></div><p>The Lambda would see one of these <code>ObjectCreated:Put</code> events come in and use it as input into the lambda handler <code>event</code> parameter. The parameter, once passed into the Lambda, would convert <code>filename.json</code> within the Lambda function&rsquo;s temp space into an Avro file.</p>
+<h2 id=a-idwriting-the-lambdaa></h2>
+<h2 id=writing-the-lambda>Writing the Lambda</h2>
+<p>The code below does all of that, in sequence.</p>
+<p>It first imports all the Python libraries. Then, it sets up the lambda handler with</p>
+<p><code>def lambda_handler(event, context):</code></p>
+<p>It loops through each record present in the file with</p>
+<p><code>for record in event['Records']: </code></p>
+<p>Initially it decompresses the file with snappy:</p>
+<p><code> uncompressed = snappy.uncompress(file_body).decode("utf-8")</code></p>
+<p>and eventually writes to an Avro file with snappy compression. It moves that file out of the Lambda temp space and into a new file in a new bucket.</p>
+<p><code>writer = datafile.DataFileWriter(open(tmp_file_location, "wb"), io.DatumWriter(), schema_writer,codec="snappy") writer.append(json_string)</code></p>
+<p>It&rsquo;s easy to see why Python Lambdas are such a popular all-purpose tool in the AWS ecosystem. There&rsquo;s minimal boilerplate, and the code is extremely legible.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># Package modules</span>
+<span style=color:#f92672>import</span> logging
+<span style=color:#f92672>import</span> json
+<span style=color:#f92672>import</span> urllib
+<span style=color:#f92672>from</span> pathlib <span style=color:#f92672>import</span> Path
+
+
+<span style=color:#75715e># Boto and OS</span>
+<span style=color:#f92672>import</span> boto3
+<span style=color:#f92672>import</span> os
+<span style=color:#f92672>import</span> tempfile
+<span style=color:#f92672>import</span> datetime
+
+<span style=color:#75715e># Snappy Decompression</span>
+<span style=color:#f92672>import</span> snappy
+
+<span style=color:#75715e># Avro</span>
+<span style=color:#f92672>from</span> avro <span style=color:#f92672>import</span> io
+<span style=color:#f92672>from</span> avro <span style=color:#f92672>import</span> schema
+<span style=color:#f92672>from</span> avro <span style=color:#f92672>import</span> datafile
+
+
+logger <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>getLogger()
+logger<span style=color:#f92672>.</span>setLevel(logging<span style=color:#f92672>.</span>INFO)
+
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
+
+    <span style=color:#75715e># connect to S3</span>
+
+    s3 <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>resource(<span style=color:#e6db74>&#39;s3&#39;</span>, region_name<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;us-east-1&#39;</span>)
+
+    <span style=color:#75715e># Production Connection</span>
+    <span style=color:#75715e># s3 = boto3.resource(&#39;s3&#39;, region_name=os.environ[&#39;REGION_NAME&#39;])</span>
+
+    <span style=color:#75715e># Create an Avro data writer</span>
+    schema_writer <span style=color:#f92672>=</span> schema<span style=color:#f92672>.</span>Parse(open(<span style=color:#e6db74>&#34;../lib/schema.avsc&#34;</span>, <span style=color:#e6db74>&#34;rb&#34;</span>)<span style=color:#f92672>.</span>read())
+
+
+    <span style=color:#66d9ef>for</span> record <span style=color:#f92672>in</span> event[<span style=color:#e6db74>&#39;Records&#39;</span>]:
+
+        <span style=color:#75715e># use the S3 event put as a trigger</span>
+        bucket <span style=color:#f92672>=</span> record[<span style=color:#e6db74>&#39;s3&#39;</span>][<span style=color:#e6db74>&#39;bucket&#39;</span>][<span style=color:#e6db74>&#39;name&#39;</span>]
+        ingest_key <span style=color:#f92672>=</span> record[<span style=color:#e6db74>&#39;s3&#39;</span>][<span style=color:#e6db74>&#39;object&#39;</span>][<span style=color:#e6db74>&#39;key&#39;</span>]
+
+        <span style=color:#75715e># create Avro file within lambda tmp directory</span>
+        tmp_dir <span style=color:#f92672>=</span> tempfile<span style=color:#f92672>.</span>gettempdir()
+        <span style=color:#75715e># get filename without .snappy and .json extensions</span>
+        filename <span style=color:#f92672>=</span> Path(Path(ingest_key)<span style=color:#f92672>.</span>stem)<span style=color:#f92672>.</span>stem
+        <span style=color:#75715e>#set tmp filename to filename sans extensions</span>
+        outfile_name <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>filename<span style=color:#e6db74>}</span><span style=color:#e6db74>.avro.snappy&#34;</span>
+        tmp_file_location <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>tmp_dir<span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>{</span>outfile_name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+
+        <span style=color:#75715e># parse URL twice</span>
+        key <span style=color:#f92672>=</span> urllib<span style=color:#f92672>.</span>parse<span style=color:#f92672>.</span>unquote(urllib<span style=color:#f92672>.</span>parse<span style=color:#f92672>.</span>unquote(ingest_key))
+
+        obj <span style=color:#f92672>=</span> s3<span style=color:#f92672>.</span>Object(bucket, key)
+
+        file_body <span style=color:#f92672>=</span> obj<span style=color:#f92672>.</span>get()[<span style=color:#e6db74>&#39;Body&#39;</span>]<span style=color:#f92672>.</span>read()
+
+        uncompressed <span style=color:#f92672>=</span> snappy<span style=color:#f92672>.</span>uncompress(file_body)<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#34;utf-8&#34;</span>)
+        json_string <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(uncompressed)
+
+        timestamp <span style=color:#f92672>=</span> json_string[<span style=color:#e6db74>&#39;PTS&#39;</span>]
+
+        <span style=color:#66d9ef>if</span> timestamp <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
+            datetime_ts <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>datetime<span style=color:#f92672>.</span>fromtimestamp(int(timestamp) <span style=color:#f92672>/</span> <span style=color:#ae81ff>1e3</span>)
+            year <span style=color:#f92672>=</span> datetime_ts<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#39;%Y&#39;</span>)
+            month <span style=color:#f92672>=</span> datetime_ts<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#39;%m&#39;</span>)
+            day <span style=color:#f92672>=</span> datetime_ts<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#39;</span><span style=color:#e6db74>%d</span><span style=color:#e6db74>&#39;</span>)
+            hour <span style=color:#f92672>=</span> datetime_ts<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#39;%H&#39;</span>)
+
+            file_path <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;outpath/year=</span><span style=color:#e6db74>{</span>year<span style=color:#e6db74>}</span><span style=color:#e6db74>/month=</span><span style=color:#e6db74>{</span>month<span style=color:#e6db74>}</span><span style=color:#e6db74>/day=</span><span style=color:#e6db74>{</span>day<span style=color:#e6db74>}</span><span style=color:#e6db74>/hour=</span><span style=color:#e6db74>{</span>hour<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+
+            writer <span style=color:#f92672>=</span> datafile<span style=color:#f92672>.</span>DataFileWriter(open(tmp_file_location, <span style=color:#e6db74>&#34;wb&#34;</span>), \
+				io<span style=color:#f92672>.</span>DatumWriter(), \
+				schema_writer, \
+				codec<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;snappy&#34;</span>)
+            writer<span style=color:#f92672>.</span>append(json_string)
+
+        writer<span style=color:#f92672>.</span>close()
+
+        <span style=color:#75715e># Move Avro file to correct folder</span>
+
+        s3<span style=color:#f92672>.</span>Bucket(bucket)<span style=color:#f92672>.</span>upload_file(tmp_file_location, file_path)
+</code></pre></div><p>The next step was to zip up the Lambda executable and its dependencies to the Lambda console and test an execution against the test event above.</p>
+<p>I should note that there are lots and lots of different ways to test Lambdas. My favorite one is <a href=https://medium.com/@bezdelev/how-to-test-a-python-aws-lambda-function-locally-with-pycharm-run-configurations-6de8efc4b206>this one</a>, but sometimes going to the AWS console can be the path of least resistance.</p>
+<h2 id=a-idbuilding-the-lambda-packagea></h2>
+<h2 id=building-the-lambda-package>Building the Lambda Package</h2>
+<p>First, I created a virtual environment through <a href=https://twitter.com/vboykis/status/1006919179793035264>Pipenv</a> and zipped everything into the venv. I also included the Avro schema in the final zip file.</p>
+<p>All of this ran through a CI flow that was kicked off when I pushed to the master branch of my GitHub repo.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/docker.jpg alt></p>
+<p>The process looked like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/usr/bin/env bash
+</span><span style=color:#75715e></span>
+echo <span style=color:#e6db74>&#34;Start script&#34;</span>
+<span style=color:#75715e># Moving to top level of project dir</span>
+cd /usr/lambda
+DIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>pwd<span style=color:#66d9ef>)</span>
+echo <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/&#34;</span>
+
+<span style=color:#75715e># Cleaning up the distribution directory</span>
+echo <span style=color:#e6db74>&#34;Cleaning up/creating dist dir ...&#34;</span>
+mkdir -p <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/dist&#34;</span>
+
+<span style=color:#75715e># Create correct pipenv virtual environment</span>
+pipenv install
+VENV_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>pipenv  --venv<span style=color:#e6db74>`</span>
+PYTHON_VERSION<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;3.6&#34;</span>
+SITE_PACKAGES_DIR<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>VENV_DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/lib/python</span><span style=color:#e6db74>${</span>PYTHON_VERSION<span style=color:#e6db74>}</span><span style=color:#e6db74>/site-packages&#34;</span>
+
+<span style=color:#75715e># zipping lambda into the zip file</span>
+cd <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+echo <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+zip -r -q --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.json&#34;</span> --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.git*&#34;</span>  --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.pytest_cache*&#34;</span>  <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/dist/lambda=.zip&#34;</span> .
+
+<span style=color:#75715e># zipping dependencies into the zip file</span>
+cd <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>SITE_PACKAGES_DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+zip  -r -q --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.git*&#34;</span> --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.idea*&#34;</span> --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.pytest_cache*&#34;</span>  <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/dist/lambda.zip&#34;</span> .
+
+<span style=color:#75715e># zipping schema into the zipfile</span>
+cd <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/lib&#34;</span>
+zip  -r  -q --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.git*&#34;</span> --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.idea*&#34;</span> --exclude<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;*.pytest_cache*&#34;</span>  <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>DIR<span style=color:#e6db74>}</span><span style=color:#e6db74>/dist/lambda.zip&#34;</span> .
+
+echo <span style=color:#e6db74>&#34;Lambda package built&#34;</span>
+</code></pre></div><p>For reference, my folder structure was:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   lambda
+	├── Dockerfile
+	├── Jenkinsfile
+	├── Pipfile
+	├── Pipfile.lock
+	├── README.md
+	├── init.py
+	├── bin
+		build_lambda.sh
+	├── dist
+		 lambda_function.zip
+	├── lambda
+		 lambda_function.py
+	├── lib
+	└── tests
+</code></pre></div><h2 id=a-idthe-errora></h2>
+<h2 id=the-error>The Error</h2>
+<p>But, when I tried to trigger a test of the Lambda using the test JSON event as an input, the console gave me the following error:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#e6db74>&#34;Traceback (most recent call last):</span>
+<span style=color:#f92672>from</span> _snappy <span style=color:#f92672>import</span> UncompressError, compress, decompress, \
+<span style=color:#a6e22e>ImportError</span>: libsnappy<span style=color:#f92672>.</span>so<span style=color:#ae81ff>.1</span>: cannot open shared object file: No such file <span style=color:#f92672>or</span> directory<span style=color:#e6db74>&#34; </span>
+</code></pre></div><p>What was going on here?</p>
+<p>The most important indicator was the <a href=https://airbrake.io/blog/python-exception-handling/importerror-and-modulenotfounderror>exception type</a>: <code>ImportError</code>.</p>
+<p>This meant that something was weird in an imported Python module. Taking a look at the import statement, the Pipfile, and the error statement, the most likely culprit was the <code>snappy</code> library, used to compress the file at the very end.</p>
+<p>What was wrong with Snappy?</p>
+<h2 id=a-idinvestigating-snappy-errorsa></h2>
+<h2 id=investigating-snappy-errors>Investigating Snappy errors</h2>
+<p>Snappy is a library that compresses and decompresses files. In the case of this package, it decompresses from json/snappy. It was <a href=https://github.com/google/snappy>initially build by Google in C.</a>, but has bindings to several other <a href=http://google.github.io/snappy/>languages .</a>, including Python.</p>
+<p>The issue with the Python version of the module is that it has C extensions. In this case, Python is a wrapper, or API on top of C, which does most of the actual work of compressing the file.</p>
+<p>When Python libraries with C extensions are used in any given environment, they need to be compiled on an environment that exactly matches the host environment, (in this case, the Lambda.) For <code>snappy</code> specifically, it needs to be built as a 64bit x86 Linux-compiled library. The environment the Lambda runs on is the same as the <a href=https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html>Linux public AMI.</a> and the instructions say,</p>
+<blockquote>
+<p>If you&rsquo;re using any native binaries in your code, make sure that they&rsquo;re compiled against the package and library versions from this AMI and kernel.</p>
+</blockquote>
+<p>What wasn&rsquo;t loading specifically was cffi, <a href=https://cffi.readthedocs.io/en/latest/.>the actual C module</a> <a href=https://dbader.org/blog/python-cffi>that allows Python to talk to C</a>.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/snappycffi.jpg alt></p>
+<p>It turned out that this was seemingly <a href=https://github.com/andrix/python-snappy/issues/52>commonly-known issue.</a>, and that I should have been looking really at the <a href=https://issues.apache.org/jira/browse/ARROW-1293>dependency on cffi.</a>.
+What this means is that, in theory, every Python package that has C dependencies <a href=https://markn.ca/2018/02/python-extension-modules-in-aws-lambda/>needs to put everything in a Docker container</a> to build the binary, put the Docker image on a build server, and have the build server send the compiled package to AWS.</p>
+<p>The <a href=https://hub.docker.com/_/amazonlinux/>Linux AMI docker image</a> is available on Docker, but <a href=https://aws.amazon.com/amazon-linux-2/faqs/#Amazon_Linux_Extras>Amazon Linux Extras</a>, which makes Python available is still relatively new, so people have had to resort to Dockerfiles lile <a href=https://github.com/yunojuno/amazonlinux-lambda-python3/blob/fbc1fbeb7327fe6647b51c615a295ff07be48be8/Dockerfile>this one.</a>, where Python is installed through wget or curl.</p>
+<p>With Python, having to build C dependencies, and AWS Linux&rsquo;s lack of Python availability (up until recently),there are too many layers where something goes wrong.</p>
+<p>By the end of the project, this was where I was: with a broken Lambda that didn&rsquo;t compile, dozens of shell scripts, and a very long and ungly Dockerfile.</p>
+<h2 id=a-idholmes-is-on-ita></h2>
+<h1 id=holmes-is-on-it>Holmes is on it</h1>
+<p>&ldquo;As she finished her story, the Datum Minder turned to me with immensely sad eyes. &lsquo;Surely you must know, Mr. Holmes, of a way around this error? I can&rsquo;t sleep. I can&rsquo;t eat. I can&rsquo;t deploy my Lambda.&rsquo; "</p>
+<p>&ldquo;I sat for a long time at her bureau, assembling the facts of the case. I thought about all of the layers of errors that had happened. I thought about the Lambda runtime environment. I thought about Snappy. I thought about the Linux 2 Docker issue. I thought about <a href=https://veekaybee.github.io/2017/09/26/python-packaging/>Python packaging.</a> After a spell, finally I realized that I had gotten in so deep as to lose my sanity.&rdquo;</p>
+<p>&ldquo;Well, it looks like you have quite a case here,&rdquo; I said to her with utmost gravity. She looked at me with hope in her eyes.</p>
+<p>" &lsquo;And, as I have said, there is nothing more deceptive than an obvious fact. And the obvious fact here is that this problem is much better suited to you solving it rather than me mucking about.&rsquo; &lsquo;But,&rsquo; she began to protest, but I held up a hand for silence. &lsquo;This is why they call you the Datum Minder and pay you the big bucks. Good luck, dear,&rsquo; I said, and took my leave.&rdquo;</p>
+<h2 id=a-idhow-the-error-was-fixeda></h2>
+<h1 id=how-the-error-was-fixed>How the error was fixed</h1>
+<p>The fire had gone low, and only glowing embers remained. Watson shivered as he prodded them with the poker. &ldquo;So what did you do, Holmes? Surely you didn&rsquo;t leave the poor lass hanging?&rdquo;</p>
+<p>&ldquo;Oh no, I went quite far away so she couldn&rsquo;t ask me any more questions about Python packaging in the cloud. Fortunately, she had connected at that point with a European fellow named Gügl who seemed to be getting her to where she needed to go.&rdquo;</p>
+<p>&ldquo;A month or so later, I decided to call on her and make sure she was still alive. She was, and seemed in much better health. Her complexion was much-improved, she had luster in her eyes, and her Lambda was deployed to production. &lsquo;What did you do,&rsquo; I asked. "</p>
+<p>&ldquo;Oh, I ended up rewriting the Lambda in Java, a language that we now have several Lambdas running on. Usually, I wouldn&rsquo;t recommend Java because it&rsquo;s a hellscape of types and boilerplate Factories, but in this particular case, it made sense. The everything-in-one nature of the JAR file allowed me to simply include <a href=https://github.com/xerial/snappy-java>xerial as a dependency in my Maven POM.</a></p>
+<p>&ldquo;The inclusive nature of the JVM as a package manager and platform allowed me to ship the project without even having to Dockerize it, and we are now happily converting events left and right.&rdquo;</p>
+<p>&ldquo;Of course, there are downsides. Java is a much harder language to write Lambdas in. I mean, just look at this code to generate the handler and connect to AWS:&rdquo;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>import</span> com.amazonaws.auth.DefaultAWSCredentialsProviderChain<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.lambda.runtime.Context<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.lambda.runtime.LambdaLogger<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.lambda.runtime.RequestHandler<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.lambda.runtime.events.S3Event<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.AmazonS3<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.AmazonS3ClientBuilder<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.model.GetObjectRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.model.PutObjectRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.model.PutObjectResult<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.amazonaws.services.s3.model.S3Object<span style=color:#f92672>;</span>
+
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TransformToAvro</span> <span style=color:#66d9ef>implements</span> RequestHandler<span style=color:#f92672>&lt;</span>S3Event<span style=color:#f92672>,</span> String<span style=color:#f92672>&gt;</span> <span style=color:#f92672>{</span>
+
+<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> AmazonS3 s3 <span style=color:#f92672>=</span> AmazonS3ClientBuilder<span style=color:#f92672>.</span><span style=color:#a6e22e>standard</span><span style=color:#f92672>()</span>
+            <span style=color:#f92672>.</span><span style=color:#a6e22e>withCredentials</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> DefaultAWSCredentialsProviderChain<span style=color:#f92672>())</span>
+            <span style=color:#f92672>.</span><span style=color:#a6e22e>withRegion</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;us-east-1&#34;</span><span style=color:#f92672>)</span>
+            <span style=color:#f92672>.</span><span style=color:#a6e22e>build</span><span style=color:#f92672>();</span>
+    <span style=color:#f92672>}</span>
+
+
+</code></pre></div><p>&ldquo;And the other downside is the warmup time, if that&rsquo;s important to you - <a href=https://mikhail.io/2018/08/serverless-cold-start-war/>it&rsquo;s longer for JVM-based projects</a>. "</p>
+<p>&ldquo;The upside, however, is that everything goes together.&rdquo;</p>
+<p>&ldquo;Of course, as soon as I wrapped up the project, I found a potential work-around, in this <a href=https://github.com/Miserlou/lambda-packages>lambda-packages library</a>. But, I haven&rsquo;t tried it yet, and I&rsquo;m not quite sure how to get started with Zappa or what kind of overhead that involve. Additionally, the library doesn&rsquo;t build snappy exclusively - only cffi. Which, hypothetically, should solve the problem, but may not.&rdquo;</p>
+<p>&ldquo;Given my time constraints, what I had to work with, and other Lambdas that we had that were already written in Java, Java ended up being the answer. If I had to do it again, with an unlimited schedule, I&rsquo;d look into Zappa.&rdquo;</p>
+<h2 id=a-idconclusiona></h2>
+<h1 id=conclusion>Conclusion</h1>
+<p>Holmes and Watson sat in the darkness, the tea gone cold, the pipes put aside. &ldquo;I don&rsquo;t know how she did it, Watson,&rdquo; Holmes said, shaking his head. &ldquo;But I do know that, after hearing that story, I decided to retire from cloud consulting entirely. It&rsquo;s far easier to investigate murders than Python package conflicts in the cloud.&rdquo;</p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>
