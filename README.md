@@ -1,2 +1,0 @@
-# hugo-test
-blog migration

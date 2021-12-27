@@ -1,2 +1,0 @@
-User-Agent: *
-Sitemap: https://veekaybee.github.io/hugo-test/sitemap.xml
