@@ -1,6 +1,7 @@
 ---
 title: What we've lost
 layout: post
+date: 2020-12-24
 ---
 
 <meta name="twitter:card" content="summary" />
