@@ -1,11 +1,9 @@
 +++
 date = '2021-11-07'
 title = "The programmer's brain in the lands of exploration and production"
-
 aliases = [
     "/2021/11/07/typed-pipe/"
 ]
-
 [twitter]
     card = "summary"
     site = "@vboykis"
