@@ -1,18 +1,24 @@
----
-date: "2021-09-23T00:00:00Z"
-title: Reaching MLE (machine learning enlightenment)
----
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="Reaching machine learning enlightenment">
-<meta name="twitter:description" content="What is this job about really?">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png">
++++
+date = '2021-09-23'
+title = "Reaching MLE (machine learning enlightenment)"
+aliases = [
+    "2021/09/23/enlightenment/"
+]
 
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "What is this job about really?"
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png" alt="wheat field" width="300px"/>
+[twitter]
+    image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png"
++++
+
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png" alt="wheat field" width="300px"}}
 Ivan Shishkin, The Field of Wheat
+
+
 
 Once, on a crisp cloudless morning in early fall, a machine learning engineer left her home to seek the answers that she could not find, even in the [newly-optimized](https://blog.google/products/search/search-language-understanding-bert/) Google results.
 
