@@ -60,8 +60,9 @@ Feb 2 2020
 </i>
 </p>
 <content>
-<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/mona_lisa_with_the_keys.png alt>
-<em>Art: Mona Lisa with the Keys, Fernand Leger, 1930</em></p>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/mona_lisa_with_the_keyspng width=300px>
+</figure>
+<p><em>Art: Mona Lisa with the Keys, Fernand Leger, 1930</em></p>
 <p>Over the past few months, I&rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off <a href=https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html>DCGAN</a>, to generate new artworks in a given style.</p>
 <p>Since I&rsquo;d like to generate abstract art, I&rsquo;m calling the project <a href=https://github.com/veekaybee/gandinsky>GANdinsky</a>.</p>
 <p>In order for the network to be able to generate new art, you have to feed it samples of art it can generate from. In other words, you have to create a training set.</p>
@@ -133,7 +134,8 @@ response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.<
 <p>You first create a .env file, which is just a text file containing variables and comments. The Python dotenv librarly, when you call load_dotenv, detects the file, and passes the variables into your system&rsquo;s environment variables, where you can pull them out with the <code>os</code> library.</p>
 <p>This file needs to be excluded from version control by adding the following to your <a href=https://gist.github.com/GhostofGoes/94580e76cd251972b15b4821c8a06f59><code>.gitignore</code></a>:</p>
 <p>Notebook Example:</p>
-<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/dotenv.png alt></p>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/dotenv.png width=600px>
+</figure>
 <p>Code:</p>
 <pre tabindex=0><code># magics for import statements
 %load_ext dotenv
@@ -229,7 +231,8 @@ string_meta <span style=color:#f92672>=</span> client<span style=color:#f92672>.
 secret_string_dict <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(string_meta ) 
 
 secret_string_dict[<span style=color:#e6db74>&#39;ACCESS_KEY&#39;</span>]
-</code></pre></div><p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/stringmeta.png alt></p>
+</code></pre></div><figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/stringmeta.png width=600px>
+</figure>
 <p>That&rsquo;s it! Go forth and hide your credentials. :)</p>
 <p><em>To edit this post, <a href=https://github.com/veekaybee/veekaybee.github.io>open a pull request</a>.</em></p>
 </content>

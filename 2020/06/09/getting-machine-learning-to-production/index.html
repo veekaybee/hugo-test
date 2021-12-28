@@ -50,6 +50,7 @@ Jun 6 2020
 <content>
 <figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/rainbow.png width=300px>
 </figure>
+<p>Art: The Other Side of the Rainbow, Roland Petersen, 1972</p>
 <p><strong>Table of Contents</strong></p>
 <ul>
 <li><a href=#intro>Intro</a></li>
@@ -74,9 +75,9 @@ Jun 6 2020
 </ul>
 </li>
 </ul>
-<p>Art: The Other Side of the Rainbow, Roland Petersen, 1972</p>
 <p>I haven&rsquo;t seen many posts in the wild on how end-to-end machine learning works, so this post covers the process of creating an end-to-end proof-of-concept (POC) machine learning product, Venti, which is a Medium-like site that generates VC thinkpieces.</p>
-<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/venti2.png alt></p>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/venti2.png width=600px>
+</figure>
 <p>All the code for <a href=https://github.com/veekaybee/venti>serving the model</a> is here, and <a href=https://github.com/veekaybee/venti-pytorch>here for generating inferences</a>.</p>
 <p>The app, <a href=http://venti.club:8501/>Venti, is live here.</a></p>
 <p></p>
@@ -118,10 +119,12 @@ Jun 6 2020
 <p>Then, I got an idea. My daughter is really into Vassily Kandinsky right now, and <a href=https://www.penguinrandomhouse.com/books/219129/the-noisy-paint-box-the-colors-and-sounds-of-kandinskys-abstract-art-by-barb-rosenstock-illustrated-by-mary-grandpre/>after reading this wonderful book</a>, I thought would try my hand at generating new Kandinsky art.</p>
 <p>I wanted to use a GAN, a generative adversarial network, which is a neural net that can generate new images from a given set of training data. Then, I&rsquo;d make a web app serving the model so that people could press a button and the underlying neural net would generate its own Kandinsky art that they could then share or tweet, or whatever.</p>
 <p>Here was what I thought he workflow would look like:</p>
-<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/gandinskydia.png alt></p>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/gandinskydia.png width=600px>
+</figure>
 <p>Luckily, PyTorch offers an implementation of GAN called <a href=https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html>DCGAN</a> that already does something extremely similar to what I was looking to do, and I looked to use that as a starting point.</p>
 <p>However, what happened when I downloaded the data from the Wikiart API and <a href=https://github.com/veekaybee/gandinsky>trained the model</a>, and <a href=https://github.com/veekaybee/gandinsky/blob/master/gandinsky.ipynb>put it into the model</a>, I got back a ton of white noise.</p>
-<p><img src=gandinskyrealfake.png alt></p>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/gandinskyrealfake.png width=600px>
+</figure>
 <p>After doing some research, I realized this was because Kandinsky unfortunately only painted something like 250 works of abstractionism in his lifetime.</p>
 <p>And, for a GAN to be effective, you need to feed it <a href=https://www.quora.com/How-many-images-required-for-Generative-Adversarial-Nets-GANs>at least a thousand</a> pieces of work. Which is why the <a href=https://github.com/robbiebarrat/art-DCGAN>DCARtGAN</a> works, but Gandinsky doesn&rsquo;t.</p>
 <p>In theory, I could have bootstrapped the dataset, or used a larger set of abstract art that was more than just Kandinsky&rsquo;s works, or <a href=http://openaccess.thecvf.com/content_ECCV_2018/papers/yaxing_wang_Transferring_GANs_generating_ECCV_2018_paper.pdf>potentially done transfer learning based on ImageNet</a>, which does have a lot of images (over 1 million.)</p>
