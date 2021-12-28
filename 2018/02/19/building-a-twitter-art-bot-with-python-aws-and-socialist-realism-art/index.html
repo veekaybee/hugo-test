@@ -1,0 +1,426 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>Building a Twitter art bot with Python, AWS, and socialist realism art | ★★Vicki Boykis★★</title>
+<meta name=title content="Building a Twitter art bot with Python, AWS, and socialist realism art">
+<meta name=description content="TLDR: I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.
+The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.
+Follow @SovietArtBot HereCheck out its website and code here.
+Table of Contents
+ Why build an art bot?  Technical Goals Personal Goals Why Socialist Realism   Breaking a Project into Chunks Requirements and Design: High-Level Bot Architecture Development: Pulling Paintings from WikiArt Development: Processing Paintings and Metadata Locally Development: Using S3 and Lambdas  Development: Scheduling the Lambda   Deployment: Bot Tweets!">
+<meta name=keywords content>
+<meta property="og:title" content="Building a Twitter art bot with Python, AWS, and socialist realism art">
+<meta property="og:description" content="TLDR: I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.
+The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.
+Follow @SovietArtBot HereCheck out its website and code here.
+Table of Contents
+ Why build an art bot?  Technical Goals Personal Goals Why Socialist Realism   Breaking a Project into Chunks Requirements and Design: High-Level Bot Architecture Development: Pulling Paintings from WikiArt Development: Processing Paintings and Metadata Locally Development: Using S3 and Lambdas  Development: Scheduling the Lambda   Deployment: Bot Tweets!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/2018/02/19/building-a-twitter-art-bot-with-python-aws-and-socialist-realism-art/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2018-02-19T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-02-19T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="Building a Twitter art bot with Python, AWS, and socialist realism art">
+<meta name=twitter:description content="TLDR: I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.
+The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.
+Follow @SovietArtBot HereCheck out its website and code here.
+Table of Contents
+ Why build an art bot?  Technical Goals Personal Goals Why Socialist Realism   Breaking a Project into Chunks Requirements and Design: High-Level Bot Architecture Development: Pulling Paintings from WikiArt Development: Processing Paintings and Metadata Locally Development: Using S3 and Lambdas  Development: Scheduling the Lambda   Deployment: Bot Tweets!">
+<meta itemprop=name content="Building a Twitter art bot with Python, AWS, and socialist realism art">
+<meta itemprop=description content="TLDR: I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.
+The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.
+Follow @SovietArtBot HereCheck out its website and code here.
+Table of Contents
+ Why build an art bot?  Technical Goals Personal Goals Why Socialist Realism   Breaking a Project into Chunks Requirements and Design: High-Level Bot Architecture Development: Pulling Paintings from WikiArt Development: Processing Paintings and Metadata Locally Development: Using S3 and Lambdas  Development: Scheduling the Lambda   Deployment: Bot Tweets!"><meta itemprop=datePublished content="2018-02-19T00:00:00+00:00">
+<meta itemprop=dateModified content="2018-02-19T00:00:00+00:00">
+<meta itemprop=wordCount content="3715"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>★★Vicki Boykis★★</h2>
+</a>
+<nav><a href=/hugo-test/>Tech Blog</a>
+<a href=/hugo-test/essays>Essays</a>
+<a href=/hugo-test/index.xml>RSS</a>
+<a href=https://www.twitter.com/vboykis>Twitter</a>
+<a href=https://www.github.com/veekaybee>GitHub</a>
+<a href=/hugo-test/about>About</a></nav>
+</header>
+<main>
+<h1>Building a Twitter art bot with Python, AWS, and socialist realism art</h1>
+<p>
+<i>
+<time datetime=2018-02-19 pubdate>
+Feb 2 2018
+</time>
+</i>
+</p>
+<content>
+<p><strong>TLDR:</strong> I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.</p>
+<p>The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.</p>
+<p>
+Follow @SovietArtBot Here</p>
+<p>Check out its <a href=https://veekaybee.github.io/soviet-art-bot/>website and code here</a>.</p>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href=#why-build-an-art-bot>Why build an art bot?</a>
+<ul>
+<li><a href=#technical-goals>Technical Goals</a></li>
+<li><a href=#personal-goals>Personal Goals</a></li>
+<li><a href=#why-socialist-realism>Why Socialist Realism</a></li>
+</ul>
+</li>
+<li><a href=#breaking-a-project-into-chunks>Breaking a Project into Chunks</a></li>
+<li><a href=#requirements-and-design-high-level-bot-architecture>Requirements and Design: High-Level Bot Architecture</a></li>
+<li><a href=#development-pulling-paintings-from-wikiart>Development: Pulling Paintings from WikiArt</a></li>
+<li><a href=#development-processing-paintings-and-metadata-locally>Development: Processing Paintings and Metadata Locally</a></li>
+<li><a href=#development-using-s3-and-lambdas>Development: Using S3 and Lambdas</a>
+<ul>
+<li><a href=#development-scheduling-the-lambda>Development: Scheduling the Lambda</a></li>
+</ul>
+</li>
+<li><a href=#deployment-bot-tweets>Deployment: Bot Tweets!</a></li>
+<li><a href=#where-to-next>Where to Next?</a>
+<ul>
+<li><a href=#testing-and-maintenance>Testing and Maintenance</a></li>
+</ul>
+</li>
+<li><a href=#conclusion>Conclusion</a></li>
+</ul>
+<p></p>
+<h1 id=why-build-an-art-bot>Why build an art bot?</h1>
+<p>Often when you&rsquo;re starting out as a data scientist or developer, people will give you the well-intentioned advice of &ldquo;just picking a project and doing it&rdquo; as a way of learning the skills you need.</p>
+<p>That advice can be hard and vague, particularly when you don&rsquo;t have a lot of experience to draw from to figure out what&rsquo;s even feasible given how much you know, and how that whole process should work.</p>
+<p>By writing out my process in detail, I&rsquo;m hoping it helps more people understand:</p>
+<ol>
+<li>
+<p>The steps of a software project from beginning to end.</p>
+</li>
+<li>
+<p>The process of putting out a mininum viable project that&rsquo;s &ldquo;good enough&rdquo; and iterating over your existing code to add features.</p>
+</li>
+<li>
+<p>Picking a project that you&rsquo;re going to enjoy working on.</p>
+</li>
+<li>
+<p>The joy of socialist realism art.</p>
+</li>
+</ol>
+<p></p>
+<h2 id=technical-goals>Technical Goals</h2>
+<p>I&rsquo;ve been doing more software development as part of my data science workflows lately, and I&rsquo;ve found that:</p>
+<ol>
+<li>I really enjoy doing both the analytical and development pieces of a data science project.</li>
+<li>The more development skills a data scientist is familiar with, the more valuable they are because it ultimately means they can prototype production workflows, and push their models into production quicker than having to wait for a data engineer.</li>
+</ol>
+<p>A goal I&rsquo;ve had recently is being able to take a full software development project from end-to-end, focusing on understanding modern production best practices, particularly in the cloud.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/squadgoals.png alt=high-level></p>
+<p></p>
+<h2 id=personal-goals>Personal Goals</h2>
+<p>But, a project that&rsquo;s just about &ldquo;cloud architecture delivery&rdquo; is really boring. In fact, I fell asleep just reading that last sentence. When I do a project, it has to have an interesting, concrete goal.</p>
+<p>To that end, I&rsquo;ve been extremely interested in Twitter as a development platform. I wrote recently that one of the most important ways we can fix the internet is to <a href=http://blog.vickiboykis.com/2016/11/20/fix-the-internet/>get off Twitter. </a></p>
+<p>Easier said than done, because Twitter is still one of my favorite places on the internet. It&rsquo;s where I get most of my news, where I find out about new blog posts, engage in <a href=https://twitter.com/vboykis/status/963098810695258117>discussions about data science</a>, and a place where <a href=https://twitter.com/vboykis/status/959493939555422208>I&rsquo;ve made a lot of friends</a> that I&rsquo;ve met in real life.</p>
+<p>But, Twitter is extremely noisy, lately to the point of being toxic. There are systemic ways that Twitter can take care of this problem, but I decided to try to tackle this problem this on my own by starting <a href="https://twitter.com/search?q=%23devart&src=typd">#devart</a>, a hashtag where people post classical works of art with their own tech-related captions to break up stressful content.</p>
+<p>There&rsquo;s something extremely catharctic about being able to state a problem in technology well enough to ascribe a visual metaphor to it, then sharing it with other people who also appreciate that visual metaphor and find it funny and relatable.</p>
+<p>And, sometimes you just want to break up the angry monotony of text with art that moves you. Turns out I&rsquo;m not the only one.</p>
+<p>As I posted more #devart, I realized that I enjoyed looking at the source art almost as much as figuring out a caption, and that I enjoyed accounts like <a href="https://twitter.com/archillect?lang=en">Archillect</a>, <a href="https://twitter.com/rabihalameddine?lang=en">Rabih Almeddine&rsquo;s</a>, and <a href="https://twitter.com/sovietvisuals?lang=en">Soviet Visuals</a>, who all tweet a lot of beautiful visual content with at least some level of explanation.</p>
+<p>I decided I wanted to build a bot that tweets out paintings. Particularly, I was interested in socialist realism artworks.</p>
+<p></p>
+<h2 id=why-socialist-realism>Why Socialist Realism</h2>
+<p>Socialist realism is an artform that was developed after the Russian Revolution. As the Russian monarchy fell, social boundaries dissovled,and people began experimenting with all kinds of new art forms, including futurism and <a href=http://www.wassilykandinsky.net/>abstractionism.</a> I&rsquo;ve previously written <a href=http://blog.vickiboykis.com/2015/06/reddit-was-amazing/>about this shift here.</a></p>
+<p>As the Bolsheviks consolidated power, they established <a href=https://en.wikipedia.org/wiki/People%27s_Commissariat_for_Education>Narkompros</a>, a body to control the education and cultrual values of what they deemend was acceptable under the new regime, and the government laid out the new criteria for what was accetable Soviet art.</p>
+<p>Socialist realism as a genre had four explicit criteria, developed by the highest government officials, including Stalin himself. It was to be:</p>
+<pre><code>+ Proletarian: art relevant to the workers and understandable to them.
++ Typical: scenes of everyday life of the people.
++ Realistic: in the representational sense.
++ Partisan: supportive of the aims of the State and the Party.`
+</code></pre>
+<p>In looking at socialist realism art, it&rsquo;s obvious that the underlying goal is to promote communism. But, just because the works are blatant propaganda doesn&rsquo;t discount what I love about the genre, which is that it is indeed representative of what real people do in real life.</p>
+<p>These are people working, sleeping, laughing, frowning, arguing, and showing real emotion we don&rsquo;t often see in art. They are relatable and humane, and reflect our humanity back to us. What I also strongly love about this genre of art is that women are depicted doing things other than sitting still to meet the artist&rsquo;s gaze.</p>
+<p>So, what I decided is that I&rsquo;d make a Twitter bot that tweets out one socialist realism work every couple of hours.</p>
+<p>Here&rsquo;s the final result:</p>
+<p>There are several steps in traditional software development:</p>
+<ol>
+<li>Requirements</li>
+<li>Design</li>
+<li>Development</li>
+<li>Testing</li>
+<li>Deployment</li>
+<li>Maintenance</li>
+</ol>
+<p></p>
+<h1 id=breaking-a-project-into-chunks>Breaking a Project into Chunks</h1>
+<p>This is a LOT to take in. When I first started, I made a list of everything that needed to be done: setting up AWS credentials, roles, and permissions, version control, writing the actual code, learning how to download images with requests, how to make the bot tweet on a schedule, and more.</p>
+<p>When you look at it from the top-down, it&rsquo;s overwhelming. But in <a href=https://www.brainpickings.org/2013/11/22/bird-by-bird-anne-lamott/>&ldquo;Bird by Bird,"</a> one of my absolute favorite books that&rsquo;s about the writing processs (but really about any creative process) Anne Lamott writes,</p>
+<blockquote>
+<p>Thirty years ago my older brother, who was ten years old at the time, was trying to get a report on birds written that he’d had three months to write, which was due the next day. We were out at our family cabin in Bolinas, and he was at the kitchen table close to tears, surrounded by binder paper and pencils and unopened books on birds, immobilized by the hugeness of the task ahead. Then my father sat down beside him, put his arm around my brother’s shoulder, and said, “Bird by bird, buddy. Just take it bird by bird.”</p>
+</blockquote>
+<p>And that&rsquo;s how I view software development, too. One thing at a time, until you finish that, and then move on to the next piece. So, with that in mind, I decided I&rsquo;d use a mix of the steps above from the traditional waterfall approach and mix them with the agile concept of making a lot of small, quick cycles of those steps to get closer to the end result.</p>
+<p></p>
+<h1 id=requirements-and-design-high-level-bot-architecture>Requirements and Design: High-Level Bot Architecture</h1>
+<p>I started building the app by working backwards from what my requirements:</p>
+<p>a bot on Twitter, pulling painting images and metadata from some kind of database, on a timed schedule, either <a href=https://help.ubuntu.com/community/CronHowto>cron</a> or something similar.</p>
+<p>This helped me figure out the design. Since I would be posting to Twitter as my last step, it made sense to have the data already some place in the cloud. I also knew I&rsquo;d eventually want to incorporate AWS because I didn&rsquo;t want the code and data to be dependent on my local machine being on.</p>
+<p>I knew that I&rsquo;d also need version control and continuous integration to make sure the bot was stable both on my local machine as I was developing it, and on AWS as I pushed my code through, and so I didn&rsquo;t have to manually put to code in the AWS console.</p>
+<p>Finally, I knew I&rsquo;d be using Python, because <a href=http://veekaybee.github.io/2017/09/26/python-packaging/>I like Python</a>, and also because it has good hooks into Twitter through the Twython API (thanks to Timo for pointing me to <a href=https://twitter.com/tkoola/status/963480840574590978>Twython</a> over Tweepy, which is deprecated) and AWS through the <a href=https://twitter.com/vboykis/status/963224376056434688>Boto library</a>.
+I&rsquo;d start by getting the paintings and metadata about the paintings from a website that had a lot of good socialist realism paintings not bound by copyright. Then, I&rsquo;d do something to those paintings to get both the name, the painter, and title so I could tweet all of that out. Then, I&rsquo;d do the rest of the work in AWS.</p>
+<p>So my high-level flow went something like this:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/high-level-flow.png alt=high-level></p>
+<p>Eventually, I&rsquo;d refactor out the dependency on my local machine entirely and push everything to S3, but I didn&rsquo;t want to spend any money in AWS before I figured out what kind of metadata the JSON returned.</p>
+<p>Beyond that, I didn&rsquo;t have a specific idea of the tools I&rsquo;d need, and made design and architecture choices as my intermediate goals became clearer to me.</p>
+<p></p>
+<h1 id=development-pulling-paintings-from-wikiart>Development: Pulling Paintings from WikiArt</h1>
+<p>Now, the development work began.</p>
+<p><a href=https://www.wikiart.org/>WikiArt</a> has an amazing, well-catalogued collection of artworks in every genre you can think of. It&rsquo;s so well-done that <a href=http://www.lamsade.dauphine.fr/~bnegrevergne/webpage/documents/2017_rasta.pdf>some researchers use</a> the catalog <a href=http://cs231n.stanford.edu/reports/2017/pdfs/406.pdf>for their papers</a> on <a href=https://arxiv.org/pdf/1605.09612.pdf>deep learning</a>, as well.</p>
+<p>Some days, I go just to browse what&rsquo;s new and get lost in some art. (Please <a href=https://www.wikiart.org/en/donate>donate</a> to them if you enjoy them.)</p>
+<p>WikiArt also has two aspects that were important to the project:</p>
+<ol>
+<li>
+<p>They have <a href="https://www.wikiart.org/en/paintings-by-style/socialist-realism?select=featured">an explicit category</a> for socialist realism art with a good number of works. 500 works in the socialist realism perspective, which was not a large amount (if I wanted to tweet more than one image a day), but good enough to start with.</p>
+</li>
+<li>
+<p>Every work has an image, title, artist, and year,which would be important for properly crediting it on Twitter.</p>
+</li>
+</ol>
+<p>My first step was to see if there was a way to acces the site through an API, the most common way to pull any kind of content from websites programmatically these days. The problem with WikiArt is that it technically doesn&rsquo;t have a readily-available public API,so people have resorted to <a href=https://github.com/lucasdavid/wikiart>really creative ways</a> of scraping the site.</p>
+<p>But, I really, really didn&rsquo;t want to scrape, especially because the site has infinite scroll Javascript elements, which are annoying to pick up in <a href=https://www.crummy.com/software/BeautifulSoup/>BeautifulSoup</a>, the tool most people use for scraping in Python.</p>
+<p>So I did some sleuthing, and found that <a href=https://docs.google.com/document/d/1Vxi5lQnMCA21dvNm_7JVd6nQkDS3whV3YjRjbwWPfQU/edit#!>WikiArt does have an API</a>, even if it&rsquo;s not official and, at this point, somewhat out of date.</p>
+<p>It had some important information on API rate limits, which tells us how often you can access the API without the site getting angry and kicking out out:</p>
+<blockquote>
+<p>API calls: 10 requests per 2.5 seconds</p>
+</blockquote>
+<blockquote>
+<p>Images downloading: 20 requests per second</p>
+</blockquote>
+<p>and,even more importantly, on how to access a specific category through JSON-based <a href=https://en.wikipedia.org/wiki/Query_string>query parameters</a>. The documentation they had, though, was mostly at the artist level:</p>
+<p><code>http://www.wikiart.org/en/salvador-dali/by-style/Neoclassicism&json=2</code></p>
+<p>so I had to do some trial and error to figure out the correct link I wanted, which was:</p>
+<pre tabindex=0><code>https://www.wikiart.org/en/paintings-by-style/socialist-realism?json=2&amp;page=1
+</code></pre><p>And with that, I was ready to pull the data.</p>
+<p>I started by using the Python <a href=http://docs.python-requests.org/en/master/>Requests library</a> to connect to the site and pull two things:</p>
+<ol>
+<li>A JSON file that has all the metadata</li>
+<li>All of the actual paintings as <code>png/jpg/jpeg</code> files</li>
+</ol>
+<p></p>
+<h1 id=development-processing-paintings-and-metadata-locally>Development: Processing Paintings and Metadata Locally</h1>
+<p>The JSON I got back looked like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+<span style=color:#960050;background-color:#1e0010>ArtistsHtml:</span> <span style=color:#960050;background-color:#1e0010>null,</span>
+<span style=color:#960050;background-color:#1e0010>CanLoadMoreArtists:</span> <span style=color:#960050;background-color:#1e0010>false,</span>
+<span style=color:#960050;background-color:#1e0010>Paintings:</span> <span style=color:#960050;background-color:#1e0010>[],</span>
+<span style=color:#960050;background-color:#1e0010>Artists:</span> <span style=color:#960050;background-color:#1e0010>null,</span>
+<span style=color:#960050;background-color:#1e0010>AllArtistsCount:</span> <span style=color:#960050;background-color:#1e0010>0,</span>
+<span style=color:#960050;background-color:#1e0010>PaintingsHtml:</span> <span style=color:#960050;background-color:#1e0010>null,</span>
+<span style=color:#960050;background-color:#1e0010>PaintingsHtmlBeta:</span> <span style=color:#960050;background-color:#1e0010>null,</span>
+<span style=color:#960050;background-color:#1e0010>AllPaintingsCount:</span> <span style=color:#960050;background-color:#1e0010>512,</span>
+<span style=color:#960050;background-color:#1e0010>PageSize:</span> <span style=color:#960050;background-color:#1e0010>60,</span>
+<span style=color:#960050;background-color:#1e0010>TimeLog:</span> <span style=color:#960050;background-color:#1e0010>null</span>
+}
+</code></pre></div><p>Within the paintings array, each painting looked like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+	<span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;577271cfedc2cb3880c2de61&#34;</span>,
+	<span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Winter in Kursk&#34;</span>,
+	<span style=color:#f92672>&#34;year&#34;</span>: <span style=color:#e6db74>&#34;1916&#34;</span>,
+	<span style=color:#f92672>&#34;width&#34;</span>: <span style=color:#ae81ff>634</span>,
+	<span style=color:#f92672>&#34;height&#34;</span>: <span style=color:#ae81ff>750</span>,
+	<span style=color:#f92672>&#34;artistName&#34;</span>: <span style=color:#e6db74>&#34;Aleksandr Deyneka&#34;</span>,
+	<span style=color:#f92672>&#34;image&#34;</span>: <span style=color:#e6db74>&#34;https://use2-uploads8.wikiart.org/images/aleksandr-deyneka/winter-in-kursk-1916.jpg&#34;</span>,
+	<span style=color:#f92672>&#34;map&#34;</span>: <span style=color:#e6db74>&#34;0123**67*&#34;</span>,
+	<span style=color:#f92672>&#34;paintingUrl&#34;</span>: <span style=color:#e6db74>&#34;/en/aleksandr-deyneka/winter-in-kursk-1916&#34;</span>,
+	<span style=color:#f92672>&#34;artistUrl&#34;</span>: <span style=color:#e6db74>&#34;/en/aleksandr-deyneka&#34;</span>,
+	<span style=color:#f92672>&#34;albums&#34;</span>: <span style=color:#66d9ef>null</span>,
+	<span style=color:#f92672>&#34;flags&#34;</span>: <span style=color:#ae81ff>2</span>,
+	<span style=color:#f92672>&#34;images&#34;</span>: <span style=color:#66d9ef>null</span>
+}
+</code></pre></div><p>I also downloaded all the image files by returning <code>response.raw</code> from the JSON and using the <code>shutil.copyfileobj</code> method.</p>
+<p>I decided not to do anymore processing locally since my goal was to eventually move everything to the cloud anyway, but I now had the files available to me for testing so that I didn&rsquo;t need to hit WikiArt and overload the website anymore.</p>
+<p>I then uploaded both the JSON and the image files to the same S3 bucket with the <a href=https://github.com/boto/boto3>boto client</a>, which lets you write :</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>upload_images_to_s3</span>(directory):
+    <span style=color:#e6db74>&#34;&#34;&#34;
+</span><span style=color:#e6db74>    Upload images to S3 bucket if they end with png or jpg
+</span><span style=color:#e6db74>    :param directory:
+</span><span style=color:#e6db74>    :return: null
+</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
+
+    <span style=color:#66d9ef>for</span> f <span style=color:#f92672>in</span> directory<span style=color:#f92672>.</span>iterdir():
+        <span style=color:#66d9ef>if</span> str(f)<span style=color:#f92672>.</span>endswith((<span style=color:#e6db74>&#39;.png&#39;</span>, <span style=color:#e6db74>&#39;.jpg&#39;</span>, <span style=color:#e6db74>&#39;.jpeg&#39;</span>)):
+            full_file_path <span style=color:#f92672>=</span> str(f<span style=color:#f92672>.</span>parent) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> str(f<span style=color:#f92672>.</span>name)
+            file_name <span style=color:#f92672>=</span> str(f<span style=color:#f92672>.</span>name)
+            s3_client<span style=color:#f92672>.</span>upload_file(full_file_path, settings<span style=color:#f92672>.</span>BASE_BUCKET, file_name)
+            print(f,<span style=color:#e6db74>&#34;put&#34;</span>)
+</code></pre></div><p>As an aside, the <code>.iterdir()</code> method here is from the pretty great <code>pathlib</code> library, new to Python 3, which handles file operations better than os. Check out more about it <a href=https://github.com/arogozhnikov/python3_with_pleasure>here.</a></p>
+<p></p>
+<h1 id=development-using-s3-and-lambdas>Development: Using S3 and Lambdas</h1>
+<p>Now that I had my files in S3, I needed some way for Twitter to read them. To do that at a regular time interval, I decided on using an AWS Lambda function (not to be confused with Python lambda functions, a completely different animal.) Because I was already familiar with Lambdas and their capabilities - <a href=http://veekaybee.github.io/2018/01/28/working-with-aws/>see my previous post on AWS</a> - , they were a tool I could use without a lot of ramp-up time (a key component of architectural decisions.)</p>
+<p>Lambdas are snippets of code that you can run without needing to know anything about the machine that runs them. They&rsquo;re triggered by other events firing in the AWS ecosystem. Or, they can be run on a <a href=http://www.tothenew.com/blog/schedule-lambda-on-cron-expression-triggers/>cron-like schedule</a>, which was perfect for what I wanted to do. This was exactly what I needed, since I needed to schedule the bot to post at an interval.</p>
+<p>Lambdas look <a href=https://docs.aws.amazon.com/lambda/latest/dg/python-programming-model-handler-types.html>like this</a> in Python:</p>
+<pre tabindex=0><code>def handler_name(event, context): 
+    ...
+    return some_value
+</code></pre><p>The <code>event</code> is what you decide to do to trigger the function and the context <a href=https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html>sets up all the runtime information</a> needed to interact with AWS and run the function.</p>
+<p>Because I wanted my bot to tweet both the artwork and some context around it, I&rsquo;d need a way to tweet both the picture and the metadata, by matching the picture with the metadata.</p>
+<p>To do this, I&rsquo;d need to create <a href=https://en.wikipedia.org/wiki/Attribute%E2%80%93value_pair>key-value pairs</a>, a common programming data model, where the key was the filename part of the <code>image</code> attribute, and the value was the <code>title</code>, <code>year</code>, and <code>artistName</code>, so that I could match the two, like this:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/file_match.png alt=high-level></p>
+<p>So, all in all, I wanted my lambda function to do several things. All of that code I wrote for that section is <a href=https://github.com/veekaybee/soviet-art-bot/blob/master/soviet_art_bot/lambda_function.py>here.</a></p>
+<ol>
+<li>Open the S3 bucket object and inspect the contents of the metadata file</li>
+</ol>
+<p>Opening an S3 bucket within a lambda usually looks something like this:</p>
+<pre tabindex=0><code>def handler(event, context):
+    for record in event['Records']:
+        bucket = record['s3']['bucket']['name']
+        key = record['s3']['object']['key'] 
+        download_path = '/tmp/{}{}'.format(uuid.uuid4(), key)
+        s3_client.download_file(bucket, key, download_path)
+</code></pre><p>where the event is the JSON file that gets passed in from Lambda that signifies that a trigger has occurred. Since our trigger is a timed event, our <a href=https://github.com/veekaybee/soviet-art-bot/blob/master/soviet_art_bot/event.json>JSON file</a> doesn&rsquo;t have any information about that specific event and bucket, and we can exclude the event, in order to create a function that normally opens a given bucket and key.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>try</span>:
+        data <span style=color:#f92672>=</span> s3<span style=color:#f92672>.</span>get_object(Bucket<span style=color:#f92672>=</span>bucket_name, Key<span style=color:#f92672>=</span>metadata)
+        json_data <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>loads(data[<span style=color:#e6db74>&#39;Body&#39;</span>]<span style=color:#f92672>.</span>read()<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>))
+    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
+        print(e)
+        <span style=color:#66d9ef>raise</span> e
+</code></pre></div><ol start=2>
+<li>Pull out the metadata and pull it into a dictionary with the filename as the key and the metadata as the value. We can pull it into a <code>defaultdict</code>, because those are ordered by default (all dictionaries <a href=https://mail.python.org/pipermail/python-dev/2016-September/146327.html>will be orded</a> as of 3.6, but we&rsquo;re still playing it safe here.)</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>indexed_json <span style=color:#f92672>=</span> defaultdict()
+
+    <span style=color:#66d9ef>for</span> value <span style=color:#f92672>in</span> json_data:
+        artist <span style=color:#f92672>=</span> value[<span style=color:#e6db74>&#39;artistName&#39;</span>]
+        title <span style=color:#f92672>=</span> value[<span style=color:#e6db74>&#39;title&#39;</span>]
+        year <span style=color:#f92672>=</span> value[<span style=color:#e6db74>&#39;year&#39;</span>]
+        values <span style=color:#f92672>=</span> [artist, title, year]
+
+        <span style=color:#75715e># return only image name at end of URL</span>
+        find_index <span style=color:#f92672>=</span> value[<span style=color:#e6db74>&#39;image&#39;</span>]<span style=color:#f92672>.</span>rfind(<span style=color:#e6db74>&#39;/&#39;</span>)
+        img_suffix <span style=color:#f92672>=</span> value[<span style=color:#e6db74>&#39;image&#39;</span>][find_index <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>:]
+        img_link <span style=color:#f92672>=</span> img_suffix
+
+        <span style=color:#66d9ef>try</span>:
+            indexed_json[img_link]<span style=color:#f92672>.</span>append(values)
+        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>KeyError</span>:
+            indexed_json[img_link] <span style=color:#f92672>=</span> (values)
+</code></pre></div><p>(By the way, a neat Python string utility that I didn&rsquo;t know before which really helped with the filename parsing was (rsplit)
+[http://python-reference.readthedocs.io/en/latest/docs/str/rsplit.html]. )</p>
+<ol start=3>
+<li>
+<p>Pick a random filename to tweet (<code>single_image_metadata = random.choice(list(indexed_json.items()))</code>)</p>
+</li>
+<li>
+<p>Tweet the image and associated metadata</p>
+</li>
+</ol>
+<p>There are a couple of Python libraries in use for Twitter. I initially started using Tweepy, but much to my sadness, I found out <a href=https://github.com/tweepy/tweepy/issues/803.>it was no longer being maintained.</a> (Thanks for the tip, <a href=https://twitter.com/tkoola/status/963480840574590978>Timo.</a> )</p>
+<p>So I switched to <a href=https://twython.readthedocs.io/en/latest/>Twython</a>, which is a tad more convoluted, but is up-to-date.</p>
+<p>The final piece of code that actually ended up sending out the tweet is here:</p>
+<pre tabindex=0><code>    twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET)
+
+    try:
+
+        tmp_dir = tempfile.gettempdir()
+        #clears out lambda dir from previous attempt, in case testing lambdas keeps previous lambda state
+        call('rm -rf /tmp/*', shell=True) 
+        path = os.path.join(tmp_dir, url)
+        print(path)
+
+        s3_resource.Bucket(bucket_name).download_file(url, path)
+        print(&quot;file moved to /tmp&quot;)
+        print(os.listdir(tmp_dir))
+
+        with open(path, 'rb') as img:
+            print(&quot;Path&quot;, path)
+            twit_resp = twitter.upload_media(media=img)
+            twitter.update_status(status=&quot;\&quot;%s\&quot;\n%s, %s&quot; % (title, painter, year), media_ids=twit_resp['media_id'])
+
+    except TwythonError as e:
+        print(e)
+</code></pre><p>What this does is take advantage of a Lambda&rsquo;s temp space:</p>
+<p>Pulls the file from S3 into the Lambda&rsquo;s <code>/tmp/</code> folder, and matches it by filename with the metadata, which at this point is in key-value format.</p>
+<p>The <code>twitter.upload_media</code> method uploads the image and gets back a media id that is then passed into the <code>update_status</code> method with the <code>twit_resp['media_id']</code>.</p>
+<p>And that&rsquo;s it. The image and text are posted.</p>
+<p></p>
+<h2 id=development-scheduling-the-lambda>Development: Scheduling the Lambda</h2>
+<p>The second part was configuring the function. to run on a schedule. Lambdas can be triggered by two things:</p>
+<ol>
+<li>An event occurring</li>
+<li>A timed schedule.</li>
+</ol>
+<p>Events <a href=https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-function.html>can be anything</a> from a file landing in an S3 bucket, to polling a Kinesis stream.</p>
+<p>Scheduled events can be written either in cron, or at a fixed-rate. I started out writing <a href=https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html>cron rules</a>, but since my bot didn&rsquo;t have any specific requirements, only that it needed to post every six hours, the fixed rate turned out to be enough for what I needed:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/cron-rule.png alt=high-level></p>
+<p>Finally, I needed to package the lambda for distribution. Lambdas run on Linux machines which don&rsquo;t have a lot of Python libraries pre-installed (other than boto3, the Amazon Python client library I used previously that connects the Lambda to other parts of the AWS ecosystem, and json. )</p>
+<p>In my script, I have a lot of library imports. Of these, Twython is an external library that needs to be <a href=https://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html>packaged with the lambda and uploaded.</a></p>
+<pre tabindex=0><code>from twython import Twython, TwythonError
+</code></pre><p></p>
+<h1 id=deployment-bot-tweets>Deployment: Bot Tweets!</h1>
+<p>So I packged the Lambda based on those instructions, manually the first time, by uploading a zip file to the Lambda console.</p>
+<p>And, that&rsquo;s it! My two one-off scripts were ready, and my bot was up and running.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/lambda.png alt=high-level></p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/cronedjob.png alt=high-level></p>
+<p>And here&rsquo;s the final flow I ended up with:
+<img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/architecture.png alt=architecture></p>
+<p></p>
+<h1 id=where-to-next>Where to Next?</h1>
+<p>There&rsquo;s a lot I still want to get to with Soviet Art Bot.</p>
+<p>The most important first step is tweaking the code so that no painting repeats more than once a week. That seems like the right amount of time for Twitter followers to not get annoyed.</p>
+<p>In parallel, I want to focus on testing and maintenance.</p>
+<p></p>
+<h2 id=testing-and-maintenance>Testing and Maintenance</h2>
+<p>The first time I worked through the entire flow, I started by working in a local Python project I had started in PyCharm and had version-controlled on <a href=https://github.com/veekaybee/soviet-art-bot>GitHub</a>.</p>
+<p>So, when I made changes to any part of the process, my execution flow would be:</p>
+<ol>
+<li>Run Wikiart download functionality locally</li>
+<li>Test the <a href=https://medium.com/@bezdelev/how-to-test-a-python-aws-lambda-function-locally-with-pycharm-run-configurations-6de8efc4b206>lambda &ldquo;locally&rdquo;</a> with <code>python-lambda-local</code></li>
+<li>Zip up the lambda and upload to Lambda</li>
+<li>Make mistakes in the Lambda code</li>
+<li>Zip up the lambda and run again.</li>
+</ol>
+<p>This was not really an ideal workflow for me, because I didn&rsquo;t want to have to manually re-uploading the lambda every time, so I decided to use Travis CI, which <a href=https://gizmodo.com/the-mess-at-meetup-1822243738>integrates with GitHub really well.</a>. The problem is that there&rsquo;s a lot of setup involved: virtualenvs, syncing to AWS credentials, setting up IAM roles and profiles that allow Travis to access the lambda, setting up a test Twitter and AWS environment to test travis integration, and more.</p>
+<p>For now, the bot is working in production, and while it works, I&rsquo;m going to continue to automate more and more parts of deployment in my <a href=https://github.com/veekaybee/soviet-art-bot/tree/dev>dev branch</a>. (<a href=https://joarleymoraes.com/hassle-free-python-lambda-deployment/>This post</a> was particularly helpful in zipping up a lambda, and my <a href=https://github.com/veekaybee/soviet-art-bot/blob/dev/lambda_deploy.sh>deploy script is here.</a></p>
+<p>After these two are complete, I want to:</p>
+<ol>
+<li>
+<p>Refactor lambda code to take advantage of <code>pathlib</code> instead of OS so my code is standardized (should be a pretty small change)</p>
+</li>
+<li>
+<p>Source more paintings. WikiArt is fantastic, but has only 500ish paintngs available in the socialist realism category. I’d like to find more sources with high-quality metadata and a significant collection of artworks. Then, I&rsquo;d like to</p>
+</li>
+<li>
+<p>Create a front-end where anyone can upload a work of socialist realism for the bot to tweet out. This would probably be easier than customizing a scraper and would allow me to crowdsource data. As part of this process, I&rsquo;d need a way to screen content before it got to my final S3 bucket.</p>
+</li>
+</ol>
+<p>Which leads to:</p>
+<ol start=4>
+<li>Go through current collection and make sure all artwork is relevant and SWF. See if there&rsquo;s a way I can do that programmatically.</li>
+</ol>
+<p>And:</p>
+<ol start=5>
+<li>Machine learning and deep learning potential possibilities: Look for a classifier to filter out artworks with nudity/questionable content and figure out how to decide what &ldquo;questionable&rdquo; means. Potentially with <a href=https://aws.amazon.com/about-aws/whats-new/2017/04/detect-explicit-or-suggestive-adult-using-amazon-rekognition/>AWS Rekognition</a>, or building my own CNN.</li>
+</ol>
+<p>Other machine learning opportunities:</p>
+<ul>
+<li>
+<p>Mash with #devart to see if the bot can create fun headlines for paintings based on painting content</p>
+</li>
+<li>
+<p>Extract colors from artworks by genre and see how they differ between genres and decades</p>
+</li>
+</ul>
+<p></p>
+<h1 id=conclusion>Conclusion</h1>
+<p>Software development can be a long, exhausting process with a lot of moving parts and decision-making involved, but it becomes much easier and more interesting if you you break up a project into byte-sized chunks that you can continuously work on to stop yourself from getting overwhelemed with the entire task at hand. The other part, of course, is that it has to be fun and interesting for you so that you make it through all of the craziness with a fun, finished product at the end.</p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>

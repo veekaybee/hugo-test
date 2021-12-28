@@ -1,0 +1,940 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta http-equiv=x-clacks-overhead content="GNU Terry Pratchett">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/images/favicon.png>
+<title>Alice in Python projectland | ★★Vicki Boykis★★</title>
+<meta name=title content="Alice in Python projectland">
+<meta name=description content="Intro Python hides the hurt Building a simple word processor Creating a single object Combining objects into a program  Refactoring a single program   Combining programs into scripts Combining scripts into a module Project structure  Modular Code Unit Tests Requirements.txt and package dependencies Documentation Scripts __init__.py __main__.py driver setup.py   Sharing and using our package Next steps  Testing environments More advanced testing Continuous Integration Git Hooks and Version Control Setup.">
+<meta name=keywords content>
+<meta property="og:title" content="Alice in Python projectland">
+<meta property="og:description" content="Intro Python hides the hurt Building a simple word processor Creating a single object Combining objects into a program  Refactoring a single program   Combining programs into scripts Combining scripts into a module Project structure  Modular Code Unit Tests Requirements.txt and package dependencies Documentation Scripts __init__.py __main__.py driver setup.py   Sharing and using our package Next steps  Testing environments More advanced testing Continuous Integration Git Hooks and Version Control Setup.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://veekaybee.github.io/hugo-test/2017/09/26/alice-in-python-projectland/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/share.png"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2017-09-26T00:00:00+00:00">
+<meta property="article:modified_time" content="2017-09-26T00:00:00+00:00"><meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta name=twitter:title content="Alice in Python projectland">
+<meta name=twitter:description content="Intro Python hides the hurt Building a simple word processor Creating a single object Combining objects into a program  Refactoring a single program   Combining programs into scripts Combining scripts into a module Project structure  Modular Code Unit Tests Requirements.txt and package dependencies Documentation Scripts __init__.py __main__.py driver setup.py   Sharing and using our package Next steps  Testing environments More advanced testing Continuous Integration Git Hooks and Version Control Setup.">
+<meta itemprop=name content="Alice in Python projectland">
+<meta itemprop=description content="Intro Python hides the hurt Building a simple word processor Creating a single object Combining objects into a program  Refactoring a single program   Combining programs into scripts Combining scripts into a module Project structure  Modular Code Unit Tests Requirements.txt and package dependencies Documentation Scripts __init__.py __main__.py driver setup.py   Sharing and using our package Next steps  Testing environments More advanced testing Continuous Integration Git Hooks and Version Control Setup."><meta itemprop=datePublished content="2017-09-26T00:00:00+00:00">
+<meta itemprop=dateModified content="2017-09-26T00:00:00+00:00">
+<meta itemprop=wordCount content="7107"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/share.png">
+<meta itemprop=keywords content>
+<meta name=referrer content="no-referrer-when-downgrade">
+<style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
+</head>
+<body>
+<header><a href=/hugo-test/ class=title>
+<h2>★★Vicki Boykis★★</h2>
+</a>
+<nav><a href=/hugo-test/>Tech Blog</a>
+<a href=/hugo-test/essays>Essays</a>
+<a href=/hugo-test/index.xml>RSS</a>
+<a href=https://www.twitter.com/vboykis>Twitter</a>
+<a href=https://www.github.com/veekaybee>GitHub</a>
+<a href=/hugo-test/about>About</a></nav>
+</header>
+<main>
+<h1>Alice in Python projectland</h1>
+<p>
+<i>
+<time datetime=2017-09-26 pubdate>
+Sep 9 2017
+</time>
+</i>
+</p>
+<content>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/alice_cards.jpg alt=alice></p>
+<ul>
+<li><a href=#intro>Intro</a></li>
+<li><a href=#python-hides-the-hurt>Python hides the hurt</a></li>
+<li><a href=#building-a-simple-word-processor>Building a simple word processor</a></li>
+<li><a href=#creating-a-single-object>Creating a single object</a></li>
+<li><a href=#combining-objects-into-a-program>Combining objects into a program</a>
+<ul>
+<li><a href=#refactoring-a-single-program>Refactoring a single program</a></li>
+</ul>
+</li>
+<li><a href=#combining-programs-into-scripts>Combining programs into scripts</a></li>
+<li><a href=#combining-scripts-into-a-module>Combining scripts into a module</a></li>
+<li><a href=#project-structure>Project structure</a>
+<ul>
+<li><a href=#modular-code>Modular Code</a></li>
+<li><a href=#unit-tests>Unit Tests</a></li>
+<li><a href=#requirementstxt-and-package-dependencies>Requirements.txt and package dependencies</a></li>
+<li><a href=#documentation>Documentation</a></li>
+<li><a href=#scripts>Scripts</a></li>
+<li><a href=#__init__.py><code>__init__.py</code></a></li>
+<li><a href=#__main__.py-driver><code>__main__.py</code> driver</a></li>
+<li><a href=#setuppy><code>setup.py</code></a></li>
+</ul>
+</li>
+<li><a href=#sharing-and-using-our-package>Sharing and using our package</a></li>
+<li><a href=#next-steps>Next steps</a>
+<ul>
+<li><a href=#testing-environments>Testing environments</a></li>
+<li><a href=#more-advanced-testing>More advanced testing</a></li>
+<li><a href=#continuous-integration>Continuous Integration</a></li>
+<li><a href=#git-hooks-and-version-control>Git Hooks and Version Control</a></li>
+<li><a href=#setupcfg>Setup.cfg</a></li>
+<li><a href=#sphinxrest>Sphinx/reST</a></li>
+<li><a href=#wheels>Wheels</a></li>
+<li><a href=#pypi>PyPi</a></li>
+</ul>
+</li>
+<li><a href=#conclusion>Conclusion</a></li>
+<li><a href=#acknowledgements>Acknowledgements</a></li>
+</ul>
+<h2 id=a-idintroaintro>Intro</h2>
+<p>Python project structure and packaging standardization is still not a solved problem, something that became even more apparent to me when I recently worked on packaging a machine learning natural language app.</p>
+<p>In the JVM, <a href=https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html>as long as you have your path structured correctly,</a> build tools will understand it and create a <code>package</code> for you into an executable <code>JAR</code>.</p>
+<p>But, when I started looking for the same standardization in Python, it wasn&rsquo;t as straightforward. Some questions I had as I worked: Should I be using virtualenvs? Pipenvs? <code>Setuptools</code>? Should I have a <code>setup.cfg?</code> What are wheels, or eggs, for that matter? Does each folder need an <code>__init__.py</code>? What does that file even do? How do I reference modules along the same <code>PYTHONPATH</code>?</p>
+<p>It became apparent that Python&rsquo;s flexbility, which I really appreciate when I&rsquo;m buckled down and writing code, makes it a huge pain to operationalize.</p>
+<p>As I worked, I thought I&rsquo;d write down everything I learned and built up to a complete Python project, from first principles, through a simple example, and thought it might help other people working through the same issues, as well.</p>
+<p>Come with me on a voyage of magic, adventure, and really annoying relative path references to find out how and why Python packaging works the way it does.</p>
+<p>This post goes through:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/package_flow.png alt=alice></p>
+<p>To comfortably go through the content, you should be reasonably comfortable with Python (aka if you know what a <a href=http://effbot.org/zone/python-list.htm>list comprehension</a> is and how it works you should probably be good), and have some understanding of object-oriented programming basics.</p>
+<p>All of the code is <a href=https://github.com/veekaybee/textedit/tree/master/textedit>here.</a></p>
+<p>My hope is that this post becomes a living document, so if you see something egregiously wrong, or something I missed, feel free to <a href=https://github.com/veekaybee/textedit/pulls>submit a pull request.</a></p>
+<h1 id=a-idpython-hides-the-hurtapython-hides-the-hurt>Python hides the hurt</h1>
+<p>I&rsquo;m going to start this Python post with a little Java. Sorry in advance.</p>
+<p>The reasoning behind this is that having another language for comparison really helps sometimes. I&rsquo;m currently working through a certificate in computer science, and most of my classes so far have been in Java. I&rsquo;ve previously done mostly dynamically-typed Python, and R, which is way out there, and Scala, but for Spark, which is a separate beast altogether, so I was a little intimidated by the shackles of Java syntax.</p>
+<p>For instance, if I want to read a text file, change some text in it, and output to a new file, Java requires a lot of scaffolding:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#f92672>import</span> java.io.*<span style=color:#f92672>;</span>
+
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Replace</span> <span style=color:#f92672>{</span>
+
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> IOException <span style=color:#f92672>{</span>
+        File file <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;alice.txt&#34;</span><span style=color:#f92672>);</span>
+
+        <span style=color:#66d9ef>try</span> <span style=color:#f92672>(</span>FileReader freader <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileReader<span style=color:#f92672>(</span>file<span style=color:#f92672>);</span>
+             BufferedReader reader <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BufferedReader<span style=color:#f92672>(</span>freader<span style=color:#f92672>);</span>
+             FileWriter writer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileWriter<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;new_alice.txt&#34;</span><span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+            String line<span style=color:#f92672>;</span>
+
+            <span style=color:#66d9ef>while</span> <span style=color:#f92672>((</span>line <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span><span style=color:#a6e22e>readLine</span><span style=color:#f92672>())</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+                String newLine <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span><span style=color:#a6e22e>replaceAll</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\\s+$&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>replaceAll</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Alice&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;Vicki&#34;</span><span style=color:#f92672>);</span>
+                writer<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>newLine<span style=color:#f92672>);</span>
+            <span style=color:#f92672>}</span>
+        <span style=color:#f92672>}</span>
+    <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+</code></pre></div><p>But Python makes it relatively painless:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#75715e># Replaces all instances in a file from &#34;Alice&#34; to &#34;Dora the Explorer&#34;</span>
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;alice.txt&#39;</span>, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> input:
+	<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;new_alice.txt&#39;</span>, <span style=color:#e6db74>&#39;w&#39;</span>) <span style=color:#66d9ef>as</span> output:
+		<span style=color:#66d9ef>for</span> line <span style=color:#f92672>in</span> input:
+			line <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>rstrip()
+			newline <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;Alice&#34;</span>, <span style=color:#e6db74>&#34;Dora the Explorer&#34;</span>)
+			output<span style=color:#f92672>.</span>write(newline)
+</code></pre></div><p>For a program of a couple lines, you might not want to use Java. But a benefit all of Java&rsquo;s scaffolding and type safety, and, particularly its build tools, is that it makes large programs easier to package.</p>
+<p>In Java, you could have three classes, put them in a project structure called <code>project/src/main/java/program</code> and call <code>package</code> on them, and they&rsquo;ll automatically reference each other. Each program is automatically split logically into a single class. You can compile the separate programs in Maven. And you&rsquo;re done.</p>
+<p>But, since Python abstracts types, objects, and paths away from the user, and there&rsquo;s no centralized build system, it becomes a bit more complicated internally.</p>
+<p>To understand what Python abstracts away and why this leads to different architecture choices, let&rsquo;s start at The Beginning.</p>
+<h1 id=a-idbuilding-a-simple-word-processora-building-a-simple-word-processor> Building a simple word processor</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/rabbit.jpg alt=alice></p>
+<p>Let&rsquo;s say I am Lewis Carroll, and I&rsquo;m writing <em>Alice in Wonderland.</em> But instead of using ink and paper, I&rsquo;d like to use some 21st century technology.</p>
+<p>What kinds of stuff do authors usually like to do to books, that can be easily automated with a program? Fixing spacing after a period from single to double, spellcheck, replacing words in entire texts, and word count are some common text editing tasks. Authors like word editors.</p>
+<p>We&rsquo;re going to create a <a href=https://github.com/veekaybee/textedit>really, really (really) simple version of Word</a> to demonstrate how Python packaging works, drilling down through internals and hopefully having some fun along the way.</p>
+<h1 id=a-idcreating-a-single-objectacreating-a-single-object>Creating a single object</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/alice_door.gif alt=alice></p>
+<p>To start writing Python code, I&rsquo;ll start in the Python REPL, the safe space for testing small pieces of code.</p>
+<p>I might write something like,</p>
+<p><code>x = "Alice"</code></p>
+<p>This is a variable, and also, a complete piece of Python code. It looks deceptively simple - a string. But it&rsquo;s really also an object, because everything, even primitive data types, is an object.</p>
+<p>Objects are the building blocks of Python. You can create multiple objects that you bundle into a single executable file, known as a module. You can bundle several modules into a package. It gets a little more complicated when you also understand that packages and modules are also objects, but let&rsquo;s keep it pretty simple here.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/model.png alt=pythonmodel></p>
+<p>Once we have our object, <code>x</code>, we can find out what&rsquo;s going on under the covers.</p>
+<p><a href=https://docs.python.org/3/reference/datamodel.html>Each Python object</a> has an identity - a pointer to a memory address where the object is stored, a type, and a value. All of this is metadata about the object and will help us investigate how various items in Python interact with each other.</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/object_props.png alt=pythonmodel></p>
+<p>In Java, we can explicitly see as we build the code what the variable looks like - what type it is, what its class is, and where it fits into a program, because Java mandates that you write all of this out.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Alice</span> <span style=color:#f92672>{</span>
+
+    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+        String x <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Alice&#34;</span><span style=color:#f92672>;</span>
+    <span style=color:#f92672>}</span>
+
+<span style=color:#f92672>}</span>
+</code></pre></div><p>In Python, we have to dig a little to find that information. First, we can find out the memory address of the object:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> id(x)
+<span style=color:#ae81ff>4409066472</span>
+</code></pre></div><p>Then, we can look at the type of a single Python object by calling <code>type()</code> on it.</p>
+<p>You can see that it&rsquo;s an instance of class <code>string</code>. And, further, you can see that string is a class, too, type.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&gt;&gt;&gt; x <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Alice&#34;</span>
+&gt;&gt;&gt; type<span style=color:#f92672>(</span>x<span style=color:#f92672>)</span>
+&lt;class <span style=color:#e6db74>&#39;str&#39;</span>&gt;
+&gt;&gt;&gt; type<span style=color:#f92672>(</span>str<span style=color:#f92672>)</span>
+&lt;class <span style=color:#e6db74>&#39;type&#39;</span>&gt;
+</code></pre></div><p>It&rsquo;s classes and objects all the way down. We can also find out more about the <code>string</code> object with the <code>__doc__</code> method.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> x<span style=color:#f92672>.</span>__doc__
+<span style=color:#e6db74>&#34;str(object=&#39;&#39;) -&gt; str</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</span><span style=color:#ae81ff>\n\n</span><span style=color:#e6db74>Create a new string object from the given object. If encoding or</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>errors is specified, then the object must expose a data buffer</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>that will be decoded using the given encoding and error handler.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Otherwise, returns the result of object.__str__() (if defined)</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>or repr(object).</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>encoding defaults to sys.getdefaultencoding().</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>errors defaults to &#39;strict&#39;.&#34;</span>
+
+</code></pre></div><p>(If you&rsquo;re more curious about how strings specifically are created, digging into <a href=https://github.com/python/cpython/blob/2.7/Objects/stringobject.c>the Python source code is fun</a>, which is where the <code>__doc__</code> string comes from.)</p>
+<p>And if we call <code>dir()</code>, we can see all of the object attributes and methods that can act on that class. Attributes are variables and methods created specifically by higher-level Python classes. Methods are specific to that object. For example, most Python objects have the <code>__add__</code>, <code>__dir__</code>, and <code>__setattr__</code> attributes. Only strings have <code>join</code>, <code>strip</code>, and <code>replace</code></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> dir(x)
+[<span style=color:#e6db74>&#39;__add__&#39;</span>, <span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__contains__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__getitem__&#39;</span>, <span style=color:#e6db74>&#39;__getnewargs__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#e6db74>&#39;__iter__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__len__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__mod__&#39;</span>, <span style=color:#e6db74>&#39;__mul__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__rmod__&#39;</span>, <span style=color:#e6db74>&#39;__rmul__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>, <span style=color:#e6db74>&#39;capitalize&#39;</span>, <span style=color:#e6db74>&#39;casefold&#39;</span>, <span style=color:#e6db74>&#39;center&#39;</span>, <span style=color:#e6db74>&#39;count&#39;</span>, <span style=color:#e6db74>&#39;encode&#39;</span>, <span style=color:#e6db74>&#39;endswith&#39;</span>, <span style=color:#e6db74>&#39;expandtabs&#39;</span>, <span style=color:#e6db74>&#39;find&#39;</span>, <span style=color:#e6db74>&#39;format&#39;</span>, <span style=color:#e6db74>&#39;format_map&#39;</span>, <span style=color:#e6db74>&#39;index&#39;</span>, <span style=color:#e6db74>&#39;isalnum&#39;</span>, <span style=color:#e6db74>&#39;isalpha&#39;</span>, <span style=color:#e6db74>&#39;isdecimal&#39;</span>, <span style=color:#e6db74>&#39;isdigit&#39;</span>, <span style=color:#e6db74>&#39;isidentifier&#39;</span>, <span style=color:#e6db74>&#39;islower&#39;</span>, <span style=color:#e6db74>&#39;isnumeric&#39;</span>, <span style=color:#e6db74>&#39;isprintable&#39;</span>, <span style=color:#e6db74>&#39;isspace&#39;</span>, <span style=color:#e6db74>&#39;istitle&#39;</span>, <span style=color:#e6db74>&#39;isupper&#39;</span>, <span style=color:#e6db74>&#39;join&#39;</span>, <span style=color:#e6db74>&#39;ljust&#39;</span>, <span style=color:#e6db74>&#39;lower&#39;</span>, <span style=color:#e6db74>&#39;lstrip&#39;</span>, <span style=color:#e6db74>&#39;maketrans&#39;</span>, <span style=color:#e6db74>&#39;partition&#39;</span>, <span style=color:#e6db74>&#39;replace&#39;</span>, <span style=color:#e6db74>&#39;rfind&#39;</span>, <span style=color:#e6db74>&#39;rindex&#39;</span>, <span style=color:#e6db74>&#39;rjust&#39;</span>, <span style=color:#e6db74>&#39;rpartition&#39;</span>, <span style=color:#e6db74>&#39;rsplit&#39;</span>, <span style=color:#e6db74>&#39;rstrip&#39;</span>, <span style=color:#e6db74>&#39;split&#39;</span>, <span style=color:#e6db74>&#39;splitlines&#39;</span>, <span style=color:#e6db74>&#39;startswith&#39;</span>, <span style=color:#e6db74>&#39;strip&#39;</span>, <span style=color:#e6db74>&#39;swapcase&#39;</span>, <span style=color:#e6db74>&#39;title&#39;</span>, <span style=color:#e6db74>&#39;translate&#39;</span>, <span style=color:#e6db74>&#39;upper&#39;</span>, <span style=color:#e6db74>&#39;zfill&#39;</span>]
+<span style=color:#f92672>&gt;&gt;&gt;</span> x<span style=color:#f92672>.</span>__init__
+<span style=color:#f92672>&lt;</span>method<span style=color:#f92672>-</span>wrapper <span style=color:#e6db74>&#39;__init__&#39;</span> of str object at <span style=color:#ae81ff>0x105ec4d88</span><span style=color:#f92672>&gt;</span>
+</code></pre></div><p>You can check this by creating an <code>int</code>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> y <span style=color:#f92672>=</span> <span style=color:#ae81ff>9</span>
+<span style=color:#f92672>&gt;&gt;&gt;</span> dir(y)
+[<span style=color:#e6db74>&#39;__abs__&#39;</span>, <span style=color:#e6db74>&#39;__add__&#39;</span>, <span style=color:#e6db74>&#39;__and__&#39;</span>, <span style=color:#e6db74>&#39;__bool__&#39;</span>, <span style=color:#e6db74>&#39;__ceil__&#39;</span>, <span style=color:#e6db74>&#39;__class__&#39;</span>, <span style=color:#e6db74>&#39;__delattr__&#39;</span>, <span style=color:#e6db74>&#39;__dir__&#39;</span>, <span style=color:#e6db74>&#39;__divmod__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>, <span style=color:#e6db74>&#39;__eq__&#39;</span>, <span style=color:#e6db74>&#39;__float__&#39;</span>, <span style=color:#e6db74>&#39;__floor__&#39;</span>, <span style=color:#e6db74>&#39;__floordiv__&#39;</span>, <span style=color:#e6db74>&#39;__format__&#39;</span>, <span style=color:#e6db74>&#39;__ge__&#39;</span>, <span style=color:#e6db74>&#39;__getattribute__&#39;</span>, <span style=color:#e6db74>&#39;__getnewargs__&#39;</span>, <span style=color:#e6db74>&#39;__gt__&#39;</span>, <span style=color:#e6db74>&#39;__hash__&#39;</span>, <span style=color:#e6db74>&#39;__index__&#39;</span>, <span style=color:#e6db74>&#39;__init__&#39;</span>, <span style=color:#e6db74>&#39;__int__&#39;</span>, <span style=color:#e6db74>&#39;__invert__&#39;</span>, <span style=color:#e6db74>&#39;__le__&#39;</span>, <span style=color:#e6db74>&#39;__lshift__&#39;</span>, <span style=color:#e6db74>&#39;__lt__&#39;</span>, <span style=color:#e6db74>&#39;__mod__&#39;</span>, <span style=color:#e6db74>&#39;__mul__&#39;</span>, <span style=color:#e6db74>&#39;__ne__&#39;</span>, <span style=color:#e6db74>&#39;__neg__&#39;</span>, <span style=color:#e6db74>&#39;__new__&#39;</span>, <span style=color:#e6db74>&#39;__or__&#39;</span>, <span style=color:#e6db74>&#39;__pos__&#39;</span>, <span style=color:#e6db74>&#39;__pow__&#39;</span>, <span style=color:#e6db74>&#39;__radd__&#39;</span>, <span style=color:#e6db74>&#39;__rand__&#39;</span>, <span style=color:#e6db74>&#39;__rdivmod__&#39;</span>, <span style=color:#e6db74>&#39;__reduce__&#39;</span>, <span style=color:#e6db74>&#39;__reduce_ex__&#39;</span>, <span style=color:#e6db74>&#39;__repr__&#39;</span>, <span style=color:#e6db74>&#39;__rfloordiv__&#39;</span>, <span style=color:#e6db74>&#39;__rlshift__&#39;</span>, <span style=color:#e6db74>&#39;__rmod__&#39;</span>, <span style=color:#e6db74>&#39;__rmul__&#39;</span>, <span style=color:#e6db74>&#39;__ror__&#39;</span>, <span style=color:#e6db74>&#39;__round__&#39;</span>, <span style=color:#e6db74>&#39;__rpow__&#39;</span>, <span style=color:#e6db74>&#39;__rrshift__&#39;</span>, <span style=color:#e6db74>&#39;__rshift__&#39;</span>, <span style=color:#e6db74>&#39;__rsub__&#39;</span>, <span style=color:#e6db74>&#39;__rtruediv__&#39;</span>, <span style=color:#e6db74>&#39;__rxor__&#39;</span>, <span style=color:#e6db74>&#39;__setattr__&#39;</span>, <span style=color:#e6db74>&#39;__sizeof__&#39;</span>, <span style=color:#e6db74>&#39;__str__&#39;</span>, <span style=color:#e6db74>&#39;__sub__&#39;</span>, <span style=color:#e6db74>&#39;__subclasshook__&#39;</span>, <span style=color:#e6db74>&#39;__truediv__&#39;</span>, <span style=color:#e6db74>&#39;__trunc__&#39;</span>, <span style=color:#e6db74>&#39;__xor__&#39;</span>, <span style=color:#e6db74>&#39;bit_length&#39;</span>, <span style=color:#e6db74>&#39;conjugate&#39;</span>, <span style=color:#e6db74>&#39;denominator&#39;</span>, <span style=color:#e6db74>&#39;from_bytes&#39;</span>, <span style=color:#e6db74>&#39;imag&#39;</span>, <span style=color:#e6db74>&#39;numerator&#39;</span>, <span style=color:#e6db74>&#39;real&#39;</span>, <span style=color:#e6db74>&#39;to_bytes&#39;</span>]
+</code></pre></div><p>Finally, <a href=https://stackoverflow.com/questions/12693606/reason-for-globals-in-python>the object&rsquo;s value</a>. Since we&rsquo;re working in the Python REPL, <code>x</code> is a global variable, i.e. available to the entire Python namespace. Therefore, we should be able to see it:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>&gt;&gt;&gt; globals<span style=color:#f92672>()</span>
+<span style=color:#f92672>{</span><span style=color:#e6db74>&#39;__loader__&#39;</span>: &lt;class <span style=color:#e6db74>&#39;_frozen_importlib.BuiltinImporter&#39;</span>&gt;, <span style=color:#e6db74>&#39;x&#39;</span>: <span style=color:#e6db74>&#39;Alice&#39;</span>, <span style=color:#e6db74>&#39;__spec__&#39;</span>: None, <span style=color:#e6db74>&#39;y&#39;</span>: 9, <span style=color:#e6db74>&#39;__name__&#39;</span>: <span style=color:#e6db74>&#39;__main__&#39;</span>, <span style=color:#e6db74>&#39;__doc__&#39;</span>: None, <span style=color:#e6db74>&#39;__builtins__&#39;</span>: &lt;module <span style=color:#e6db74>&#39;builtins&#39;</span> <span style=color:#f92672>(</span>built-in<span style=color:#f92672>)</span>&gt;, <span style=color:#e6db74>&#39;__package__&#39;</span>: None<span style=color:#f92672>}</span>
+</code></pre></div><p>We can run <code>globals</code> specifically on it to get its value:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> globals()[<span style=color:#e6db74>&#39;x&#39;</span>]
+<span style=color:#e6db74>&#39;Alice&#39;</span>
+
+</code></pre></div><p>Now that we know what a single object can look like, let&rsquo;s get out of the shallows of the REPL and create a bunch of them to interact with each other.</p>
+<h1 id=a-idcombining-objects-into-a-programa-combining-objects-into-a-program> Combining objects into a program</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/tea_mouse.jpg alt=tea_muse></p>
+<p>Usually, after we write a couple one-liners, we want to write a complete snippet of code that does something. For example, let&rsquo;s say Lewis Carroll has written a couple pages and wants to do a word count on the file he&rsquo;s written (writers always want to compulsively do word counts).</p>
+<p>We&rsquo;ll work with <code>alice.txt</code> here:</p>
+<pre tabindex=0><code>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, ‘and what is the use of a book,’ thought Alice ‘without pictures or conversations?’
+So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.
+There was nothing so very remarkable in that; nor did Alice think it so very much out of the way to hear the Rabbit say to itself, ‘Oh dear! Oh dear! I shall be late!’ (when she thought it over afterwards, it occurred to her that she ought to have wondered at this, but at the time it all seemed quite natural); but when the Rabbit actually took a watch out of its waistcoat-pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with either a waistcoat-pocket, or a watch to take out of it, and burning with curiosity, she ran across the field after it, and fortunately was just in time to see it pop down a large rabbit-hole under the hedge.
+In another moment down went Alice after it, never once considering how in the world she was to get out again.
+</code></pre><p>We are now working with a file, <code>wordcount.py</code>, and a text file, in the same directory.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mbp-vboykis:python_packaging vboykis$ tree
+├── alice.txt
+└── wordcount.py
+</code></pre></div><p>The loop is still a single logical piece of code. Let&rsquo;s save this as a file and execute it on the command line:</p>
+<p><code>vboykis$ python wordcount.py Word Count: 274</code></p>
+<p>Let&rsquo;s take a look inside:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;alice.txt&#39;</span>, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+	file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+	print(<span style=color:#e6db74>&#39;Word count:&#39;</span>, len(file_contents<span style=color:#f92672>.</span>split()))
+		
+    <span style=color:#f92672>---</span>
+    Word count: <span style=color:#ae81ff>274</span>
+</code></pre></div><p>We still have objects that we are performing operations on. <code>file</code> is an object, as is <code>file_contents</code> and <code>len(file_contents.split())</code>, but now we&rsquo;re getting more interesting types:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>type(file_contents)
+str
+
+type(file)
+_io<span style=color:#f92672>.</span>TextIOWrapper
+
+type(len(file_contents<span style=color:#f92672>.</span>split()))
+int
+</code></pre></div><p>When we run <code>python wordcount.py</code>, a <a href=https://tech.blog.aknin.name/2010/04/02/pythons-innards-introduction/>couple things happen</a>:</p>
+<ol>
+<li>
+<p>Python parses command line arguments (everything after <code>python</code> on the CLI)</p>
+</li>
+<li>
+<p>Python checks for any dependencies (aka <code>import</code> statements) and pulls them in.</p>
+</li>
+<li>
+<p>Python looks in our current working directory (<code>python_packaging</code>) for anything related to the file, and uses the path setup from when Python was installed on your system.</p>
+</li>
+</ol>
+<p>Let&rsquo;s check what our <code>PYTHONPATH</code> is:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> os
+<span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> sys
+
+<span style=color:#f92672>&gt;&gt;&gt;</span> os<span style=color:#f92672>.</span>getcwd() <span style=color:#75715e>#where we&#39;re currently running code</span>
+<span style=color:#e6db74>&#39;/python_packaging&#39;</span>
+
+<span style=color:#f92672>&gt;&gt;&gt;</span> print(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span><span style=color:#f92672>.</span>join(sys<span style=color:#f92672>.</span>path)) <span style=color:#75715e># all the paths Python checks for packages</span>
+
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>
+
+Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python35<span style=color:#f92672>.</span>zip
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>
+
+Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span>
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>
+
+Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>plat<span style=color:#f92672>-</span>darwin
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>
+
+Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>-</span>dynload
+<span style=color:#f92672>/</span>usr<span style=color:#f92672>/</span>local<span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>site<span style=color:#f92672>-</span>packages
+</code></pre></div><ol start=4>
+<li>
+<p>Python assembles a Python virtual machine, <a href=https://en.wikipedia.org/wiki/CPython>CPython</a>, to execute and interpret the code.</p>
+</li>
+<li>
+<p>If there are no external dependencies (aka packages), as is the case in our word count program, a special attribute, <code>__name__</code> is initialized to <code>"__main__"</code> in the <strong>main</strong> <a href=https://docs.python.org/3/library/__main__.html>namespace</a>.</p>
+</li>
+</ol>
+<p>Program:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>print(<span style=color:#e6db74>&#34;__name__:&#34;</span>, __name__)
+
+<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;texts/alice.txt&#39;</span>, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+	file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+	print(<span style=color:#e6db74>&#39;Word count:&#39;</span>, len(file_contents<span style=color:#f92672>.</span>split()))
+</code></pre></div><p>Output:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mbp-vboykis:python_packaging vboykis$ python wordcount.py 
+__name__: __main__
+Word count: <span style=color:#ae81ff>274</span>
+
+</code></pre></div><p>How do we get that file elsewhere? For example, how do we import functions from wordcount if we&rsquo;re in the REPL? The REPL is, essentially, a special case of a file being executed directly in our current working directory.</p>
+<p>However, if we run <code>wordcount.py</code> form the REPL, since we&rsquo;re importing the <code>wordcount</code> module from elsewhere, the name immediately becomes that module.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> wordcount
+<span style=color:#f92672>&gt;&gt;&gt;</span> wordcount<span style=color:#f92672>.</span>__name__
+<span style=color:#e6db74>&#39;wordcount&#39;</span>
+</code></pre></div><ol start=6>
+<li>All of the code gets translated at run-time to byte code using the CPython interpreter. Python
+generates a copy of the file with the <code>.pyc</code> extension in a folder called <code>__pycache__</code>.</li>
+</ol>
+<p>If you want to see what the byte code of our program looks like, <a href=http://akaptur.com/blog/2013/08/14/python-bytecode-fun-with-dis/>digging into it</a> can be fun.</p>
+<ol start=7>
+<li>As the code is executed, Python reads all of our objects and loops. The interpreter allocates memory to the code and the special Python structures for each object are created. This is where the <code>id</code> for each object is created, and why we can call these things after we run the code.</li>
+</ol>
+<p>We&rsquo;ve just created a Python runtime environment, told Python which directories it should be reading from, imported some stuff, allocated memory, and given some output. Basically all of the things we do to run a program.</p>
+<h2 id=a-idrefactoring-a-single-programarefactoring-a-single-program>Refactoring a single program</h2>
+<p>Ok, so we&rsquo;ve run our program. But, if we try to run it on any other file, not just <code>alice.txt</code>, we won&rsquo;t be able to. Let&rsquo;s make it a bit more robust. First, we&rsquo;ll abstract out some of the hard coding referencing <code>alice.txt</code>.</p>
+<p>Second, we&rsquo;ll turn the code from a simple loop, into a function that acts like an API so that we can access a single pointer to our loop from other places in the file, and from other files.</p>
+<p>Finally, we&rsquo;ll add <code>if __name__ == '__main__'</code> to the program, put all the functions we want to execute under the if block, and run the file that way.</p>
+<p>This is a really common pattern for running multiple functions and keeping track of them. As we noted in the last section,</p>
+<blockquote>
+<p>If there are no external dependencies (aka packages), as is the case in our word count program, a special attribute, <code>__name__</code> is initialized to <code>"__main__"</code> in the <strong>main</strong> <a href=https://docs.python.org/3/library/__main__.html>namespace</a></p>
+</blockquote>
+<p>If the program is the main program you&rsquo;re running, Python will run everything in order under that statement.</p>
+<p>Note that if you don&rsquo;t have <code>if __name__ == '__main__'</code>, the code won&rsquo;t run anything since the function is initialized but not executed.</p>
+<p>This is a really important pattern to understand, because it looks into how Python references the current module you&rsquo;re working with in relation to other modulers.</p>
+<p>Let&rsquo;s also: adding a function that counts sentences, as well.</p>
+<p>Program:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>word_count</span>(filename):
+	<span style=color:#66d9ef>with</span> open(filename, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+		file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+		print(<span style=color:#e6db74>&#39;Total words:   &#39;</span>, len(file_contents<span style=color:#f92672>.</span>split()))
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sentence_count</span>(filename):
+	<span style=color:#66d9ef>with</span> open(filename, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+		file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+		print(<span style=color:#e6db74>&#39;total sentences:    &#39;</span>, file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;.&#39;</span>)		<span style=color:#f92672>+</span>file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;!&#39;</span>)<span style=color:#f92672>+</span>file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;?&#39;</span>))
+
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+	word_count(<span style=color:#e6db74>&#39;pool_of_tears.txt&#39;</span>)
+	sentence_count(<span style=color:#e6db74>&#39;pool_of_tears.txt&#39;</span>)
+</code></pre></div><p>Output:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>vboykis$ python wordcount.py
+Total words:    <span style=color:#ae81ff>2098</span>
+total sentences:     <span style=color:#ae81ff>117</span>
+
+</code></pre></div><p>These kinds of refactoring tasks will become important as we start to understand how many files, or modules, reference each other in a package.</p>
+<p>We&rsquo;re also going to slightly modify wordcount to return a value instead of print so we don&rsquo;t double-print:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>word_count</span>(filename):
+	<span style=color:#66d9ef>with</span> open(filename, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+		file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+		<span style=color:#66d9ef>return</span>(<span style=color:#e6db74>&#39;Total words:   &#39;</span>, len(file_contents<span style=color:#f92672>.</span>split()))
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sentence_count</span>(filename):
+	<span style=color:#66d9ef>with</span> open(filename, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+		file_contents <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span>read()
+		<span style=color:#66d9ef>return</span>(<span style=color:#e6db74>&#39;total sentences:    &#39;</span>, file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;.&#39;</span>)<span style=color:#f92672>+</span>file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;!&#39;</span>)<span style=color:#f92672>+</span>file_contents<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;?&#39;</span>))
+
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+	print(word_count(<span style=color:#e6db74>&#39;pool_of_tears.txt&#39;</span>))
+	print(sentence_count(<span style=color:#e6db74>&#39;pool_of_tears.txt&#39;</span>))
+</code></pre></div><p>Let&rsquo;s do one more thing, and now make this function a class so that it&rsquo;s really, really easy to reference from other modules.</p>
+<p>A class is part of <a href=https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/>object-oriented programming</a>, and makes code more modular and easy to call. A class, in a way, is like an API.</p>
+<p>And, let&rsquo;s add a character count (we&rsquo;ll need that for some later work we&rsquo;re doing):</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#!/usr/bin/env python</span>
+
+<span style=color:#e6db74>&#34;&#34;&#34;Takes a file as sys.arg[1] as input and returns a wordcount, 
+</span><span style=color:#e6db74>character count, and sentence count.
+</span><span style=color:#e6db74>
+</span><span style=color:#e6db74>Sysargs:  filename
+</span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+
+<span style=color:#f92672>import</span> re
+<span style=color:#f92672>import</span> sys
+
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WC</span>:
+	<span style=color:#e6db74>&#34;&#34;&#34;Conducts character, word, and letter count of object&#34;&#34;&#34;</span>
+
+	<span style=color:#66d9ef>def</span> __init__(self, filename):
+
+		self<span style=color:#f92672>.</span>filename <span style=color:#f92672>=</span> filename
+
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>open_file</span>(self,filename):
+		<span style=color:#e6db74>&#34;&#34;&#34;Opens a file object to be used across the class&#34;&#34;&#34;</span>
+		<span style=color:#66d9ef>with</span> open(filename,<span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> f:
+			file_contents <span style=color:#f92672>=</span> f<span style=color:#f92672>.</span>read()
+			<span style=color:#66d9ef>return</span> file_contents
+
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>word_count</span>(self):
+		<span style=color:#e6db74>&#34;&#34;&#34;Returns a file&#39;s word count&#34;&#34;&#34;</span>
+
+		wc_file <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>open_file(self<span style=color:#f92672>.</span>filename)
+		self <span style=color:#f92672>=</span> len(wc_file<span style=color:#f92672>.</span>split())
+		<span style=color:#66d9ef>return</span>(<span style=color:#e6db74>&#34;Words:&#34;</span>,len(wc_file<span style=color:#f92672>.</span>split()))
+
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sentence_count</span>(self):
+		<span style=color:#e6db74>&#34;&#34;&#34;Returns a file&#39;s word sentence count&#34;&#34;&#34;</span>
+
+		sc_file <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>open_file(self<span style=color:#f92672>.</span>filename)
+		
+		<span style=color:#66d9ef>return</span>(<span style=color:#e6db74>&#34;Sentences:&#34;</span>, sc_file<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;.&#39;</span>) <span style=color:#f92672>+</span> sc_file<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;!&#39;</span>) <span style=color:#f92672>+</span> sc_file<span style=color:#f92672>.</span>count(<span style=color:#e6db74>&#39;?&#39;</span>))
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>letter_count</span>(self):
+
+		<span style=color:#e6db74>&#34;&#34;&#34;Returns a file&#39;s character count, excluding punctuation&#34;&#34;&#34;</span>
+		letter_counter <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+
+		pattern <span style=color:#f92672>=</span> <span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;[\W]&#39;</span> <span style=color:#75715e># excluding all punctuation</span>
+
+		cc_file <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>open_file(self<span style=color:#f92672>.</span>filename)
+
+		total_words <span style=color:#f92672>=</span> cc_file<span style=color:#f92672>.</span>split()
+
+		<span style=color:#66d9ef>for</span> word <span style=color:#f92672>in</span> total_words: 
+			<span style=color:#66d9ef>for</span> letter <span style=color:#f92672>in</span> word:
+				<span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> re<span style=color:#f92672>.</span>search(pattern, letter):
+					letter_counter <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+		
+		<span style=color:#66d9ef>return</span>(<span style=color:#e6db74>&#34;Letters:&#34;</span>, letter_counter)
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>counts</span>(self):
+		print(self<span style=color:#f92672>.</span>word_count(),<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span>,self<span style=color:#f92672>.</span>sentence_count(),<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span>,self<span style=color:#f92672>.</span>letter_count())
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+	alice <span style=color:#f92672>=</span> WC(sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>])
+	WC<span style=color:#f92672>.</span>counts(alice)
+
+</code></pre></div><p>Now we&rsquo;re cooking. We&rsquo;ve got a program that&rsquo;s easy to read, abstractable, and applicable across multiple files. We have <a href=https://github.com/veekaybee/textedit/blob/master/textedit/review/wordcount.py>a complete Python module.</a></p>
+<p>For bonus fun and to do some QA, you can paste the test into Word to do a sanity check. I got 274 words, which matches our program.</p>
+<h1 id=combining-programs-into-scripts>Combining programs into scripts</h1>
+<p><img src=https://cdn-images-1.medium.com/max/1600/1*c8z_BEgJvo7ra4IKH28RfA.jpeg alt=alice></p>
+<p>Ok, we&rsquo;ve cleaned up a single file. We have a pretty simple, clean module to do a word count, a sentence count, or character count on any file that&rsquo;s input. But what if we want to count the words in a file, and then replace some text in that file, save as a new file, and do a word count again?</p>
+<p>I could do this in the same <code>wordcount.py</code> script, but for the sake of the case study and modulatrity, let&rsquo;s call these separate pieces of code, since they do separate things. The <code>wordcount</code> module is for analytics, the new module would actually change things in the program.</p>
+<p>So now I want one piece of code to do a word count and another to replace words in a file. Here&rsquo;s the word replacement. As always, we start with a single file and a single function.</p>
+<pre tabindex=0><code>mbp-vboykis:python_packaging vboykis$ tree
+├── alice.txt
+├── pool_of_tears.txt
+└── replace.py
+└── wordcount.py
+
+</code></pre><p>Now we have a couple of text samples and a couple of modules in the same file folder. Starting to get a little complicated, but it&rsquo;s not too bad, yet.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>replace_words</span>(words):
+	<span style=color:#66d9ef>with</span> open(words, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> input:
+		<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;new_alice.txt&#39;</span>, <span style=color:#e6db74>&#39;w&#39;</span>)<span style=color:#66d9ef>as</span> output:
+			<span style=color:#66d9ef>for</span> line <span style=color:#f92672>in</span> input:
+				line <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>rstrip()
+				newline <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;Alice&#34;</span>, <span style=color:#e6db74>&#34;Dora the Explorer&#34;</span>)
+				print(newline)
+				output<span style=color:#f92672>.</span>write(newline)
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+	replace_words(<span style=color:#e6db74>&#39;alice.txt&#39;</span>)
+	
+</code></pre></div><p>Let&rsquo;s say I want to call the wordcount on <code>alice.txt</code>, and then again on <code>new_alice.txt</code>, since I am adding more words. I could copy and paste the <code>word_count</code> method into the <code>replace_words</code> code.</p>
+<p>Or, I could just reference it from a different file in the same directory. Remember, Python always checks the directory you&rsquo;re currently working in first for files, and the top-level file is the one that has the <code>__main__</code> <a href=https://docs.python.org/3/library/__main__.html#module-__main__>module.</a></p>
+<p>Our directory <a href=https://github.com/veekaybee/textedit/blob/master/textedit/edit/replace.py>currently looks like this:</a></p>
+<pre tabindex=0><code>
+mbp-vboykis:python_packaging vboykis$ tree
+├── alice.txt
+├── new_alice.txt
+├── pool_of_tears.txt
+├── replace.py
+└── wordcount.py
+</code></pre><p>Now, I&rsquo;d like to call the <code>wordcount</code> module from the <code>replace</code> module. Remember that all modules can be imported with their filename. So, if we are in the same directory, we should be able to do a simple <code>import wordcount</code>. Once we do that, we have access to all of wordcount&rsquo;s classes and methods in the <code>replace</code> module.</p>
+<p>We also want to see what the name of the module in relationship to the module calling it is. Notice that wordcount&rsquo;s <code>__name __</code>is <code>wordcount</code>, while <code>replace's</code> is <code>main</code>, since that&rsquo;s now the main module we&rsquo;re referencing.</p>
+<p>Program:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> wordcount <span style=color:#f92672>import</span> WC
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>replace_words</span>(words):
+	<span style=color:#66d9ef>with</span> open(words, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> input:
+		<span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#39;new_alice.txt&#39;</span>, <span style=color:#e6db74>&#39;w&#39;</span>)<span style=color:#66d9ef>as</span> output:
+			<span style=color:#66d9ef>for</span> line <span style=color:#f92672>in</span> input:
+				line <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>rstrip()
+				newline <span style=color:#f92672>=</span> line<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;Alice&#34;</span>, <span style=color:#e6db74>&#34;Dora the Explorer&#34;</span>)
+				output<span style=color:#f92672>.</span>write(newline)
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+	replace_words(<span style=color:#e6db74>&#39;alice.txt&#39;</span>)
+	alice <span style=color:#f92672>=</span> WC(<span style=color:#e6db74>&#39;alice.txt&#39;</span>)
+	new_alice <span style=color:#f92672>=</span> WC(<span style=color:#e6db74>&#39;texts/new_alice.txt&#39;</span>)
+	print(<span style=color:#e6db74>&#34;Old Wordcount&#34;</span>,alice<span style=color:#f92672>.</span>word_count())
+	print(<span style=color:#e6db74>&#34;WC __name__:&#34;</span>, WC<span style=color:#f92672>.</span>__name__)
+	print(<span style=color:#e6db74>&#34;New Wordcount&#34;</span>,new_alice<span style=color:#f92672>.</span>word_count())
+	print(<span style=color:#e6db74>&#34;replace __name__:&#34;</span>, __name__)
+</code></pre></div><p>Output:</p>
+<pre tabindex=0><code>Old Wordcount ('Words:', 274)
+WC __name__: WC
+New Wordcount ('Words:', 281)
+replace __name__: __main__
+</code></pre><p>Once again:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/object_model.png alt=pythonmodel></p>
+<p>All of the functions from the wordcount module are imported into the <code>replace</code> module, to be used. That module is no longer the main module when you are running <code>replace</code>, but a helper module, because of the way <code>__name__</code> now points. These two modules also have to be in the same directory.</p>
+<p>This distinction makes up the heart of the Python packaging system.</p>
+<p>Let&rsquo;s finish up by replace a callable object with an API, as well.</p>
+<h1 id=a-idcombining-scripts-into-a-moduleacombining-scripts-into-a-module>Combining scripts into a module</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/tea_party.png alt="tea party"></p>
+<p>Ok, now we have a word &ldquo;editor&rdquo;, a word counter, and we&rsquo;re cranking away on <em>Alice in Wonderland</em>. What else might we want in a text editor?</p>
+<p>Let&rsquo;s brainstorm a couple modules of functionality:</p>
+<ul>
+<li>the ability to change from single to double space after a period?</li>
+<li>And, the ability to determine how readable our document is based on the <a href=https://readable.io/content/the-coleman-liau-index/>Colman-Liau</a> index. There are lots of ways to gauge readability, but a lot of them involve counting word syllables, which is too complicated for what we&rsquo;re trying to do here, which is focus on Python package structure. (If you are interested in <a href=http://veekaybee.github.io/2017/03/20/hadoop-or-laptop/>wordcount</a>, check out my other posts. )</li>
+</ul>
+<p>So, in addition to our two modules:</p>
+<ul>
+<li><a href=https://github.com/veekaybee/textedit/blob/master/textedit/review/wordcount.py>wordcount</a></li>
+<li><a href=https://github.com/veekaybee/textedit/blob/master/textedit/edit/replace.py>replace</a></li>
+</ul>
+<p>We&rsquo;ll be adding two more</p>
+<ul>
+<li><a href=https://github.com/veekaybee/textedit/blob/master/textedit/edit/spacing.py>spacing</a></li>
+<li><a href=https://github.com/veekaybee/textedit/blob/master/textedit/review/readability.py>readability</a></li>
+</ul>
+<p>Based on PEP, the arbiter in Python style, the package name should be <a href=https://www.python.org/dev/peps/pep-0008/#package-and-module-names>short, lowercase, and meaningful.</a>.</p>
+<p>Now that we have more than three modules, and also some text files, we&rsquo;ll want to create a package. Let&rsquo;s follow PEP again and call it something easy: <code>textedit</code>. If we were publishing this package to <a href=https://pypi.python.org/pypi>PyPI</a>, the public repository of all available Python code and where we pull stuff from when we do <code>pip package</code>, we would want to make sure it doesn&rsquo;t conflict with other names. Since we&rsquo;re just sharing it with ourselves and maybe a couple of other people on our team, it&rsquo;s fine for now.</p>
+<p>Note: there are IDEs (PyCharm) and <a href=https://github.com/audreyr/cookiecutter-pypackage>programs</a> that set up a cookiecutter Python application for you, but I&rsquo;ve found these to be too complicated when you&rsquo;re just starting out.</p>
+<p>It&rsquo;s important to understand what is actually being set up, and not to get too bogged down in the implementation/continuous integration details that you might not have to deal with at first.</p>
+<p>So we want something, at the very basic level, like this:</p>
+<pre tabindex=0><code> textedit
+├── replace.py
+├── wordcount.py
+├── spacing.py
+└── readability.py
+
+</code></pre><p>Once we look at this, we might see that some modules belong together logically. For example, <code>wordcount</code> and <code>spellcheck</code> just take the text and analyze it. And, in fact, in the Word menu bar, they&rsquo;re grouped together:</p>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/wordcountmenu.png alt=wordmenu></p>
+<p>Which brings me to a (probably obvious) tip: Try to base your software on existing, successfully-tested patterns in the real world instead of trying to greenfield it. Chances are someone has already solved the exact problem you&rsquo;re trying to solve.</p>
+<p><code>replace</code> and <code>spacing</code> actually edit the document and create new copies of files. So you might want something like the way these functions are organized in the Word menu. And then you have your text documents that you&rsquo;re actually testing the functionality on. Those should be separate from the code.</p>
+<pre tabindex=0><code> textedit
+	├── edit
+		├── replace.py
+		├── spacing.py
+	├── review
+		├── wordcount.py
+		└── readability.py
+	├── texts
+		├── alice.txt
+		└── pool_of_tears.txt
+
+</code></pre><p>At its very basic level, this is what our code structure looks like.</p>
+<h1 id=a-idproject-structureaproject-structure>Project structure</h1>
+<p>But, there are signals we need to give to Python to read this correctly. CPython also needs to know how these things relate to each other in order to compile a package for us. And the code needs to be built in a way such that other people can seamlessly download it and use it without a lot of explanation from you.</p>
+<p>Which is why, if you look at some popular Python project folder structures,like <a href=https://github.com/pandas-dev/pandas>Pandas</a>, <a href=https://github.com/requests/requests>Requests</a>, or <a href=https://github.com/pallets/flask>Flask</a>, you&rsquo;ll see they tend to be a bit more complicated.</p>
+<p>Generally, it&rsquo;s a good idea to look at other people&rsquo;s work, so here are some <a href="https://news.ycombinator.com/item?id=9896369">smaller Python packages to take a look at.</a></p>
+<p>So how do you go from two scripts to a fully-functional package?</p>
+<h2 id=a-idmodular-codeamodular-code>Modular Code</h2>
+<p>First, Python needs to have all of the files of the <a href=https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html#directory-layout>project in its same directory and subdirectory:</a>. The top-level textedit is the distribution or package, and the lower-level one is the actual module.</p>
+<pre tabindex=0><code> textedit - package
+ 	textedit - module
+		├── edit
+			├── replace.py
+			├── spacing.py
+		├── review
+			├── wordcount.py
+			└── readability.py
+		├── texts
+			├── alice.txt
+			└── pool_of_tears.txt
+
+</code></pre><h2 id=a-idunit-testsaunit-tests>Unit Tests</h2>
+<p>Then, you&rsquo;ll want to add tests. Unit tests help you make sure that your code runs as expected, even as you change it. You usually want to write a test for each function or package.</p>
+<p>There is a whole art/science to unit testing, but for the sake of this example, I&rsquo;m going to skip it and just write an example test, called <code>test_wordcount.py</code>.</p>
+<p>Program:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> unittest
+<span style=color:#f92672>import</span> sys
+<span style=color:#f92672>import</span> os
+
+
+sys<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>append(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>abspath(<span style=color:#e6db74>&#34;python_packaging/textedit/textedit/review&#34;</span>))
+<span style=color:#f92672>from</span> wordcount <span style=color:#f92672>import</span> WC
+
+WC_test <span style=color:#f92672>=</span> WC(<span style=color:#e6db74>&#39;../texts/alice.txt&#39;</span>)
+
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span>(unittest<span style=color:#f92672>.</span>TestCase):
+
+	wc <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#39;Words:&#39;</span>, <span style=color:#ae81ff>274</span>)
+	sc <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#39;Sentences:&#39;</span>, <span style=color:#ae81ff>7</span>)
+	cc <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#39;Letters:&#39;</span>, <span style=color:#ae81ff>1120</span>)
+
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_wc</span>(self):
+		self<span style=color:#f92672>.</span>assertCountEqual(WC_test<span style=color:#f92672>.</span>word_count(),self<span style=color:#f92672>.</span>wc)
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_sentences</span>(self):
+		self<span style=color:#f92672>.</span>assertEqual(WC_test<span style=color:#f92672>.</span>sentence_count(), self<span style=color:#f92672>.</span>sc)
+
+
+	<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_characters</span>(self):
+		self<span style=color:#f92672>.</span>assertEqual(WC_test<span style=color:#f92672>.</span>character_count(), self<span style=color:#f92672>.</span>cc)
+
+ 
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+    unittest<span style=color:#f92672>.</span>main()
+    
+</code></pre></div><p>Output:</p>
+<pre tabindex=0><code>    mbp-vboykis:tests vboykis$ python test_wordcount.py 
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+</code></pre><p><a href=https://github.com/veekaybee/textedit/tree/master/textedit/tests>When you run this piece of code,</a> it will check to make sure that wordcount is doing what you want it to do. Usually, we&rsquo;ll want to have the units broken down and more well-defined, but remember, here, we&rsquo;re focusing on building a package rather than the nuances of testing.</p>
+<p>But, whoa! What&rsquo;s going on up top here? We have some important changes:</p>
+<ol>
+<li>Lots of imports</li>
+<li><code>sys.path.append</code></li>
+<li><code>../texts/alice.txt</code> as a relative file reference.</li>
+</ol>
+<p>Here&rsquo;s where the fun of packaging starts. Because we now have files in different directories, Python needs to understand how to link those directories together to execute the files.</p>
+<p>Before, we were executing everything in the same folder. But now, Python needs to know what you&rsquo;re talking about when you do <code>from wordcount import WC</code>, because that package is not in our current working directory, and it&rsquo;s not in the package path that we have when we did this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span> <span style=color:#f92672>import</span> os
+<span style=color:#f92672>&gt;&gt;&gt;</span> os<span style=color:#f92672>.</span>getcwd() <span style=color:#75715e>#where wer&#39;re currently running code</span>
+<span style=color:#e6db74>&#39;/python_packaging&#39;</span>
+
+<span style=color:#f92672>&gt;&gt;&gt;</span> print(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span><span style=color:#f92672>.</span>join(sys<span style=color:#f92672>.</span>path)) <span style=color:#75715e># all the paths Python checks for packages</span>
+</code></pre></div><p>So we have to add this <code>sys.path.append(os.path.abspath("/python_packaging/textedit/textedit/review"))</code> to our sys path so Python knows where to refrence it from:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>&gt;&gt;&gt;</span>sys<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>append(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>abspath(<span style=color:#e6db74>&#34;/python_packaging/textedit/textedit/review&#34;</span>))
+<span style=color:#f92672>&gt;&gt;&gt;</span> print(<span style=color:#e6db74>&#39;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#39;</span><span style=color:#f92672>.</span>join(sys<span style=color:#f92672>.</span>path))
+
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>
+Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python35<span style=color:#f92672>.</span>zip
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span>
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>plat<span style=color:#f92672>-</span>darwin
+python3<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5.1</span><span style=color:#f92672>/</span>Frameworks<span style=color:#f92672>/</span>Python<span style=color:#f92672>.</span>framework<span style=color:#f92672>/</span>Versions<span style=color:#f92672>/</span><span style=color:#ae81ff>3.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>lib<span style=color:#f92672>-</span>dynload
+<span style=color:#f92672>/</span>usr<span style=color:#f92672>/</span>local<span style=color:#f92672>/</span>lib<span style=color:#f92672>/</span>python3<span style=color:#ae81ff>.5</span><span style=color:#f92672>/</span>site<span style=color:#f92672>-</span>packages
+<span style=color:#f92672>/</span>python_packaging<span style=color:#f92672>/</span>textedit<span style=color:#f92672>/</span>textedit<span style=color:#f92672>/</span>review
+</code></pre></div><p>And there it is, at the end. For now, we have to add <code>sys.path.append</code> to every file that we want to import. This is temporary, just to show how that works. We&rsquo;ll fix this later.</p>
+<p>And, speaking of imports, we now have external packages that we&rsquo;re calling: os, re, and sys, common modules. How does our package know how to call those?</p>
+<h2 id=a-idrequirementstxt-and-package-dependenciesarequirementstxt-and-package-dependencies>Requirements.txt and package dependencies</h2>
+<pre tabindex=0><code> textedit - package
+ 	textedit - module
+		├── edit
+			├── replace.py
+			├── spacing.py
+		├── review
+			├── wordcount.py
+			└── readability.py
+		├── tests
+			└── test_wordcount.py
+	requirements.txt
+			
+</code></pre><p>We put a requirements.txt module at the top level of our module. This file that will tell people who install the package which Python packages are used in our programs and automatically install them when you run <code>pip install .</code> on the package. (We may have to run ``pip install -r requirements.txt` separately, but that&rsquo;s usually an edge case.)</p>
+<p>For example, we&rsquo;ve used <code>os</code>, <code>sys</code>, and <code>re</code> in building this module so far. These are standard library modules, and come default with every Python install. It will also sync versions to make sure that they have the exact version you used to develop your code.</p>
+<p>To create a requirements file, you would normally do a <code>pip freeze > requirements.txt</code>. You&rsquo;ll notice that this includes a lot of stuff, basically everything you have in your Python environment, since <code>pip freeze</code> doesn&rsquo;t know which specific packages you&rsquo;re using to build your package and there could be interactions.</p>
+<p>There are several ways to build requirements on a per-project basis, but we&rsquo;re not going to use them here because we want to focus, again, on packaging rather than Python environments. A simpler way to do this is to install <a href=https://github.com/bndr/pipreqs>pipreqs and take it from there</a>.</p>
+<p><code>pipreqs --force "/python_packaging/textedit/textedit"</code></p>
+<p>If you run that, you&rsquo;ll see that the file generated is blank, because the three modules we&rsquo;ve included, <code>os</code>, <code>re</code>, and <code>sys</code>, are part of the standard Python library. If we included something like NumPy, we&rsquo;d get:</p>
+<pre tabindex=0><code>mbp-vboykis:textedit vboykis$ cat requirements.txt 
+nltk==3.2
+</code></pre><h2 id=a-iddocumentationadocumentation>Documentation</h2>
+<p>Let&rsquo;s add some documentation, as well. Good documentation is really important, paricularly to someone just coming into your project. And, even more so, for yourself tomorrow morning. :) The easiest way to add documentation is to add a <code>README</code> to the top level of your module, the same place as <code>requirements.txt</code>.</p>
+<pre tabindex=0><code> textedit - package
+ 	textedit - module
+		├── edit
+			├── replace.py
+			├── spacing.py
+		├── review
+			├── wordcount.py
+			└── readability.py
+		├── tests
+			└── test_wordcount.py
+	README.MD
+	requirements.txt
+		
+		
+</code></pre><p>Here are some aspirational examples of what <a href=https://github.com/PharkMillups/beautiful-docs>good documentation</a> should look like, but remember, these are really complicated examples. Here&rsquo;s a <a href=https://gist.github.com/PurpleBooth/109311bb0361f32d87a2>good, simple one.</a></p>
+<p>The advanced next level is to generate your documentation with Sphinx or reST. Don&rsquo;t worry about that yet.</p>
+<p>Documentation also includes your code. All of your code should have headers, and your classes should have <a href=https://www.python.org/dev/peps/pep-0257/>docstrings</a>, as well. <a href=https://www.python.org/dev/peps/pep-0008/>Comments are good!</a></p>
+<p>For headers, there are mixed opinions onto what one should contain, but I think headers help.</p>
+<pre tabindex=0><code>&quot;&quot;&quot;This module contains x, y
+Author: Vicki Boykis
+&quot;&quot;&quot;
+</code></pre><p>For classes, check out Scikit-learn; it&rsquo;s really good at <a href=https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/cluster/k_means_.py>documentation</a></p>
+<h2 id=a-idscriptsascripts>Scripts</h2>
+<p>If you have any shell scripts or additional helper methods associated with your project, you can create a <code>bin</code> directory for them. We don&rsquo;t, so that folder will be empty. But scripts are usually present anywhere you have to deploy stuff, add it to cron, or generally put it in production in any way.</p>
+<p>This is also where continuous integration can come in.</p>
+<pre tabindex=0><code> textedit - package
+ 	__init__.py
+ 	bin/ # scripts
+ 	textedit - module
+ 		__init__.py
+		├── edit
+			├── replace.py
+			├── spacing.py
+		├── review
+			__init__.py
+			├── wordcount.py
+			└── readability.py
+		├── tests
+		    __init__.py
+			└── test_wordcount.py
+	README.MD
+	requirements.txt
+			
+</code></pre><h2 id=__init__py><code>__init__.py</code></h2>
+<p>And, finally and most importantly, the <code>__init__.py</code>, which we&rsquo;ll want to add to every directory where you have runable Python modules.</p>
+<p>If you remember from the Python innards overview <code>__init__</code> is a special file that will make Python realize that you have a package working together instead of a <a href=https://docs.python.org/3/tutorial/modules.html#packages>single file.</a></p>
+<p>We can leave it null. Or you can <a href=http://mikegrouchy.com/blog/2012/05/be-pythonic-__init__py.html>add things to it</a> that will initialize when the module is run. Let&rsquo;s leave it null for now.</p>
+<p>When Python imports the module for the first time, it checks the module registry for a list of modules that it can use. <code>Init</code> allows your module to be <a href=http://effbot.org/zone/import-confusion.htm#what-does-python-do>put in that registry.</a>.</p>
+<h2 id=a-id__main__py-drivera__main__py-driver><code>__main__.py</code> driver</h2>
+<p>There is this concept in Java of a driver program that you can run and have it call all the other programs in the package.</p>
+<p>In Python, we can also have a <code>__main__.py</code> file, which will execute everything in it first and pull in from other directories. This might be helpful if you&rsquo;re pre-executing things, like for example a script has to kick off right away to load the word document, for example.</p>
+<p>Here, since we&rsquo;re just performing different things to a document in a single state, we don&rsquo;t really need it.</p>
+<p>Additionally, there are mixed thoughts about having a driver. Google&rsquo;s Python code, for example, says that every <a href=https://google.github.io/styleguide/pyguide.html#Main>file should have a name/main pattern.</a></p>
+<pre tabindex=0><code> textedit - package
+ 	__init__.py
+ 	__main__.py
+ 	bin/
+ 	textedit - module
+ 		__init__.py
+		├── edit
+			├── replace.py
+			├── spacing.py
+		├── review
+			__init__.py
+			├── wordcount.py
+			└── readability.py
+		├── tests
+			└── test_wordcount.py
+	README.MD
+	requirements.txt
+			
+</code></pre><h2 id=a-idsetuppyasetuppy><code>setup.py</code></h2>
+<p>Now that we have the scaffolding in place, we can add things that will help us set up the module after we import it from pip or download it.</p>
+<p>This is <code>setup.py</code>, the heart of a project.</p>
+<p>It has metadata about the project, <code>import distutils</code>, which does the actual program setup whenever someone downloads it, as we specified in the <code>README.md</code>, and be at the <a href=https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html#setup-py-description>top level of the package.</a>.</p>
+<p>Here&rsquo;s more <a href=https://github.com/kennethreitz/setup.py>really good background</a> on what goes into the file.</p>
+<p>Here&rsquo;s what ours will look like. The most important part is setting the <code>here</code> variable to the current filepath.</p>
+<p>Remember how we had to do crazy things to get our modules to reference each other in the context of the package?
+<code>sys.path.append(os.path.abspath("python_packaging/textedit/textedit/review"))</code></p>
+<p>This lets us avoid all of that and forces a root directory.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> io
+<span style=color:#f92672>import</span> os
+<span style=color:#f92672>import</span> sys
+<span style=color:#f92672>from</span> shutil <span style=color:#f92672>import</span> rmtree
+
+<span style=color:#f92672>from</span> setuptools <span style=color:#f92672>import</span> find_packages, setup, Command
+
+<span style=color:#75715e># Package meta-data.</span>
+NAME <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;textedit&#39;</span>
+DESCRIPTION <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;A simple Python text editor for Victorian authors who just want to write. &#39;</span>
+URL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://github.com/veekaybee/textedit&#39;</span>
+EMAIL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;vickiboykis@gmail.com&#39;</span>
+AUTHOR <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Vicki Boykis&#39;</span>
+
+<span style=color:#75715e># What packages are required for this module to be executed?</span>
+REQUIRED <span style=color:#f92672>=</span> [
+    <span style=color:#75715e># &#39;requests&#39;, &#39;maya&#39;, &#39;records&#39;,</span>
+]
+
+<span style=color:#75715e># The rest you shouldn&#39;t have to touch too much :)</span>
+<span style=color:#75715e># ------------------------------------------------</span>
+<span style=color:#75715e># Except, perhaps the License and Trove Classifiers!</span>
+<span style=color:#75715e># If you do change the License, remember to change the Trove Classifier for that!</span>
+
+here <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>abspath(os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>dirname(__file__))
+
+
+
+<span style=color:#75715e># Where the magic happens:</span>
+setup(
+    name<span style=color:#f92672>=</span>NAME,
+    <span style=color:#75715e>#version=about[&#39;__version__&#39;],</span>
+    description<span style=color:#f92672>=</span>DESCRIPTION,
+    <span style=color:#75715e># long_description=long_description,</span>
+    author<span style=color:#f92672>=</span>AUTHOR,
+    author_email<span style=color:#f92672>=</span>EMAIL,
+    url<span style=color:#f92672>=</span>URL,
+    packages<span style=color:#f92672>=</span>find_packages(exclude<span style=color:#f92672>=</span>(<span style=color:#e6db74>&#39;tests&#39;</span>,)),
+    <span style=color:#75715e># If your package is a single module, use this instead of &#39;packages&#39;:</span>
+    <span style=color:#75715e># py_modules=[&#39;mypackage&#39;],</span>
+
+    <span style=color:#75715e># entry_points={</span>
+    <span style=color:#75715e>#     &#39;console_scripts&#39;: [&#39;mycli=mymodule:cli&#39;],</span>
+    <span style=color:#75715e># },</span>
+    install_requires<span style=color:#f92672>=</span>REQUIRED,
+    include_package_data<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>,
+    license<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;MIT&#39;</span>,
+    classifiers<span style=color:#f92672>=</span>[
+        <span style=color:#75715e># Trove classifiers</span>
+        <span style=color:#75715e># Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+        <span style=color:#e6db74>&#39;License :: OSI Approved :: MIT License&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 2.6&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 2.7&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 3&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 3.3&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 3.4&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 3.5&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: 3.6&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: Implementation :: CPython&#39;</span>,
+        <span style=color:#e6db74>&#39;Programming Language :: Python :: Implementation :: PyPy&#39;</span>
+    ],
+
+)
+
+</code></pre></div><p>Now, once we run setup.py like the README specifices, we can follow the accepted module import naming structure, which is:</p>
+<p><code>import module.submodule</code></p>
+<p>For us, it would be:</p>
+<p><code>import edit.replace</code></p>
+<p>The rest is metadata about who you are and what the package looks like. It&rsquo;s really top-loaded for use in PyPI, so I removed those components and kepts the ones necessary for use locally.</p>
+<p>One of the things included in here is the <code>install_requires</code> which lists the requirements that will be installed for the file to continue. But wait, you say. Don&rsquo;t we already have a <code>requirements.txt</code> file? Yes, we do. We&rsquo;ll be using that one, instead.</p>
+<p>The difference between the two is that <code>install_requires</code> is configured more if you&rsquo;re packaging for production-ready systems and putting your package in PyPi, the Python package repository. If you are targeting specific packages in <a href=https://www.reddit.com/r/Python/comments/3uzl2a/setuppy_requirementstxt_or_a_combination/>development or testing, use requirements.txt.</a></p>
+<p>Since we&rsquo;re not exactly focusing on targeting PyPi here to keep things simple, we&rsquo;ll use requirements.</p>
+<p>So now, finally we have:</p>
+<pre tabindex=0><code> textedit - package
+ 	__init__.py
+ 	setup.py
+ 	textedit - module
+ 		__init__.py
+ 		├── texts
+ 			├── alice.txt
+			├── pool_of_tears.txt
+		├── edit
+			__init__.py
+			├── replace.py
+			├── spacing.py
+		├── review
+			__init__.py
+			├── wordcount.py
+			└── spellcheck.py 
+		├── tests
+	README.md
+	requirements.txt
+	
+			
+</code></pre><p>Now that we have everything set up, let&rsquo;s convert the rest of the code to more OOP-like practices, clean it up, and take a look.</p>
+<p>An extra step we can take here is to make sure that none of the modules actually have an <code>if __name__ == '__main__'</code> piece of code so that they don&rsquo;t run on their own, and create that driver module we were talking about so that there is only one entry point to the package.</p>
+<p>You can see that in action here, <a href=https://github.com/pallets/flask/blob/master/flask/cli.py#L721>for example</a>. that&rsquo;s a matter of style and might or might not make sense for your program.</p>
+<h1 id=a-idsharing-and-using-our-packageasharing-and-using-our-package>Sharing and using our package</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/alice_08c-alice_flamingo.png alt=wordmenu></p>
+<p>Ok, we&rsquo;re done writing all of our code, our tests, making sure objects are accessible, and we have our structure all layed out. What do we do now? <a href=https://github.com/veekaybee/textedit>Let&rsquo;s package it!</a></p>
+<p>Let&rsquo;s go to the module level of our package - where our <code>setup.py</code> file that will actually handle the install is located</p>
+<p><code>mbp-vboykis:textedit vboykis$ cd /python_packaging/textedit/textedit</code></p>
+<p>and run</p>
+<p><code>pip install .</code></p>
+<p>You should see something like this:</p>
+<pre tabindex=0><code>mbp-vboykis:textedit vboykis$ pip install .
+Processing /python_packaging/textedit/textedit
+Installing collected packages: textedit
+  Running setup.py install for textedit ... done
+Successfully installed textedit-0.0.0
+</code></pre><p>✨ We&rsquo;ve installed our package locally! ✨</p>
+<p>Let&rsquo;s see that it&rsquo;s in our PYTHONPATH:</p>
+<pre tabindex=0><code>python3/3.5.1/Frameworks/Python.framework/Versions/3.5/lib/python35.zip
+python3/3.5.1/Frameworks/Python.framework/Versions/3.5/lib/python3.5
+python3/3.5.1/Frameworks/Python.framework/Versions/3.5/lib/python3.5/plat-darwin
+python3/3.5.1/Frameworks/Python.framework/Versions/3.5/lib/python3.5/lib-dynload
+/usr/local/lib/python3.5/site-packages
+/usr/local/lib/python3.5/site-packages/textedit-0.0.0-py3.5.egg
+</code></pre><p>And now, let&rsquo;s write some code with it! We can either use the command line to run individual modules:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#Replace </span>
+
+python replace.py ../texts/alice.txt <span style=color:#e6db74>&#34;Alice&#34;</span> <span style=color:#e6db74>&#34;Dora the Explorer&#34;</span>
+Old Wordcount <span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Words:&#39;</span>, 274<span style=color:#f92672>)</span>
+WC __name__: WC
+New Wordcount <span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Words:&#39;</span>, 281<span style=color:#f92672>)</span>
+replace __name__: __main__
+
+<span style=color:#75715e>#WordCount</span>
+
+mbp-vboykis:review vboykis$ python wordcount.py <span style=color:#e6db74>&#34;../texts/alice.txt&#34;</span>
+<span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Words:&#39;</span>, 274<span style=color:#f92672>)</span>
+<span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Sentences:&#39;</span>, 7<span style=color:#f92672>)</span>
+<span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Letters:&#39;</span>, 1120<span style=color:#f92672>)</span>
+
+<span style=color:#75715e># Readability</span>
+
+mbp-vboykis:review vboykis$ python readability.py <span style=color:#e6db74>&#34;../texts/alice.txt&#34;</span>
+<span style=color:#f92672>(</span><span style=color:#e6db74>&#39;Reading Grade Level of Text:&#39;</span>, 7<span style=color:#f92672>)</span>
+</code></pre></div><p>Or we can now call the package from a completely new program, since we have it installed. Note the import structure. Each folder and subfolder is <code>folder.subfolder</code>, and each module name is after the import. Classes are referenced later down.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#e6db74>&#34;&#34;&#34;Tests textedit functionality on the pool_of_tears.txt file&#34;&#34;&#34;</span>
+
+
+<span style=color:#f92672>from</span> textedit.review <span style=color:#f92672>import</span> readability 
+<span style=color:#f92672>from</span> textedit.review <span style=color:#f92672>import</span> wordcount 
+<span style=color:#f92672>from</span> textedit.edit <span style=color:#f92672>import</span> spacing
+<span style=color:#f92672>from</span> textedit.edit <span style=color:#f92672>import</span> replace
+
+
+test_file <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;/python_packaging/textedit/textedit/texts/pool_of_tears.txt&#39;</span>
+
+<span style=color:#75715e># Count words</span>
+alice <span style=color:#f92672>=</span> wordcount<span style=color:#f92672>.</span>WC(test_file)
+
+print(wordcount<span style=color:#f92672>.</span>WC<span style=color:#f92672>.</span>word_count(alice))
+print(wordcount<span style=color:#f92672>.</span>WC<span style=color:#f92672>.</span>character_count(alice))
+print(wordcount<span style=color:#f92672>.</span>WC<span style=color:#f92672>.</span>sentence_count(alice))
+
+<span style=color:#75715e># Readability Index</span>
+
+print(readability<span style=color:#f92672>.</span>colman_liau(test_file))
+
+<span style=color:#75715e># Change Spacing</span>
+
+sp <span style=color:#f92672>=</span> spacing<span style=color:#f92672>.</span>Spacing(test_file)
+spacing<span style=color:#f92672>.</span>Spacing<span style=color:#f92672>.</span>spacing_check(sp)
+print(<span style=color:#e6db74>&#39;Spaces replaced&#39;</span>)
+
+<span style=color:#75715e># Replace Words</span>
+
+replace<span style=color:#f92672>.</span>Replace(test_file, <span style=color:#e6db74>&#34;Alice&#34;</span>, <span style=color:#e6db74>&#34;Dora the Explorer&#34;</span>)
+print(<span style=color:#e6db74>&#39;Words replaces&#39;</span>)
+</code></pre></div><p>The next step would be to use <a href=https://docs.python.org/3/library/argparse.html><code>argparse</code></a> to pass arguments a bit more cleanly.</p>
+<p>And that&rsquo;s it! We&rsquo;ve imported a package that we can now use to write other software.</p>
+<h1 id=a-idnext-stepsanext-steps>Next steps</h1>
+<p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/alice_dodo.png alt=wordmenu></p>
+<p>🎉 Congratulations! We&rsquo;ve built a Python package! 🎉</p>
+<p>What&rsquo;s next? A lot. But we&rsquo;re not going to cover any of it in this post, because the goal, again, was to understand the basics of packaging.</p>
+<p>But, now that we&rsquo;ve taken our first step into a much larger and more insane world, there are a lot more next steps we can take to make sure our code is clean, secure, and easy to use.</p>
+<p>Here are some great places to start exploring once you&rsquo;ve gotten the hang of the above:</p>
+<h2 id=a-idtesting-environmentsatesting-environments>Testing environments</h2>
+<p>I mentioned before that there are several ways to create specific environments to build your applications so you&rsquo;re isolated from whatever else is going on in your Python ecosystem.</p>
+<ol>
+<li>
+<p>Use <a href=https://virtualenv.pypa.io/en/stable/>virtualenv</a>, which acts like a container and isolates the application you&rsquo;re developing to a single environment that just has the packages you&rsquo;re interested in for that specific application.</p>
+</li>
+<li>
+<p>Use <a href=http://docs.python-guide.org/en/latest/dev/virtualenvs/>pipenv</a>, in which you install packages through <code>pipenv install requests</code> instead of pip. It will create a Pipfile, which keeps track of all your libraries.</p>
+</li>
+</ol>
+<p>Both of these are involved in modifying the <code>sys.path</code> that we looked at earlier so that Python knows where to find other files.</p>
+<p>Your next step would be to use either of these instead of your local Python environment.</p>
+<h2 id=a-idmore-advanced-testingamore-advanced-testing>More advanced testing</h2>
+<p>Unittest is a great starting point, but there&rsquo;s also <code>pytest</code>, <code>nose</code>, mock testing (when you have complex object dependencies), and <a href=https://wiki.python.org/moin/PythonTestingToolsTaxonomy>much, much more.</a> All of these work slightly differently.</p>
+<h2 id=a-idcontinuous-integrationacontinuous-integration>Continuous Integration</h2>
+<p>Once you build a package, you&rsquo;ll probably want to make changes to it. And push those changes to some remote version-controlled repository so that others can use them. And you&rsquo;ll want to automate this process so that you&rsquo;re not manually doing <code>pip install .</code>. This process is known as <a href=https://www.thoughtworks.com/continuous-integration>continuous integration</a>.</p>
+<p>There&rsquo;s a number of fantastic tools for Python CI. The most popular one these days is <a href=http://docs.python-guide.org/en/latest/scenarios/ci/>Travis</a>, which involves adding a <code>travis.yml</code> file that will test your code against your tests and known Python versions.</p>
+<h2 id=a-idgit-hooks-and-version-controlagit-hooks-and-version-control>Git Hooks and Version Control</h2>
+<p>We haven&rsquo;t touched the subject of version control for your package, but you&rsquo;ll want to add it to specific repositories. We can also add <a href=https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks>pre-commit and post-commit hooks</a> to our code, which mean that the code gets checked, or some specific action is triggered, when you try to check in your code.</p>
+<h2 id=a-idsetupcfgasetupcfg>Setup.cfg</h2>
+<p>In our module, there are no passwords or usernames. But if you&rsquo;re working with databases, webforms, or any number of software options that require you to log in, you&rsquo;ll need a separate <code>setup.cfg</code> file that stores your passwords and keeps them safe on your local or testing machine while not sharing them with others.</p>
+<h2 id=a-idsphinxrestasphinxrest>Sphinx/reST</h2>
+<p>We&rsquo;ve already written README.md. But what if you have multiple files that rely on each other? Or you want to use your docstrings to build documentation? <a href=https://thomas-cokelaer.info/tutorials/sphinx/introduction.html>Sphinx and reST</a> are some ways popular Python packages are documented.</p>
+<h2 id=a-idwheelsawheels>Wheels</h2>
+<p>Once you&rsquo;re done refining all of that, and you&rsquo;re ready to go to production, you should build a wheel. Python <a href=https://packaging.python.org/tutorials/distributing-packages/#wheels>wheels</a> are similar to <code>JAR</code> packages in Java, and are a much faster and lightweight process to use in production environments. You can use <code>setup.py</code> to build wheels (which is why it&rsquo;s so important to get it right initially), <code>python setup.py bdist_wheel --universal</code>.</p>
+<p>For much, much more info on wheels, see <a href=http://pythonwheels.com/.>here</a></p>
+<h2 id=a-idpypiapypi>PyPi</h2>
+<p>This is the big one. If your module is stable enough, you <a href=https://glyph.twistedmatrix.com/2016/08/python-packaging.html>can release it to PyPi</a>, which means anyone in the world can download it through <code>pip</code>. There are some <a href=https://hynek.me/articles/sharing-your-labor-of-love-pypi-quick-and-dirty/>extra hoops you have to jump through here</a>, namely in how you configure your setup.py file.
+For an easier way to do this, <a href=http://flit.readthedocs.io/en/latest/>Flit</a> is a potential option.</p>
+<p>Once you&rsquo;re ready, the whole world can see and use your text editor.</p>
+<h1 id=a-idconclusiona-conclusion> Conclusion</h1>
+<p>Python project structure and packaging can be intimidating, but, if you take it step by step, it doesn&rsquo;t have to be.</p>
+<p>Look at other people&rsquo;s code, particularly smaller, modular projects, break the work up into pieces, and work through it piece by piece, until you&rsquo;re all the way down the rabbit hole.</p>
+<p>Good luck!</p>
+<h1 id=a-idacknowledgementsa-acknowledgements> Acknowledgements</h1>
+<p>A huge thank you to <a href=https://twitter.com/SamanthaZeitlin>Sam Zeitlin</a>, <a href=https://twitter.com/TomAugspurger>Tom Ausperger</a>, <a href=https://twitter.com/gallamine>William Cox</a>, and <a href=https://twitter.com/digitallogic>Mark Roddy</a> for reading drafts of this post.</p>
+<p>Any additional errors are wholly my own and the fault of too many late nights spent in the <a href=http://www.gutenberg.org/files/114/114-h/114-h.htm>Tenniel Alice in Wonderland illustrations.</a></p>
+<p>To fix a bug, feel free to <a href=https://github.com/veekaybee/textedit/pulls>submit a pull request.</a></p>
+</content>
+<p>
+</p>
+</main>
+<footer>Made with <a href=https://github.com/janraasch/hugo-bearblog/>Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+</body>
+</html>
