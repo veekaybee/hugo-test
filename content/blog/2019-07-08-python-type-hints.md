@@ -1,31 +1,25 @@
 +++
 date = '2019-07-08T00:00:00Z'
 title = 'A deep dive on Python type hints'
-
+description = 'What are they? Why are they?'
+aliases = [
+    "/2019/07/08/python-type-hints/"
+]
 +++
 
- <img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/presser.png" alt="Smiley face" height="400" width="300"> 
-Presser, Konstantin Makovsky 1900
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="A deep dive on Python type hints">
-<meta name="twitter:description" content="What are they? Why are they? ">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/presser.png">
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/presser.png" height="400" width="300">}}
 
 **Table of Contents**  
 
-- [Introduction](#introduction)
-- [How Computers Build Our Code](#how-computers-build-our-code)
-- [An introduction to type systems](#an-introduction-to-type-systems)
-- [Data types in statically versus dynamically typed languages](#data-types-in-statically-versus-dynamically-typed-languages)
-- [How does Python handle data types?](#how-does-python-handle-data-types)
-- [Python's type hints](#pythons-type-hints)
-- [Type hints in IDEs](#type-hints-in-ides)
-- [Getting started with type hints](#getting-started-with-type-hints)
-- [So, what's the verdict? To use or not to use?](#so-whats-the-verdict-to-use-or-not-to-use)
-- [Thanks](#thanks)
+- [<a id="introduction"></a>Introduction](#introduction)
+- [<a id="how-computers-build-our-code"></a> How Computers Build Our Code](#-how-computers-build-our-code)
+- [<a id="an-introduction-to-type-systems"></a> An introduction to type systems](#-an-introduction-to-type-systems)
+- [<a id="data-types-in-statically-versus-dynamically-typed-languages"></a> Data types in statically versus dynamically typed languages](#-data-types-in-statically-versus-dynamically-typed-languages)
+- [<a id="pythons-type-hints"></a> Python's type hints](#-pythons-type-hints)
+- [<a id="type-hints-in-ides"></a> Type hints in IDEs](#-type-hints-in-ides)
+- [<a id="getting-started-with-type-hints"></a> Getting started with type hints](#-getting-started-with-type-hints)
+- [<a id="so-whats-the-verdict-to-use-or-not-to-use"></a> So, what's the verdict? To use or not to use?](#-so-whats-the-verdict-to-use-or-not-to-use)
+  - [Thanks](#thanks)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -81,7 +75,7 @@ When languages are either [compiled or executed ](http://openbookproject.net/thi
 
 There are a couple ways to translate your code into machine-legible code: you can either build a binary and have a compiler translate it (C++, Go, Rust, etc.), or run the code directly and have the interpreter do it. The latter is how Python (and PHP, Ruby,and similar "scripting" languages) works.  
 
-![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/interpret.png)
+![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/interpret.png)
 
 How does the hardware know how to store those 0s and 1s in memory? The software, our code, needs to tell it how to allocate memory for that data. What kind of data? That's dicated by the language's choice of data types. 
 
@@ -89,7 +83,7 @@ Every language has data types. They're usually one of the first things you learn
 
 You might see a tutorial like this (from Allen Downey's excellent book, ["Think Like a Computer Scientist."](http://openbookproject.net/thinkcs/python/english3e/)),that talks about what they are. Simply put, they're different ways of representing data laid out in memory.  
 
-![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/datatypes.png)
+![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/datatypes.png)
 
 
 There are strings, integers, and many more, depending on which language you use. For example, [Python's basic data types](https://en.wikibooks.org/wiki/Python_Programming/Data_Types) include: 
