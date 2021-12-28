@@ -1,7 +1,8 @@
----
-title: Democracy in the dark 
-layout: post
----
++++
+layout = 'post'
+title = 'Democracy in the dark'
+
++++
 
 ![image](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2016/03/immigration.jpg)
 [Source. ](http://teacher.scholastic.com/activities/immigration/tour/stop1.htm)

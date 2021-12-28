@@ -1,9 +1,9 @@
----
-date: "2017-06-19T00:00:00Z"
-redirect_from:
-- /data-science-myths/
-title: So, you want to data science
----
++++
+date = '2017-06-19T00:00:00Z'
+redirect_from = ['/data-science-myths/']
+title = 'So, you want to data science'
+
++++
 ---
 
 ![rake](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/rake.jpg)

@@ -1,21 +1,15 @@
----
-id: 9933
-title: It is hard to talk to my baby in Russian
-date: 2015-05-28T07:56:44+00:00
-author: Vicki
-layout: post
-guid: https://vkblog.github.io/?p=9933
-permalink: /2015/05/it-is-hard-to-talk-to-my-baby-in-russian/
-categories:
-  - Uncategorized
-tags:
-  - baby
-  - ben yehuda
-  - culture
-  - family
-  - language
-  - Russian
----
++++
+author = 'Vicki'
+categories = ['Uncategorized']
+date = '2015-05-28T07:56:44+00:00'
+guid = 'https://vkblog.github.io/?p=9933'
+id = 9933
+layout = 'post'
+permalink = '/2015/05/it-is-hard-to-talk-to-my-baby-in-russian/'
+tags = ['baby', 'ben yehuda', 'culture', 'family', 'language', 'Russian']
+title = 'It is hard to talk to my baby in Russian'
+
++++
 [<img src="https://c2.staticflickr.com/8/7501/15046850364_48f2fda406_z.jpg" alt="moscow mime" width="640" height="427" />](https://www.flickr.com/photos/svetcontact/15046850364 "moscow mime by Svetlana, on Flickr")
 
 There is a meme going around the internet that is a picture with two eggs on it. The first, on the left, is a whole egg, round and white and smooth. The second, on the right, is the egg smashed into tiny bits and pieces. The whole egg is your brain before kids, and the right egg is your brain after kids.

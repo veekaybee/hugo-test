@@ -1,7 +1,8 @@
----
-date: "2015-06-03T00:00:00Z"
-title: What do we do with all these photos?
----
++++
+date = '2015-06-03T00:00:00Z'
+title = 'What do we do with all these photos?'
+
++++
 
 ![photos](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/littleme.jpg)
 

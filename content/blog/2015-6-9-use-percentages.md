@@ -1,7 +1,8 @@
----
-Title: Really easy data concepts that get abused all the time
-date: "2015-06-09T00:00:00Z"
----
++++
+Title = 'Really easy data concepts that get abused all the time'
+date = '2015-06-09T00:00:00Z'
+
++++
 
 The more we make things easier for the human brain to understand, the easier it is to make data-driven decisions because we don't have to spend time understanding the data. 
 

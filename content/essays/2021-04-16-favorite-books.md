@@ -1,8 +1,9 @@
----
-title: My Favorite Books of 2020
-layout: post
-date: "2021-04-16T00:00:00Z"
----
++++
+date = '2021-04-16T00:00:00Z'
+layout = 'post'
+title = 'My Favorite Books of 2020'
+
++++
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@vboykis" />

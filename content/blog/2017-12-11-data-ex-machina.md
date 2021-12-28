@@ -1,7 +1,8 @@
----
-date: "2017-12-11T00:00:00Z"
-title: Data ex machina
----
++++
+date = '2017-12-11T00:00:00Z'
+title = 'Data ex machina'
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

@@ -1,7 +1,8 @@
----
-title: JJ Abrams opens the box of my childhood
-date: 2015-12-28T21:55:46+00:00
----
++++
+date = '2015-12-28T21:55:46+00:00'
+title = 'JJ Abrams opens the box of my childhood'
+
++++
 [_This post contains spoilers of Star Wars, Inside Out, and your childhood._]
 
 > &#8220;Luke, you&#8217;re going to find that many of the truths we cling to depend greatly on our own point of view. &#8221;

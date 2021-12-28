@@ -1,7 +1,8 @@
----
-date: "2018-09-24T00:00:00Z"
-title: The Case of the Broken Lambda
----
++++
+date = '2018-09-24T00:00:00Z'
+title = 'The Case of the Broken Lambda'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

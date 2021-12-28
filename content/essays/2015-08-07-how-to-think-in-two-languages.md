@@ -1,26 +1,16 @@
----
-id: 10052
-title: How to think in two languages
-date: 2015-08-07T07:29:51+00:00
-author: Vicki
-excerpt: 'Just a single word can paint an entire world. '
-layout: post
-guid: https://vkblog.github.io/?p=10052
-permalink: /2015/08/how-to-think-in-two-languages/
-categories:
-  - identity
-  - raising russian
-tags:
-  - baby
-  - culture
-  - cynicism
-  - english
-  - literature
-  - raising russian
-  - reading
-  - Russian
-  - war and peace
----
++++
+author = 'Vicki'
+categories = ['identity', 'raising russian']
+date = '2015-08-07T07:29:51+00:00'
+excerpt = 'Just a single word can paint an entire world. '
+guid = 'https://vkblog.github.io/?p=10052'
+id = 10052
+layout = 'post'
+permalink = '/2015/08/how-to-think-in-two-languages/'
+tags = ['baby', 'culture', 'cynicism', 'english', 'literature', 'raising russian', 'reading', 'Russian', 'war and peace']
+title = 'How to think in two languages'
+
++++
 _This is one in what looks like is becoming a series of posts in how I reconcile growing up mostly in America but wanting to raise my child in Russian._
 
 I need to get something off my chest.

@@ -1,9 +1,9 @@
----
-date: "2017-02-22T00:00:00Z"
-redirect_from:
-- /being-a-woman-in-programming-in-the-soviet-union/
-title: Being a woman in programming in the Soviet Union
----
++++
+date = '2017-02-22T00:00:00Z'
+redirect_from = ['/being-a-woman-in-programming-in-the-soviet-union/']
+title = 'Being a woman in programming in the Soviet Union'
+
++++
 ![image](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/programmers.jpg)
 
 [Image source.](http://zavodfoto.livejournal.com/2908010.html) 

@@ -1,7 +1,8 @@
----
-date: "2016-07-07T00:00:00Z"
-title: Why doesn't MySQL have window functions?
----
++++
+date = '2016-07-07T00:00:00Z'
+title = "Why doesn't MySQL have window functions?"
+
++++
 
 ![image](https://cdn.meme.am/instances/500x/52119287.jpg)
 

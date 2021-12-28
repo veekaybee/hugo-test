@@ -1,7 +1,8 @@
----
-date: "2016-03-29T00:00:00Z"
-title: Starting to dig inside Spark RDDs
----
++++
+date = '2016-03-29T00:00:00Z'
+title = 'Starting to dig inside Spark RDDs'
+
++++
 
 
 

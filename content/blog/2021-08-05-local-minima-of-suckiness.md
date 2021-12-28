@@ -1,16 +1,13 @@
 +++
+aliases = ['/2021/09/23/enlightenment/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-08-05'
-title = "The local minima of suckiness"
-aliases = [
-    "/2021/09/23/enlightenment/"
-]
+description = 'How to become good by getting slowly less bad?'
+site = '@vboykis'
+title = 'The local minima of suckiness'
+twitterImage = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/handandkey.png'
 
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-description = "How to become good by getting slowly less bad?"
-
-twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/handandkey.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/handandkey.png" width="300px" >}}

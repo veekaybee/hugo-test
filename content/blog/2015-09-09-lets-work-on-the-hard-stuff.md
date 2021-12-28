@@ -1,7 +1,8 @@
----
-date: "2015-09-09T00:00:00Z"
-title: Let's work on the hard stuff
----
++++
+date = '2015-09-09T00:00:00Z'
+title = "Let's work on the hard stuff"
+
++++
 
 
 <center><img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/rockwell.jpg" style="width: 400px;"/></center>

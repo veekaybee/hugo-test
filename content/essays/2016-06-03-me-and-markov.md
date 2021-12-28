@@ -1,7 +1,8 @@
----
-layout: post
-title: Me and Markov
----
++++
+layout = 'post'
+title = 'Me and Markov'
+
++++
 
 ![image](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2016/03/the-writer.jpg)
 

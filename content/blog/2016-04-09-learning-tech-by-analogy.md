@@ -1,7 +1,8 @@
----
-date: "2016-04-09T00:00:00Z"
-title: Learning tech by analogy
----
++++
+date = '2016-04-09T00:00:00Z'
+title = 'Learning tech by analogy'
+
++++
 
 ![image](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/jenga.jpeg)
 

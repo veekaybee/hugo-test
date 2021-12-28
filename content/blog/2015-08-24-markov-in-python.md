@@ -1,7 +1,8 @@
----
-date: "2015-08-24T00:00:00Z"
-title: Generating fake Hacker News headlines with Python
----
++++
+date = '2015-08-24T00:00:00Z'
+title = 'Generating fake Hacker News headlines with Python'
+
++++
 
 ![hn](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/hn.png)
 

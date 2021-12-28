@@ -1,7 +1,8 @@
----
-layout: post
-title: Keeping the world away 
----
++++
+layout = 'post'
+title = 'Keeping the world away'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

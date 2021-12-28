@@ -1,7 +1,8 @@
----
-date: "2019-09-11T00:00:00Z"
-title: How to make sure your question gets answered online
----
++++
+date = '2019-09-11T00:00:00Z'
+title = 'How to make sure your question gets answered online'
+
++++
 
  <img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/question.png" alt="question" height="400" width="500"> 
  

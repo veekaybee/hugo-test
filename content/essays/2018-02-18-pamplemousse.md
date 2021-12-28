@@ -1,7 +1,8 @@
----
-layout: post
-title: It didn't taste like Pamplemousse
----
++++
+layout = 'post'
+title = "It didn't taste like Pamplemousse"
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

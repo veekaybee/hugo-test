@@ -1,7 +1,8 @@
----
-date: "2015-05-30T00:00:00Z"
-title: Man, do static sites suck.
----
++++
+date = '2015-05-30T00:00:00Z'
+title = 'Man, do static sites suck.'
+
++++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ducreux.png" width="600px">}}
 

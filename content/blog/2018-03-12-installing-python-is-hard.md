@@ -1,7 +1,8 @@
----
-date: "2018-03-12T00:00:00Z"
-title: It's still hard for beginners to get started with Python
----
++++
+date = '2018-03-12T00:00:00Z'
+title = "It's still hard for beginners to get started with Python"
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

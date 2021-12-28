@@ -1,16 +1,13 @@
 +++
+aliases = ['/2021/03/26/data-ghosts/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-03-26'
-title = "The ghosts in the data"
-aliases = [
-    "/2021/03/26/data-ghosts/"
-]
-
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
 description = "What I've learned about implicit knowledge after spending time in industry"
+site = '@vboykis'
+title = 'The ghosts in the data'
+twitterImage = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ghosts.png'
 
-twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ghosts.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ghosts.png" width="300px" >}}

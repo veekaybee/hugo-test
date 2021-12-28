@@ -1,7 +1,8 @@
----
-date: "2017-10-12T00:00:00Z"
-title: Recent podcast and radio appearences
----
++++
+date = '2017-10-12T00:00:00Z'
+title = 'Recent podcast and radio appearences'
+
++++
 
 
 I love exploring technical topics by writing about them. But, a lot of data science work involves explaining the breadth of your complicated model in 20 minutes at a meeting. So, I set a goal of becoming a better public speaker. 

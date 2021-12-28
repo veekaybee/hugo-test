@@ -1,7 +1,8 @@
----
-date: "2017-12-14T00:00:00Z"
-title: Logs populi or, Thanks, Netflix!
----
++++
+date = '2017-12-14T00:00:00Z'
+title = 'Logs populi or, Thanks, Netflix!'
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

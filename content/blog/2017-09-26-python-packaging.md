@@ -1,7 +1,8 @@
----
-date: "2017-09-26T00:00:00Z"
-title: Alice in Python projectland
----
++++
+date = '2017-09-26T00:00:00Z'
+title = 'Alice in Python projectland'
+
++++
 
 ![alice](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/alice_cards.jpg)
 

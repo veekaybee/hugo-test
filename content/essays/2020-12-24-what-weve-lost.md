@@ -1,8 +1,9 @@
----
-title: What we've lost
-layout: post
-date: 2020-12-24
----
++++
+date = '2020-12-24'
+layout = 'post'
+title = "What we've lost"
+
++++
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@vboykis" />

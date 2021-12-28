@@ -1,7 +1,8 @@
----
-date: "2015-06-01T00:00:00Z"
-title: How to get into big data
----
++++
+date = '2015-06-01T00:00:00Z'
+title = 'How to get into big data'
+
++++
 
 A couple of weeks ago, I gave a talk at [Philly Women in Tech](http://http://phillywomenintech.com/2015/01/17/b-big-data-how-big-is-it-in-your-future/) on how to get into the field of big data to a diverse group of women both in tech fields and not.  
 

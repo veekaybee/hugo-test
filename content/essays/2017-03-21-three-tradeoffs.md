@@ -1,7 +1,8 @@
----
-title: Three tradeoffs
-layout: post
----
++++
+layout = 'post'
+title = 'Three tradeoffs'
+
++++
 
 
 ![Alt text](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/hedgehog.PNG)

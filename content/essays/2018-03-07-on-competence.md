@@ -1,7 +1,8 @@
----
-layout: post
-title: On competence
----
++++
+layout = 'post'
+title = 'On competence'
+
++++
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@vboykis" />

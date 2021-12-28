@@ -1,7 +1,8 @@
----
-date: "2015-06-15T00:00:00Z"
-title: How many people are actually using your stuff?
----
++++
+date = '2015-06-15T00:00:00Z'
+title = 'How many people are actually using your stuff?'
+
++++
 
 [Five million years](http://nymag.com/news/intelligencer/spotify-2012-5/) after it became popular, I've gotten into Spotify. The thing I like the most about the service is the curated content. 
 

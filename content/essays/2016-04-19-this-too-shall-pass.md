@@ -1,7 +1,8 @@
----
-layout: post
-title: This, too, shall pass
----
++++
+layout = 'post'
+title = 'This, too, shall pass'
+
++++
 
 ![image](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/IMG_0438.jpg)
 

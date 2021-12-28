@@ -1,7 +1,8 @@
----
-date: "2016-06-23T00:00:00Z"
-title: How to keep up with the data industry today?
----
++++
+date = '2016-06-23T00:00:00Z'
+title = 'How to keep up with the data industry today?'
+
++++
 
 ![image](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/bowl-glass-and-newspaper.jpg)
 

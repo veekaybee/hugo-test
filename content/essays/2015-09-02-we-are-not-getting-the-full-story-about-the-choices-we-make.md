@@ -1,7 +1,8 @@
----
-title: We are not getting the full story about the choices we make
-date: 2015-09-02T07:43:49+00:00
----
++++
+date = '2015-09-02T07:43:49+00:00'
+title = 'We are not getting the full story about the choices we make'
+
++++
 My last semester of MBA classes started last week. Although I am still at home Thursday through Sunday with Baby B, I no longer see her on Mondays and Wednesdays after eight in the morning, the time I leave for work. Additionally, I now usually have  class group work to do on the nights when I am home and we&#8217;ve put her to bed. People always say to me, &#8220;I don&#8217;t know how you do it,&#8221; and I answer truthfully. I give up stuff, and I have a lot of help.
 
 First, I cannot even convey how lucky we are to have found our nanny. When I leave the house, I don&#8217;t have to worry about the baby at all. I know she is in good hands, because she smiles the largest smile when the nanny comes. Next, my mom  lives nearby, so on Mondays after the nanny leaves and Mr. B comes home, she is with the baby. Finally, Mr. B takes over  on Wednesdays and days when I have to do MBA assignments after work.

@@ -1,22 +1,16 @@
----
-id: 9925
-title: No, I will not enjoy every moment
-date: 2015-03-25T07:24:12+00:00
-author: Vicki
-excerpt: '"Enjoy every moment!" Nope. I refuse. '
-layout: post
-guid: https://vkblog.github.io/?p=9925
-permalink: /2015/03/no-i-will-not-enjoy-every-moment/
-categories:
-  - Uncategorized
-tags:
-  - baby
-  - culture
-  - development
-  - family
-  - house of cards
-  - mandala
----
++++
+author = 'Vicki'
+categories = ['Uncategorized']
+date = '2015-03-25T07:24:12+00:00'
+excerpt = '"Enjoy every moment!" Nope. I refuse. '
+guid = 'https://vkblog.github.io/?p=9925'
+id = 9925
+layout = 'post'
+permalink = '/2015/03/no-i-will-not-enjoy-every-moment/'
+tags = ['baby', 'culture', 'development', 'family', 'house of cards', 'mandala']
+title = 'No, I will not enjoy every moment'
+
++++
 <div>
   <a href="https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2015/03/ustv-house-of-cards-s03-e07-2.jpg"><img class="aligncenter size-medium wp-image-9926" src="https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2015/03/ustv-house-of-cards-s03-e07-2-580x342.jpg" alt="ustv-house-of-cards-s03-e07-2" width="580" height="342" /></a>
 </div>

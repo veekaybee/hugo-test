@@ -1,7 +1,8 @@
----
-date: "2019-04-29T00:00:00Z"
-title: Breaking down Apple's iOS Screen Time report
----
++++
+date = '2019-04-29T00:00:00Z'
+title = "Breaking down Apple's iOS Screen Time report"
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

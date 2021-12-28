@@ -1,7 +1,8 @@
----
-title: Good things don't scale
-layout: post
----
++++
+layout = 'post'
+title = "Good things don't scale"
+
++++
 
 ![viking](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/viking.jpeg)
 

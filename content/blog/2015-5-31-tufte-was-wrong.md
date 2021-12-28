@@ -1,6 +1,7 @@
 +++
-title = "I'm not so sure about Tufte"
 date = '2015-05-31'
+title = "I'm not so sure about Tufte"
+
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/kandinsky.jpg" width="600px">}}

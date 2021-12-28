@@ -1,7 +1,8 @@
----
-title: America Online and off
-layout: post
----
++++
+layout = 'post'
+title = 'America Online and off'
+
++++
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@vboykis" />

@@ -1,7 +1,8 @@
----
-title: Diaper by diaper and bottle by bottle
-date: 2015-10-07T07:20:28+00:00
----
++++
+date = '2015-10-07T07:20:28+00:00'
+title = 'Diaper by diaper and bottle by bottle'
+
++++
 I am reading about someone who has a lot of followers on Twitter. She just had a baby, and I am outraged. &#8220;Can you believe this,&#8221; I say to Mr. B. &#8220;She writes that childbirth was &#8216;beautiful,&#8217; and that she&#8217;ll be offline for a bit because she, her husband, and her baby will be &#8216;falling in love with each other&#8217; for the foreseeable future. &#8221;
 
 Mr. B looks up from his computer. &#8220;So,&#8221; he shrugs, and goes back to watching an American excitedly narrating two Koreans killing each other&#8217;s Zerg and Protoss in London.

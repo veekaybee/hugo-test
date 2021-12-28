@@ -1,9 +1,9 @@
----
-date: "2017-04-20T00:00:00Z"
-redirect_from:
-- /sql-is-hard/
-title: Setting up SQL for beginners is hard
----
++++
+date = '2017-04-20T00:00:00Z'
+redirect_from = ['/sql-is-hard/']
+title = 'Setting up SQL for beginners is hard'
+
++++
 ![alt text](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/munch.jpg)
 
 Edvard Munch, Building The Winter Studio. Ekely

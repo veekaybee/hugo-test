@@ -1,9 +1,9 @@
----
-date: "2017-08-11T00:00:00Z"
-redirect_from:
-- /soundcloud/
-title: The demise of SoundCloud
----
++++
+date = '2017-08-11T00:00:00Z'
+redirect_from = ['/soundcloud/']
+title = 'The demise of SoundCloud'
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

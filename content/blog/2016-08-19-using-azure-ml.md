@@ -1,7 +1,8 @@
----
-date: "2016-08-19T00:00:00Z"
-title: My recent experiences using Azure ML
----
++++
+date = '2016-08-19T00:00:00Z'
+title = 'My recent experiences using Azure ML'
+
++++
 
 <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/dandandao/9688517609/in/photolist-GPGG3Q-fL9bK4-o54E2y-ohyv4D-4f3qn-4f3u4-4f42k-4f54L-4f4th-4f45C-4f3ak-4f4wL-4f3fq-4f3mE-4f2Sm-4f4Xa-4f2XJ-4f2N1-4f33W-4f4Mn-4f4jg-4f3zM-4f3K9-4f5gE-4f2CH-bwrUE5-nVLinp-4f3Tn-4f3wB-4f4RV-4f4zL-4f5kW-4f3iL-4f51F-4f4ga-4f3WB-4f2rt-4f49A-4f2uE-4f2FV-4f3Dz-4f4cA-4f4ov-4f3Pq-4f5uN-4f2yh-4f4GT-4f596-4f5dj-4f2J1" title="Vintage Tools"><img src="https://c2.staticflickr.com/8/7308/9688517609_f81fea0e73.jpg" width="500" height="375" alt="Vintage Tools"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 

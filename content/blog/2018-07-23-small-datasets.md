@@ -1,7 +1,8 @@
----
-date: "2018-07-23T00:00:00Z"
-title: Good small datasets
----
++++
+date = '2018-07-23T00:00:00Z'
+title = 'Good small datasets'
+
++++
 
 
 <meta name="twitter:card" content="summary">

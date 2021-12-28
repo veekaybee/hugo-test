@@ -1,17 +1,14 @@
 +++
+aliases = ['/2021/10/28/recsys-recap/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-10-28'
-title = "Recsys 2021 Recap"
-aliases = [
-    "/2021/10/28/recsys-recap/"
-]
-
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
 description = "What's up in recommender systems"
-
+site = '@vboykis'
+title = 'Recsys 2021 Recap'
 [twitter]
-    image  = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png"
+  image = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png'
+
 
 +++
 

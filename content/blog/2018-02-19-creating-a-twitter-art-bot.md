@@ -1,7 +1,8 @@
----
-date: "2018-02-19T00:00:00Z"
-title: Building a Twitter art bot with Python, AWS, and socialist realism art
----
++++
+date = '2018-02-19T00:00:00Z'
+title = 'Building a Twitter art bot with Python, AWS, and socialist realism art'
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

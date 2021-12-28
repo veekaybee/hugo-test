@@ -1,21 +1,15 @@
----
-id: 9880
-title: Pushing to production
-date: 2014-12-15T12:56:44+00:00
-author: Vicki
-layout: post
-guid: https://vkblog.github.io/?p=9880
-permalink: /2014/12/pushing-to-production/
-categories:
-  - Uncategorized
-tags:
-  - baby
-  - development
-  - family
-  - IT
-  - pregnancy
-  - writing
----
++++
+author = 'Vicki'
+categories = ['Uncategorized']
+date = '2014-12-15T12:56:44+00:00'
+guid = 'https://vkblog.github.io/?p=9880'
+id = 9880
+layout = 'post'
+permalink = '/2014/12/pushing-to-production/'
+tags = ['baby', 'development', 'family', 'IT', 'pregnancy', 'writing']
+title = 'Pushing to production'
+
++++
 &nbsp;
 
 [<img class="aligncenter  wp-image-9881" src="https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2014/12/Screenshot_2014-12-15-09-57-06-580x1031.png" alt="Screenshot_2014-12-15-09-57-06" width="333" height="592" />](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2014/12/Screenshot_2014-12-15-09-57-06.png)

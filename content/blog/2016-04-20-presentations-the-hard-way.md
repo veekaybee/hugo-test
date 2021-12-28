@@ -1,7 +1,8 @@
----
-date: "2016-04-20T00:00:00Z"
-title: Building presentations the hard way with reveal.js and Jupyter
----
++++
+date = '2016-04-20T00:00:00Z'
+title = 'Building presentations the hard way with reveal.js and Jupyter'
+
++++
 
 <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/fblanc35/13195059744/in/photolist-m718y5-dsNSRN-at2M8M-3kKGmL-paasgL-8nb9gW-4CCPqR-8Zv4Qq-rmaUL8-aUpP5F-aX3vQe-4a47Uc-bC8buA-oLKijv-4jfTnt-8HLXb3-qM8aTS-stKFLH-rxQTtd-brnt3K-7SBTED-dHYhX4-4FNyvi-5WvCsq-ewYaSq-dsNT6s-aypaJM-oDjE1K-os1mVX-72iASJ-d78TBd-eL7o1P-7QQjTV-2XNWVh-dXqtzj-qpo9St-6J2NsH-ewUZvB-c4yKE-azz2iy-SBgqj-fJ7wpT-j4pSQK-6Eiyfz-cr5Nds-4kaDvB-ewUZXK-4FSLam-ewUZrT-4CCQ98" title="machines"><img src="https://farm3.staticflickr.com/2146/13195059744_59f18e7489.jpg" width="500" height="333" alt="machines"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 

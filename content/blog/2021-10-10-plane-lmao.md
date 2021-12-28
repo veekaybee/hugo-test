@@ -1,16 +1,12 @@
 +++
+aliases = ['/2021/10/10/plane-lmao/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-10-10'
-title = "Doing small, fun projects"
-aliases = [
-    "/2021/10/10/plane-lmao/"
-]
-
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-description = "with Streamlit"
-
-image  = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/airplane_on_train.png"
+description = 'with Streamlit'
+image = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/airplane_on_train.png'
+site = '@vboykis'
+title = 'Doing small, fun projects'
 
 +++
 

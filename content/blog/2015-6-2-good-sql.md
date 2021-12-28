@@ -1,7 +1,8 @@
----
-date: "2015-06-02T00:00:00Z"
-title: Creating readable SQL.
----
++++
+date = '2015-06-02T00:00:00Z'
+title = 'Creating readable SQL.'
+
++++
 ![Bart](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/bart.gif)
 
 Writing legible code is seen as the hallmark of a competent developer, and for good reason.  If you can't read what you wrote, you can't change what you wrote. There are lots of organizations, especially once you get to larger companies where programming isn't the core competency or value center, that are prime examples of this. The result is a mess that not only impacts the code, but the entire company or business. 

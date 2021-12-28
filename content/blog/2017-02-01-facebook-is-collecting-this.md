@@ -1,9 +1,9 @@
----
-date: "2017-02-01T00:00:00Z"
-redirect_from:
-- /facebook-is-collecting-this/
-title: What should you think about when using Facebook?
----
++++
+date = '2017-02-01T00:00:00Z'
+redirect_from = ['/facebook-is-collecting-this/']
+title = 'What should you think about when using Facebook?'
+
++++
 
 ![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/winnowers.jpg)
 

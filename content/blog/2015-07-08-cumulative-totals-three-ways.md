@@ -1,7 +1,8 @@
----
-date: "2015-07-08T00:00:00Z"
-title: Cumulative totals three different ways in data science
----
++++
+date = '2015-07-08T00:00:00Z'
+title = 'Cumulative totals three different ways in data science'
+
++++
 <img src="http://nancyfriedman.typepad.com/.a/6a00d8341c4f9453ef01a73dafb230970d-pi"  style="width: 400px;"/>
 
 

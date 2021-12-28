@@ -1,7 +1,8 @@
----
-date: "2017-03-20T00:00:00Z"
-title: Should you replace Hadoop with your laptop?
----
++++
+date = '2017-03-20T00:00:00Z'
+title = 'Should you replace Hadoop with your laptop?'
+
++++
 
 *Vicki's note: I've given this talk at [Data Philly at Sidecar](https://www.meetup.com/DataPhilly/events/237673648/) and [Software as Craft at Promptworks](https://www.meetup.com/Software-as-Craft-Philadelphia/events/237732903/). To see all the slides and the code,
 check out the original deck [here.](https://veekaybee.github.io/data-lake-talk/#/)*

@@ -1,8 +1,11 @@
 +++
-title = "Essays"
+title = 'Essays'
 [menu]
-  [[menu.main]]
-     weight = 30
+[[menu.main]]
+  weight = 30
+
+
+
 +++
 
 

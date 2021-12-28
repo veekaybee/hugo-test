@@ -1,16 +1,13 @@
 +++
+aliases = ['/2021/06/06/hashaggregate/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-06-06'
-title = "The humble hash aggregate"
-aliases = [
-    "/2021/06/06/hashaggregate/"
-]
+description = 'Data work has its own unique architecture we should be aware of'
+site = '@vboykis'
+title = 'The humble hash aggregate'
+twitterImage = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/checkers.png'
 
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-description = "Data work has its own unique architecture we should be aware of"
-
-twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/checkers.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/checkers.png" width="300px" >}}

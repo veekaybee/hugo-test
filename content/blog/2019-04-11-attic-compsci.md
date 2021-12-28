@@ -1,7 +1,8 @@
----
-date: "2019-04-11T00:00:00Z"
-title: The attic and the basement of apps
----
++++
+date = '2019-04-11T00:00:00Z'
+title = 'The attic and the basement of apps'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

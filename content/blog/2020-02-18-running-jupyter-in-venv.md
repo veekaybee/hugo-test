@@ -1,7 +1,8 @@
----
-date: "2020-02-18T00:00:00Z"
-title: Lauching a Jupyter notebook from within a virtual environment
----
++++
+date = '2020-02-18T00:00:00Z'
+title = 'Lauching a Jupyter notebook from within a virtual environment'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

@@ -1,7 +1,8 @@
----
-date: "2018-03-30T00:00:00Z"
-title: Dear Facebook user 752461218193242
----
++++
+date = '2018-03-30T00:00:00Z'
+title = 'Dear Facebook user 752461218193242'
+
++++
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">
 <meta name="twitter:creator" content="@vboykis">

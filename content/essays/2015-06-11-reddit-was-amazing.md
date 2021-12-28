@@ -1,15 +1,15 @@
----
-id: 9977
-title: Reddit was amazing
-date: 2015-06-11T11:56:37+00:00
-author: Vicki
-excerpt: 'The old internet,whatever it was, is gone. The revolution is over. '
-layout: post
-guid: https://vkblog.github.io/?p=9977
-permalink: /2015/06/reddit-was-amazing/
-categories:
-  - Uncategorized
----
++++
+author = 'Vicki'
+categories = ['Uncategorized']
+date = '2015-06-11T11:56:37+00:00'
+excerpt = 'The old internet,whatever it was, is gone. The revolution is over. '
+guid = 'https://vkblog.github.io/?p=9977'
+id = 9977
+layout = 'post'
+permalink = '/2015/06/reddit-was-amazing/'
+title = 'Reddit was amazing'
+
++++
 In its early years, the Soviet Union was not like what we think of the Soviet Union today: closed, totalitarian, single-minded. The fresh, new feel of the revolution made Russia feel like a whole new world for artists and writers alike. The government, just a baby itself and energized by this brave new world it had created, pushed for many progressive ideas. In addition to banning private property, it also gave women equal rights to men under marriage, legalized abortion, and gave legitimacy to children born out of wedlock.
 
 Art, seen as a way to communicate  and gain favor with the population, which was still largely illiterate at that point, was encouraged, in any shape or form. <a href="http://en.wikipedia.org/wiki/Proletkult" target="_blank">Proletkult,</a> short for Proletarian Culture, arose out of the chaos of the Revolution and Civil War, and encouraged thousands of artists to spread socialism in any way they chose to express themselves, be it through traditional painting, expressionism, modernism, or abstractionism.

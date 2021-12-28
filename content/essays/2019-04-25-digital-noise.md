@@ -1,7 +1,8 @@
----
-layout: post
-title: The luxury of opting out of digital noise 
----
++++
+layout = 'post'
+title = 'The luxury of opting out of digital noise'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

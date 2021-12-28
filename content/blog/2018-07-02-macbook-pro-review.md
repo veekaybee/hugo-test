@@ -1,7 +1,8 @@
----
-date: "2018-07-02T00:00:00Z"
-title: One month with the 2017 MacBook Pro
----
++++
+date = '2018-07-02T00:00:00Z'
+title = 'One month with the 2017 MacBook Pro'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

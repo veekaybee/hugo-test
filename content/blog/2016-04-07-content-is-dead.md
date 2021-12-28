@@ -1,9 +1,9 @@
----
-date: "2016-04-07T00:00:00Z"
-post: Content is dead. Long live filler!
-redirect_from:
-- /content-is-dead/
----
++++
+date = '2016-04-07T00:00:00Z'
+post = 'Content is dead. Long live filler!'
+redirect_from = ['/content-is-dead/']
+
++++
 
 It's 2016. I shouldn't have to write  a scraping script to extract the information I need from the webpage of a magazine article. But that's exactly what I had to do in February when I needed information on switching between Android and iOS. 
 

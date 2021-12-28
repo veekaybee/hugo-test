@@ -1,7 +1,8 @@
----
-title: My Favorite Books of 2018
-layout: post
----
++++
+layout = 'post'
+title = 'My Favorite Books of 2018'
+
++++
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@vboykis" />

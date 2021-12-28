@@ -1,7 +1,8 @@
----
-layout: post
-title: Russia's window to the West
----
++++
+layout = 'post'
+title = "Russia's window to the West"
+
++++
 
 <img src="https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2016/03/volga.jpeg"  height="500" width="600">
 

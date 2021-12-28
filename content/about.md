@@ -1,8 +1,11 @@
 +++
-title = "About"
+title = 'About'
 [menu]
-  [[menu.main]]
-     weight = 10
+[[menu.main]]
+  weight = 10
+
+
+
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/headshot.jpeg" alt="image" width="200px">}}

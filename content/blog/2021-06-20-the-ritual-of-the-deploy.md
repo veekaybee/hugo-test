@@ -1,16 +1,13 @@
 +++
+aliases = ['/2021/06/20/the-ritual-of-the-deploy/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-06-20'
-title = "The ritual of the deploy"
-aliases = [
-    "/2021/06/20/the-ritual-of-the-deploy/"
-]
+description = 'We are powerful with our computers and also powerless against them'
+site = '@vboykis'
+title = 'The ritual of the deploy'
+twitterImage = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ship.png'
 
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-description = "We are powerful with our computers and also powerless against them"
-
-twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ship.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ship.png" width="300px" >}}

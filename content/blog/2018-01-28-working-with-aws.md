@@ -1,7 +1,8 @@
----
-date: "2018-01-28T00:00:00Z"
-title: Working with AWS
----
++++
+date = '2018-01-28T00:00:00Z'
+title = 'Working with AWS'
+
++++
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@vboykis">

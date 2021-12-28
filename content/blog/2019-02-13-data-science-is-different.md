@@ -1,7 +1,8 @@
----
-date: "2019-02-13T00:00:00Z"
-title: Data science is different now
----
++++
+date = '2019-02-13T00:00:00Z'
+title = 'Data science is different now'
+
++++
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@vboykis">

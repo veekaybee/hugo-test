@@ -1,16 +1,13 @@
 +++
+aliases = ['/2021/09/23/enlightenment/']
+card = 'summary'
+creator = '@vboykis'
 date = '2021-09-23'
-title = "Reaching MLE (machine learning enlightenment)"
-aliases = [
-    "/2021/09/23/enlightenment/"
-]
+description = 'What is this job about really?'
+image = 'https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png'
+site = '@vboykis'
+title = 'Reaching MLE (machine learning enlightenment)'
 
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-description = "What is this job about really?"
-
-image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png" alt="wheat field" width="300px" >}}

@@ -1,7 +1,8 @@
----
-date: "2019-07-08T00:00:00Z"
-title: A deep dive on Python type hints
----
++++
+date = '2019-07-08T00:00:00Z'
+title = 'A deep dive on Python type hints'
+
++++
 
  <img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/presser.png" alt="Smiley face" height="400" width="300"> 
 Presser, Konstantin Makovsky 1900
