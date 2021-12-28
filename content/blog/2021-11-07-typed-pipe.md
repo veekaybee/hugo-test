@@ -10,8 +10,7 @@ site = "@vboykis"
 creator = "@vboykis"
 description = "How working with data-driven programs requires two different contexts"
 
-[twitter]
-    image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
+twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png" width="600px">}}
