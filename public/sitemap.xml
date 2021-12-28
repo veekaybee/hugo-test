@@ -4,12 +4,11 @@
   <url>
     <loc>https://veekaybee.github.io/hugo-test/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/</loc>
-    <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/2021/11/07/the-programmers-brain-in-the-lands-of-exploration-and-production/</loc>
+    <lastmod>2021-11-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://veekaybee.github.io/hugo-test/</loc>
     <lastmod>2021-11-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/2021/10/28/recsys-2021-recap/</loc>
@@ -186,16 +185,16 @@
     <loc>https://veekaybee.github.io/hugo-test/2015/08/24/generating-fake-hacker-news-headlines-with-python/</loc>
     <lastmod>2015-08-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/baby/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/baby/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/culture/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/culture/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/cynicism/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/cynicism/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/english/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/english/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/essays/2015-08-07-how-to-think-in-two-languages/</loc>
@@ -204,22 +203,22 @@
     <loc>https://veekaybee.github.io/hugo-test/categories/identity/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/literature/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/literature/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/raising-russian/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/raising-russian/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/categories/raising-russian/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/reading/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/reading/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/russian/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/russian/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/war-and-peace/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/war-and-peace/</loc>
     <lastmod>2015-08-07T07:29:51+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/2015/08/04/how-large-should-your-sample-size-be/</loc>
@@ -255,52 +254,52 @@
     <loc>https://veekaybee.github.io/hugo-test/2015/05/30/man-do-static-sites-suck./</loc>
     <lastmod>2015-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/ben-yehuda/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/ben-yehuda/</loc>
     <lastmod>2015-05-28T07:56:44+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/family/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/family/</loc>
     <lastmod>2015-05-28T07:56:44+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/essays/2015-05-28-it-is-hard-to-talk-to-my-baby-in-russian/</loc>
     <lastmod>2015-05-28T07:56:44+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/language/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/language/</loc>
     <lastmod>2015-05-28T07:56:44+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/development/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/development/</loc>
     <lastmod>2015-03-25T07:24:12+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/house-of-cards/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/house-of-cards/</loc>
     <lastmod>2015-03-25T07:24:12+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/mandala/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/mandala/</loc>
     <lastmod>2015-03-25T07:24:12+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/essays/2015-03-25-no-i-will-not-enjoy-every-moment/</loc>
     <lastmod>2015-03-25T07:24:12+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/it/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/it/</loc>
     <lastmod>2014-12-15T12:56:44+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/pregnancy/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/pregnancy/</loc>
     <lastmod>2014-12-15T12:56:44+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/essays/2014-12-15-pushing-to-production/</loc>
     <lastmod>2014-12-15T12:56:44+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/writing/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/writing/</loc>
     <lastmod>2014-12-15T12:56:44+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/categories/america/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/chicken/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/chicken/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/cock/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/cock/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/cooking/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/cooking/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/categories/culture/</loc>
@@ -318,17 +317,19 @@
     <loc>https://veekaybee.github.io/hugo-test/categories/marriage/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/nyt/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/nyt/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/spatch/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/spatch/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
-    <loc>https://veekaybee.github.io/hugo-test/blog/white-people/</loc>
+    <loc>https://veekaybee.github.io/hugo-test/tags/white-people/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/categories/women/</loc>
     <lastmod>2014-09-25T07:19:21+00:00</lastmod>
+  </url><url>
+    <loc>https://veekaybee.github.io/hugo-test/about/</loc>
   </url><url>
     <loc>https://veekaybee.github.io/hugo-test/essays/2018-08-23-america-online-and-off/</loc>
   </url><url>
