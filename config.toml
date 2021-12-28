@@ -1,7 +1,6 @@
 
 baseURL = "https://veekaybee.github.io/hugo-test"
 
-# The name of this wonderful theme ;-).
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
@@ -17,8 +16,8 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-  blog = "/:slug/"
-  tags = "/blog/:slug"
+  blog = '/:year/:month/:day/:slug/'
+
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
@@ -34,6 +33,8 @@ ignoreErrors = ["error-disable-taxonomy"]
   # https://gohugo.io/templates/internal#open-graph.
   images = ["images/share.png"]
 
+  logo = "/images.headshot.jpeg"
+
   # Another "title" :-). This one is used as the site_name on the Hugo's internal
   # opengraph structured data template.
   # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
@@ -48,5 +49,5 @@ ignoreErrors = ["error-disable-taxonomy"]
   # file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
   # for details. An example TOML config that uses [ISO
   # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
-  # dateFormat = "2006-01-02"
+  dateFormat = "Jan 1 2006"
 

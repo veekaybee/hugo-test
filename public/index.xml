@@ -10,30 +10,30 @@
     <lastBuildDate>Sun, 07 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://veekaybee.github.io/hugo-test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The programmer&#39;s brain in the lands of exploration and production</title>
-      <link>https://veekaybee.github.io/hugo-test/the-programmers-brain-in-the-lands-of-exploration-and-production/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/11/07/the-programmers-brain-in-the-lands-of-exploration-and-production/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-programmers-brain-in-the-lands-of-exploration-and-production/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/11/07/the-programmers-brain-in-the-lands-of-exploration-and-production/</guid>
       <description>A lot of my brain space lately has been occupied by TypedPipes. A TypedPipe is the main object type that you work with in Scalding, a distributed data framework written as a wrapper in Scala around Cascading. Scalding was originally developed at Twitter, and adopted by many companies around the same time Apache Spark became popular.
 A TypedPipe is a distributed array that “may or may not have been materialized to disk”, aka it’s a very large list of elements that exists mainly in the memory space of your program, where the memory space is usually the nodes of a distributed computational cluster.</description>
     </item>
     
     <item>
       <title>Recsys 2021 Recap</title>
-      <link>https://veekaybee.github.io/hugo-test/recsys-2021-recap/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/10/28/recsys-2021-recap/</link>
       <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/recsys-2021-recap/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/10/28/recsys-2021-recap/</guid>
       <description>Recsys 2021 was in October. Since I&amp;rsquo;m now focusing on this area of ML at work, I attended (virtually only, unfortunately, but the online experience was as good as it could be at a hybrid conference, so major hats off to the organizers!) at took around 30 pages of notes.
 There was SO much content! In the interest of condensing my learnings before I forget them, here is some of the high-level content that was most interesting to me.</description>
     </item>
     
     <item>
       <title>Doing small, fun projects</title>
-      <link>https://veekaybee.github.io/hugo-test/doing-small-fun-projects/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/10/10/doing-small-fun-projects/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/doing-small-fun-projects/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/10/10/doing-small-fun-projects/</guid>
       <description>Last year, I gave a keynote at RStudio Conf where I encouraged people to fight the ennui of pandemic life and the boxed-in social platforms we operate on by building up their digital gardens.
 I gave a few smaller examples of ways to do that, and now I have another one: building fun Streamlit apps.
 Last year, I built a Streamlit app that did natural language processing to generate thinkpieces.</description>
@@ -41,30 +41,30 @@ Last year, I built a Streamlit app that did natural language processing to gener
     
     <item>
       <title>Reaching MLE (machine learning enlightenment)</title>
-      <link>https://veekaybee.github.io/hugo-test/reaching-mle-machine-learning-enlightenment/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/09/23/reaching-mle-machine-learning-enlightenment/</link>
       <pubDate>Thu, 23 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/reaching-mle-machine-learning-enlightenment/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/09/23/reaching-mle-machine-learning-enlightenment/</guid>
       <description>Once, on a crisp cloudless morning in early fall, a machine learning engineer left her home to seek the answers that she could not find, even in the newly-optimized Google results.
 She closed her laptop, put on her backpack and hiking boots, and walked quietly out her door and past her mailbox, down a dusty path that led past a stream, until the houses around her gave way to broad fields full of ripening corn.</description>
     </item>
     
     <item>
       <title>The local minima of suckiness</title>
-      <link>https://veekaybee.github.io/hugo-test/the-local-minima-of-suckiness/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/08/05/the-local-minima-of-suckiness/</link>
       <pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-local-minima-of-suckiness/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/08/05/the-local-minima-of-suckiness/</guid>
       <description>Key and Hand, Tamara Lempicka, 1941
 I don&amp;rsquo;t usually deal in absolutes, but I now know this one thing to be fundamentally true: no one becomes a good software engineer by themselves. But in an industry that has always prided itself on the myth of the superstar ninja, the lone wolf, the self-taught genius, it can seem like good developers are not born - they rise out of the ground, fully-formed and churning out PRs in their wake.</description>
     </item>
     
     <item>
       <title>Writing for distributed teams</title>
-      <link>https://veekaybee.github.io/hugo-test/writing-for-distributed-teams/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/07/17/writing-for-distributed-teams/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/writing-for-distributed-teams/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/07/17/writing-for-distributed-teams/</guid>
       <description>This week was my first anniversary since I started at Automattic in the spring of 2020, and I was going through my work artifacts to reflect on what I&amp;rsquo;ve done so far this year. One thing that completely surprised me was that it turns out that I only sent 11 emails this entire year.
 How is it possible? The answer is P2s.
 For those not familiar with Automattic, the company behind WordPress.</description>
@@ -72,30 +72,30 @@ For those not familiar with Automattic, the company behind WordPress.</descripti
     
     <item>
       <title>The ritual of the deploy</title>
-      <link>https://veekaybee.github.io/hugo-test/the-ritual-of-the-deploy/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/06/20/the-ritual-of-the-deploy/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-ritual-of-the-deploy/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/06/20/the-ritual-of-the-deploy/</guid>
       <description>Humans have always been terrible at dealing with uncertainty. Historically, we used to cope with it by inventing superstitions. The ancient world is filled with rituals to ward off potential ill omens during times that were especially out of the control of human capability.
 A big example of this has been seafaring. Since six months to a year in a ship headed to an unknown destination with unknown weather events was a high-anxiety event, humans developed a host of superstitions to deal with them.</description>
     </item>
     
     <item>
       <title>The humble hash aggregate</title>
-      <link>https://veekaybee.github.io/hugo-test/the-humble-hash-aggregate/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/06/06/the-humble-hash-aggregate/</link>
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-humble-hash-aggregate/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/06/06/the-humble-hash-aggregate/</guid>
       <description>This post is an expansion of this tweet:
  One of the important ways we learn when we&amp;rsquo;re growing up is by understanding patterns. As a mom of two young children, I&amp;rsquo;ve been lucky enough to witness this happen multiple times in the wild. Recently, my youngest, who is almost two, has learned the Russian word &amp;ldquo;еще&amp;rdquo;, or &amp;ldquo;more.&amp;rdquo; He&amp;rsquo;ll say it when he wants a second (or third) slice of watermelon.</description>
     </item>
     
     <item>
       <title>The ghosts in the data</title>
-      <link>https://veekaybee.github.io/hugo-test/the-ghosts-in-the-data/</link>
+      <link>https://veekaybee.github.io/hugo-test/2021/03/26/the-ghosts-in-the-data/</link>
       <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-ghosts-in-the-data/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2021/03/26/the-ghosts-in-the-data/</guid>
       <description>Bernadette Resha, Gathering of Ghosts (2014)
 Something I&amp;rsquo;ve been thinking about recently as I&amp;rsquo;ve been working at a company that operates entirely remotely and mostly asynchronously during a time when most companies are working in some variation of this model is the idea of implicit versus explicit knowledge.
 Explicit knowledge is anything that you can read about, knowledge that&amp;rsquo;s easy to share and pass on. Implicit knowledge is knowledge that people gain by context that&amp;rsquo;s very hard to pull out consciously.</description>
@@ -103,20 +103,20 @@ Explicit knowledge is anything that you can read about, knowledge that&amp;rsquo
     
     <item>
       <title>Getting machine learning to production</title>
-      <link>https://veekaybee.github.io/hugo-test/getting-machine-learning-to-production/</link>
+      <link>https://veekaybee.github.io/hugo-test/2020/06/09/getting-machine-learning-to-production/</link>
       <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/getting-machine-learning-to-production/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2020/06/09/getting-machine-learning-to-production/</guid>
       <description>Table of Contents
  Intro The Mystery of Deploying ML Trying to Create Gandinsky Trying to Create Venti Venti Architecture  Generating Venti Inferences   Putting Venti on Streamlit Splitting out inference and front-end Deploying to the Cloud Lessons Learned  Deploying is hard Deep learning is deceptively easy Go for prebuilt as much as possible Understand networking and scale Iterate quickly    Art: The Other Side of the Rainbow, Roland Petersen, 1972</description>
     </item>
     
     <item>
       <title>Securely storing configuration credentials in a Jupyter Notebook</title>
-      <link>https://veekaybee.github.io/hugo-test/securely-storing-configuration-credentials-in-a-jupyter-notebook/</link>
+      <link>https://veekaybee.github.io/hugo-test/2020/02/25/securely-storing-configuration-credentials-in-a-jupyter-notebook/</link>
       <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/securely-storing-configuration-credentials-in-a-jupyter-notebook/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2020/02/25/securely-storing-configuration-credentials-in-a-jupyter-notebook/</guid>
       <description>Art: Mona Lisa with the Keys, Fernand Leger, 1930
 Over the past few months, I&amp;rsquo;ve been slowly working my way to building up an intuition neural nets through a Generative Adversarial Network project based off DCGAN, to generate new artworks in a given style.
 Since I&amp;rsquo;d like to generate abstract art, I&amp;rsquo;m calling the project GANdinsky.
@@ -125,20 +125,20 @@ In order for the network to be able to generate new art, you have to feed it sam
     
     <item>
       <title>Lauching a Jupyter notebook from within a virtual environment</title>
-      <link>https://veekaybee.github.io/hugo-test/lauching-a-jupyter-notebook-from-within-a-virtual-environment/</link>
+      <link>https://veekaybee.github.io/hugo-test/2020/02/18/lauching-a-jupyter-notebook-from-within-a-virtual-environment/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/lauching-a-jupyter-notebook-from-within-a-virtual-environment/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2020/02/18/lauching-a-jupyter-notebook-from-within-a-virtual-environment/</guid>
       <description>When I&amp;rsquo;m working with Jupyter notebooks, I often want to work with them from within a virtual environment. The general best practice is that you should always use either virtual environments or Docker containers for working with Python, for reasons outlined in this post, or you&amp;rsquo;re gonna have a bad time. I know I have.
 The workflow is a little long, so I thought I&amp;rsquo;d document it for future me here.</description>
     </item>
     
     <item>
       <title>How to make sure your question gets answered online</title>
-      <link>https://veekaybee.github.io/hugo-test/how-to-make-sure-your-question-gets-answered-online/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/09/11/how-to-make-sure-your-question-gets-answered-online/</link>
       <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-to-make-sure-your-question-gets-answered-online/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/09/11/how-to-make-sure-your-question-gets-answered-online/</guid>
       <description>Saul Steinberg, Untitled (Question Marks) (1961)
 Since writing my post on data science being different, a lot of people have emailed/DMed me asking for advice on Python, data science, machine learning, and careers.
 And, as David wisely notes, if you find yourself saying the same thing a lot, you should put it in a blog post, so here it is.
@@ -147,39 +147,39 @@ Hopefully this advice is useful to people who write to others on the internet as
     
     <item>
       <title>A deep dive on Python type hints</title>
-      <link>https://veekaybee.github.io/hugo-test/a-deep-dive-on-python-type-hints/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/07/08/a-deep-dive-on-python-type-hints/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/a-deep-dive-on-python-type-hints/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/07/08/a-deep-dive-on-python-type-hints/</guid>
       <description>Table of Contents
  Introduction How Computers Build Our Code An introduction to type systems Data types in statically versus dynamically typed languages How does Python handle data types? Python&amp;rsquo;s type hints Type hints in IDEs Getting started with type hints So, what&amp;rsquo;s the verdict? To use or not to use? Thanks  Introduction Since the release of Python&amp;rsquo;s type hints in 2014, people have been working on adopting them into their codebase.</description>
     </item>
     
     <item>
       <title>IT runs on Java 8</title>
-      <link>https://veekaybee.github.io/hugo-test/it-runs-on-java-8/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/05/10/it-runs-on-java-8/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/it-runs-on-java-8/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/05/10/it-runs-on-java-8/</guid>
       <description>Sometime in 2011, I stumbled across an unassuming site called Hacker News. At the time, I was a data analyst working mostly with Excel and SAS, and almost all of the headlines there were foreign to me. Git diffs? PyPy? Real-time APIs?
 I realized quickly, though, that HN was the heartbeat of the tech industry, the place where many threads and points of interest were discussed. There&amp;rsquo;s a lot to dislike about the commenters and some of the discussion generated, but I still don&amp;rsquo;t know of any other outlet like it for any other industry that allows the emerging practitioner to become quickly familiar with the latest news and slang of their given profession, with such a high discussion volume.</description>
     </item>
     
     <item>
       <title>Breaking down Apple&#39;s iOS Screen Time report</title>
-      <link>https://veekaybee.github.io/hugo-test/breaking-down-apples-ios-screen-time-report/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/04/29/breaking-down-apples-ios-screen-time-report/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/breaking-down-apples-ios-screen-time-report/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/04/29/breaking-down-apples-ios-screen-time-report/</guid>
       <description>One of the most valuable things I&amp;rsquo;ve learned in the early part of my career spent as a data janitor business analyst is how to put together visuals that are actionable. After all, as data professionals, we&amp;rsquo;re not putting together charts for the sake of looking good. If we were, we&amp;rsquo;d be the &amp;ldquo;Data is Ugly&amp;rdquo; subreddit. The point of a good chart is drive a person (usually the executive you&amp;rsquo;re presenting the chart to) to commit to an action.</description>
     </item>
     
     <item>
       <title>The attic and the basement of apps</title>
-      <link>https://veekaybee.github.io/hugo-test/the-attic-and-the-basement-of-apps/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/04/11/the-attic-and-the-basement-of-apps/</link>
       <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-attic-and-the-basement-of-apps/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/04/11/the-attic-and-the-basement-of-apps/</guid>
       <description>Building the Winter Studio. Ekely, Edvard Munch, 1929
 My dad can do everything with his hands. From building shelves, to installing sump pumps, to fixing busted Soviet radios from the 1970s, there&amp;rsquo;s no problem he can&amp;rsquo;t solve.
 Recently, my husband and I undertook what I envisioned as a really small house project: adding three shelves to a hallway closet to better store shoes and coats.
@@ -188,20 +188,20 @@ But when we went to the home improvement store, we were completely lost.</descri
     
     <item>
       <title>Data science is different now</title>
-      <link>https://veekaybee.github.io/hugo-test/data-science-is-different-now/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/02/13/data-science-is-different-now/</link>
       <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/data-science-is-different-now/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/02/13/data-science-is-different-now/</guid>
       <description>Woman holding a balance, Vermeer 1664
 What do you think of when you read the phrase &amp;lsquo;data science&amp;rsquo;? It&amp;rsquo;s probably some combination of keywords like statistics, machine learning, deep learning, and &amp;lsquo;sexiest job of the 21st century&amp;rsquo;. Or maybe it&amp;rsquo;s an image of a data scientist, sitting at her computer, putting together stunning visuals from well-run A/B tests. Either way, it&amp;rsquo;s glamorous, smart, and sophisticated. This is the narrative that data science has been selling since I entered the field almost ten years ago.</description>
     </item>
     
     <item>
       <title>Commit to your lock-in</title>
-      <link>https://veekaybee.github.io/hugo-test/commit-to-your-lock-in/</link>
+      <link>https://veekaybee.github.io/hugo-test/2019/02/10/commit-to-your-lock-in/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/commit-to-your-lock-in/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2019/02/10/commit-to-your-lock-in/</guid>
       <description>A rising concern as companies continue moving infrastructure to the cloud is vendor-lock in.
 For example, I recently came across a post from 2017 discussing the impact of Lambdas locking you into the AWS ecosystem.
  &amp;ldquo;It&amp;rsquo;s code that tied not just to hardware – which we&amp;rsquo;ve seen before – but to a data center, you can&amp;rsquo;t even get the hardware yourself. And that hardware is now custom fabbed for the cloud providers with dark fiber that runs all around the world, just for them.</description>
@@ -209,20 +209,20 @@ For example, I recently came across a post from 2017 discussing the impact of La
     
     <item>
       <title>How the headphone jack-less iPhone came to be</title>
-      <link>https://veekaybee.github.io/hugo-test/how-the-headphone-jack-less-iphone-came-to-be/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/11/05/how-the-headphone-jack-less-iphone-came-to-be/</link>
       <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-the-headphone-jack-less-iphone-came-to-be/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/11/05/how-the-headphone-jack-less-iphone-came-to-be/</guid>
       <description>It so happened that one morning the devil was stuck in an Uber Pool down 101 from the city to Menlo Park (he was late for a meeting with the Facebook content moderation team,) when the driver suddenly took a huge detour and stopped at a leafy driveway in Atherton.
 Phil Schiller emerged, wearing a slightly rumpled shirt and holding two iPhones in each hand. Another stuck out haphazardly from his back pocket.</description>
     </item>
     
     <item>
       <title>The Case of the Broken Lambda</title>
-      <link>https://veekaybee.github.io/hugo-test/the-case-of-the-broken-lambda/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/09/24/the-case-of-the-broken-lambda/</link>
       <pubDate>Mon, 24 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-case-of-the-broken-lambda/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/09/24/the-case-of-the-broken-lambda/</guid>
       <description>Vincent van Gogh, Still Life with Drawing Board, Pipe, Onions and Sealing-Wax (1889)
 Table of Contents
  Holmes takes on a new case The Case of the Broken Lambda  Getting S3 Input Events Writing the Lambda Building the Lambda Package The Error Investigating Snappy errors   Holmes is on it How the error was fixed Conclusion   Holmes takes on a new case Holmes and Watson were in Holmes&amp;rsquo;s study.</description>
@@ -230,10 +230,10 @@ Table of Contents
     
     <item>
       <title>On Excel and developer productivity</title>
-      <link>https://veekaybee.github.io/hugo-test/on-excel-and-developer-productivity/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/09/08/on-excel-and-developer-productivity/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/on-excel-and-developer-productivity/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/09/08/on-excel-and-developer-productivity/</guid>
       <description>Kuzma Petrov-Vodkin, The girl at the desk (1934)
 When I was just starting out in my professional life, I did a lot of Excel.
 A LOT of Excel.
@@ -242,10 +242,10 @@ I graduated with a B.S. in Economics, outside the realm of anything remotely rel
     
     <item>
       <title>Good small datasets</title>
-      <link>https://veekaybee.github.io/hugo-test/good-small-datasets/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/07/23/good-small-datasets/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/good-small-datasets/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/07/23/good-small-datasets/</guid>
       <description>I&amp;rsquo;ve been working on a project that, like most projects, requires testing with a dataset.
 My personal criteria are:
  Relatively small size (Less than 100 KB, or 100ish rows) At least 5-6 features (columns) Should have both numerical and text-based features Ideally a range of different kinds of numbers Has good documentation Is open and available to the public Relatively available for both R and as individual CSV files or Python imports (APIs and download portals count-ish) Isn&amp;rsquo;t overly morbid (i.</description>
@@ -253,20 +253,20 @@ My personal criteria are:
     
     <item>
       <title>One month with the 2017 MacBook Pro</title>
-      <link>https://veekaybee.github.io/hugo-test/one-month-with-the-2017-macbook-pro/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/07/02/one-month-with-the-2017-macbook-pro/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/one-month-with-the-2017-macbook-pro/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/07/02/one-month-with-the-2017-macbook-pro/</guid>
       <description>After reading so many negative reviews of the new MacBook Pro, I&amp;rsquo;ve been avoiding upgrading my hardware. I held out for a long time, but recently, I finally upgraded to a 15-inch 2017 MacBook Pro. I&amp;rsquo;ve spent the past month using it as my primary development machine for work, and I thought I&amp;rsquo;d share my experiences.
 Unboxing and first impressions After I opened the MacBook box, I was surprised to find a small piece of paper resting on the laptop lid.</description>
     </item>
     
     <item>
       <title>Dear Facebook user 752461218193242</title>
-      <link>https://veekaybee.github.io/hugo-test/dear-facebook-user-752461218193242/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/03/30/dear-facebook-user-752461218193242/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/dear-facebook-user-752461218193242/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/03/30/dear-facebook-user-752461218193242/</guid>
       <description>Apologies to Roy Lichtenstein
 According to my Facebook data dump, Mark Zuckerberg knows my birthday, all 40 of my interests, my wedding anniversary, and that time in 2011 that I checked in at a castle in Scotland.
 I&amp;rsquo;ve been a Facebook user since it became available to public universities in 2004 - almost fifteen years of my life and countless hours of effort have been put into status boxes, photo updates, and checkins.</description>
@@ -274,10 +274,10 @@ I&amp;rsquo;ve been a Facebook user since it became available to public universi
     
     <item>
       <title>It&#39;s still hard for beginners to get started with Python</title>
-      <link>https://veekaybee.github.io/hugo-test/its-still-hard-for-beginners-to-get-started-with-python/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/03/12/its-still-hard-for-beginners-to-get-started-with-python/</link>
       <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/its-still-hard-for-beginners-to-get-started-with-python/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/03/12/its-still-hard-for-beginners-to-get-started-with-python/</guid>
       <description>Python is, for a good reason, one of the easiest programming languages to get started with for people new to computational data analysis specifically, and new to programming in general.
 But it&amp;rsquo;s still really hard to get started with. Allen Downey, who&amp;rsquo;s been teaching Python for years, recently wrote a great post about this. He says,
  I have written several books that use Python to explain topics like Bayesian Statistics and Digital Signal Processing.</description>
@@ -285,10 +285,10 @@ But it&amp;rsquo;s still really hard to get started with. Allen Downey, who&amp;
     
     <item>
       <title>Building a Twitter art bot with Python, AWS, and socialist realism art</title>
-      <link>https://veekaybee.github.io/hugo-test/building-a-twitter-art-bot-with-python-aws-and-socialist-realism-art/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/02/19/building-a-twitter-art-bot-with-python-aws-and-socialist-realism-art/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/building-a-twitter-art-bot-with-python-aws-and-socialist-realism-art/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/02/19/building-a-twitter-art-bot-with-python-aws-and-socialist-realism-art/</guid>
       <description>TLDR: I built a Twitter bot that tweets paintings from the WikiArt socialist realism category every 6 hours using Python and AWS Lambdas.
 The post outlines why I decided to do that, architecture decisions I made, technical details on how the bot works, and my next steps for the bot.
 Follow @SovietArtBot HereCheck out its website and code here.
@@ -298,10 +298,10 @@ Table of Contents
     
     <item>
       <title>Strava and the boat in the data lake</title>
-      <link>https://veekaybee.github.io/hugo-test/strava-and-the-boat-in-the-data-lake/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/01/30/strava-and-the-boat-in-the-data-lake/</link>
       <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/strava-and-the-boat-in-the-data-lake/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/01/30/strava-and-the-boat-in-the-data-lake/</guid>
       <description>Dutch Fishing Boats in a Storm, JMW Turner
 Several years ago, I wrote that the Snowden revelations changed the way I understood the internet.
 I wrote then, that,
@@ -310,10 +310,10 @@ I wrote then, that,
     
     <item>
       <title>Working with AWS</title>
-      <link>https://veekaybee.github.io/hugo-test/working-with-aws/</link>
+      <link>https://veekaybee.github.io/hugo-test/2018/01/28/working-with-aws/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/working-with-aws/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2018/01/28/working-with-aws/</guid>
       <description>Clouds, Isaac Levitan
 TL;DR: AWS is an extremely flexible environment to work in, but the flexibility can lead to an overwhelming amount of choices that may initially overwhelm and make someone used to working on-prem less productive until they get the hang of it.
 More and more of my projects lately have been either doing data science on AWS, or moving data into AWS for data science, and I wanted to jot down some brief thoughts on coming from an on-prem background about what to expect from working in the cloud.</description>
@@ -321,10 +321,10 @@ More and more of my projects lately have been either doing data science on AWS, 
     
     <item>
       <title>Logs populi or, Thanks, Netflix!</title>
-      <link>https://veekaybee.github.io/hugo-test/logs-populi-or-thanks-netflix/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/12/14/logs-populi-or-thanks-netflix/</link>
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/logs-populi-or-thanks-netflix/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/12/14/logs-populi-or-thanks-netflix/</guid>
       <description>Earlier this week, Netflix tweeted out a seemingly-innocuous throw-away joke about how comforting it is to watch terrible Lifetime-like movies.
 The tweet immediately went viral, but not for the reason Netflix probably imagined. In the process of Brand Building, the company ultimately revealed that it was not above exposing proprietary customer viewing data to hundreds of thousands of people on Twitter for quick laughs.
 There is a small caveat: having worked previously with streaming viewing data, I&amp;rsquo;m not entirely convinced the data in the tweet was real.</description>
@@ -332,10 +332,10 @@ There is a small caveat: having worked previously with streaming viewing data, I
     
     <item>
       <title>Data ex machina</title>
-      <link>https://veekaybee.github.io/hugo-test/data-ex-machina/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/12/11/data-ex-machina/</link>
       <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/data-ex-machina/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/12/11/data-ex-machina/</guid>
       <description>Washing Machine (1961), Roy Lichtenstein
 Recently, Andrej Karpathy, head of AI at Tesla, wrote &amp;ldquo;Software 2.0.&amp;quot;, describing what he sees as a fundamental shift in the way software works. Software 1.0 is &amp;ldquo;explicit instructions to the computer written by a programmer.&amp;rdquo;
 Instead of writing lines of code, he writes that, &amp;ldquo;Software 2.0 is written in neural network weights.&amp;rdquo;
@@ -344,39 +344,39 @@ Instead of writing lines of code, he writes that, &amp;ldquo;Software 2.0 is wri
     
     <item>
       <title>Recent podcast and radio appearences</title>
-      <link>https://veekaybee.github.io/hugo-test/recent-podcast-and-radio-appearences/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/10/12/recent-podcast-and-radio-appearences/</link>
       <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/recent-podcast-and-radio-appearences/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/10/12/recent-podcast-and-radio-appearences/</guid>
       <description>I love exploring technical topics by writing about them. But, a lot of data science work involves explaining the breadth of your complicated model in 20 minutes at a meeting. So, I set a goal of becoming a better public speaker.
 I&amp;rsquo;ve given a lot of conference talks, but this has been my first year being on both podcasts and public radio(!). What&amp;rsquo;s exciting and hard about audio (especially when it&amp;rsquo;s live) is that you have to express yourself clearly in a limited amount of time, knowing that the recording will then be around for posterity.</description>
     </item>
     
     <item>
       <title>Alice in Python projectland</title>
-      <link>https://veekaybee.github.io/hugo-test/alice-in-python-projectland/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/09/26/alice-in-python-projectland/</link>
       <pubDate>Tue, 26 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/alice-in-python-projectland/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/09/26/alice-in-python-projectland/</guid>
       <description>Intro Python hides the hurt Building a simple word processor Creating a single object Combining objects into a program  Refactoring a single program   Combining programs into scripts Combining scripts into a module Project structure  Modular Code Unit Tests Requirements.txt and package dependencies Documentation Scripts __init__.py __main__.py driver setup.py   Sharing and using our package Next steps  Testing environments More advanced testing Continuous Integration Git Hooks and Version Control Setup.</description>
     </item>
     
     <item>
       <title>The demise of SoundCloud</title>
-      <link>https://veekaybee.github.io/hugo-test/the-demise-of-soundcloud/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/08/11/the-demise-of-soundcloud/</link>
       <pubDate>Fri, 11 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/the-demise-of-soundcloud/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/08/11/the-demise-of-soundcloud/</guid>
       <description>They listen to the gramophone, Makovsky
 The winter of 2005 was not easy. I was a sophomore in college, taking a heavy courseload, with a scholarship contingent on grades, and finals were right around the corner. I was also working two jobs. It was cold and dark in State College, Pennsylvania. My roommate and I didn&amp;rsquo;t get along - she wrote a public blog post detailing everything that annoyed her about me, including the fact that I was a loud chewer.</description>
     </item>
     
     <item>
       <title>Should Spark have an API for R?</title>
-      <link>https://veekaybee.github.io/hugo-test/should-spark-have-an-api-for-r/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/07/20/should-spark-have-an-api-for-r/</link>
       <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/should-spark-have-an-api-for-r/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/07/20/should-spark-have-an-api-for-r/</guid>
       <description>Table of Contents
  The SparkR API: DataFrames are confusing Functionality, adoption, and commit velocity Inability to plot data Visibility into debugging Incomplete Documentation Conclusion  Goya, Fire at Night
 As a consultant, I&amp;rsquo;m often asked to make tooling choices in big data projects: Should we use Python or R? What&amp;rsquo;s the best NoSQL datastore right now? How do we set up a data lake?
@@ -385,10 +385,10 @@ While I do keep up with data news, I don&amp;rsquo;t know everything that&amp;rs
     
     <item>
       <title>So, you want to data science</title>
-      <link>https://veekaybee.github.io/hugo-test/so-you-want-to-data-science/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/06/19/so-you-want-to-data-science/</link>
       <pubDate>Mon, 19 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/so-you-want-to-data-science/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/06/19/so-you-want-to-data-science/</guid>
       <description>The hype of data science has dominated the tech scene for the last five years, an eternity an industry when the average interest cycle for, say, a JavaScript framework is 3.7 days.
 And yet, data science, (and data engineering), is still a really young field that is not easily parsed by recruiters, managers making department budgeting decisions, and even data science practitioners themselves.
 Add into the mix the latest buzz around AI and deep learning, and there are a lot of misconceptions about what data science is and what data scientists do.</description>
@@ -396,10 +396,10 @@ Add into the mix the latest buzz around AI and deep learning, and there are a lo
     
     <item>
       <title>Setting up SQL for beginners is hard</title>
-      <link>https://veekaybee.github.io/hugo-test/setting-up-sql-for-beginners-is-hard/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/04/20/setting-up-sql-for-beginners-is-hard/</link>
       <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/setting-up-sql-for-beginners-is-hard/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/04/20/setting-up-sql-for-beginners-is-hard/</guid>
       <description>Edvard Munch, Building The Winter Studio. Ekely
 Although there has been a huge backlash against traditional programming paradigms, particularly relational databases, over the past several years, SQL is still one of the most popular programming languages.
 First, it&amp;rsquo;s proven (working in production settings for over forty years). Second, its human-language-like syntax and declarative nature make it a perfect stepping stone for people who have zero programming knowledge and get overwhelmed by having to start learning by understanding data types and loops.</description>
@@ -407,30 +407,30 @@ First, it&amp;rsquo;s proven (working in production settings for over forty year
     
     <item>
       <title>Should you replace Hadoop with your laptop?</title>
-      <link>https://veekaybee.github.io/hugo-test/should-you-replace-hadoop-with-your-laptop/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/03/20/should-you-replace-hadoop-with-your-laptop/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/should-you-replace-hadoop-with-your-laptop/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/03/20/should-you-replace-hadoop-with-your-laptop/</guid>
       <description>Vicki&amp;rsquo;s note: I&amp;rsquo;ve given this talk at Data Philly at Sidecar and Software as Craft at Promptworks. To see all the slides and the code, check out the original deck here.
 This talk is not meant to discourage you from pursuing distributed, NoSQL systems, but to get you to think about tradeoffs. Every technical choice is a tradeoff for another one, and it&amp;rsquo;s important to understand what you&amp;rsquo;re keeping and giving up in each scenario.</description>
     </item>
     
     <item>
       <title>Being a woman in programming in the Soviet Union</title>
-      <link>https://veekaybee.github.io/hugo-test/being-a-woman-in-programming-in-the-soviet-union/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/02/22/being-a-woman-in-programming-in-the-soviet-union/</link>
       <pubDate>Wed, 22 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/being-a-woman-in-programming-in-the-soviet-union/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/02/22/being-a-woman-in-programming-in-the-soviet-union/</guid>
       <description>Image source.
 Vicki&amp;rsquo;s note: A couple weeks ago, I saw a really interesting clip on Twitter that showed students in the Soviet Union learning to program using pen and paper. My mom has often told stories about how she learned to program the same way, and I shared the tweet. Marie Hicks, a tech historian, reached out and asked if my mom would want to write about her experiences, and she did.</description>
     </item>
     
     <item>
       <title>What should you think about when using Facebook?</title>
-      <link>https://veekaybee.github.io/hugo-test/what-should-you-think-about-when-using-facebook/</link>
+      <link>https://veekaybee.github.io/hugo-test/2017/02/01/what-should-you-think-about-when-using-facebook/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/what-should-you-think-about-when-using-facebook/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2017/02/01/what-should-you-think-about-when-using-facebook/</guid>
       <description>Courbet, The Winnowers
 TL;DR: Facebook collects data about you in hundreds of ways, across numerous channels. It&amp;rsquo;s very hard to opt out, but by reading about what they collect, you can understand the risks of the platform and choose to be more restrictive with your Facebook usage.
 Translations  Dutch translation here Big thank you to Ben! Portuguese translation here. Thank you to Ibrahim! Ukranian translation here French translation here Russian translation here Chinese translation here  Contents:</description>
@@ -438,20 +438,20 @@ Translations  Dutch translation here Big thank you to Ben! Portuguese translatio
     
     <item>
       <title>Strata 2016 and the rise of New Data</title>
-      <link>https://veekaybee.github.io/hugo-test/strata-2016-and-the-rise-of-new-data/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/10/06/strata-2016-and-the-rise-of-new-data/</link>
       <pubDate>Thu, 06 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/strata-2016-and-the-rise-of-new-data/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/10/06/strata-2016-and-the-rise-of-new-data/</guid>
       <description>Intro The last time I attended Strata + Hadoop World was in 2013. The conference was held at the New York Midtown Hilton for just a little over two days. Back then in the Stone Ages of Big Data, there was no Kafka, Spark, or Tensorflow.
 Many teams were just beginning to explore realtime as a possibility, and the data formats we most associate with Hadoop today, Avro and Parquet, were just starting to gain traction as Apache projects.</description>
     </item>
     
     <item>
       <title>How to parse emails with Python (or, how I liberated my Strata schedule)</title>
-      <link>https://veekaybee.github.io/hugo-test/how-to-parse-emails-with-python-or-how-i-liberated-my-strata-schedule/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/08/28/how-to-parse-emails-with-python-or-how-i-liberated-my-strata-schedule/</link>
       <pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-to-parse-emails-with-python-or-how-i-liberated-my-strata-schedule/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/08/28/how-to-parse-emails-with-python-or-how-i-liberated-my-strata-schedule/</guid>
       <description>Strata, arguably the largest data science conference in the United States, is coming up in September and my company is sponsoring my trip there this year, so I&amp;rsquo;ve started planning out which sessions I&amp;rsquo;ll be attending.
 One of the cool things you can do on the website for the conference is plan out your schedule beforehand by adding sessions to your calendar.
 But I wanted to then share that calendar with a coworker who is also going and compare calendars with him.</description>
@@ -459,10 +459,10 @@ But I wanted to then share that calendar with a coworker who is also going and c
     
     <item>
       <title>Walkthrough of Jupyter Lab Alpha</title>
-      <link>https://veekaybee.github.io/hugo-test/walkthrough-of-jupyter-lab-alpha/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/08/24/walkthrough-of-jupyter-lab-alpha/</link>
       <pubDate>Wed, 24 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/walkthrough-of-jupyter-lab-alpha/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/08/24/walkthrough-of-jupyter-lab-alpha/</guid>
       <description>I love Jupyter notebooks as a replacement for REPL work, quick data manipulation with pandas, and visualization with matplotlib. I&amp;rsquo;ve also had great experiences sharing them with executives, who need to look at multiple pieces of data quickly to make decisions.
 For all their Swiss army knife capabilities though, notebooks are terrible at code continuity.
 For example, it&amp;rsquo;s a pain to get [version control set up.] (https://www.r-bloggers.com/why-i-dont-like-jupyter-fka-ipython-notebook/)
@@ -471,20 +471,20 @@ Because cells are really easy to move up and down, because code can change withi
     
     <item>
       <title>My recent experiences using Azure ML</title>
-      <link>https://veekaybee.github.io/hugo-test/my-recent-experiences-using-azure-ml/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/08/19/my-recent-experiences-using-azure-ml/</link>
       <pubDate>Fri, 19 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/my-recent-experiences-using-azure-ml/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/08/19/my-recent-experiences-using-azure-ml/</guid>
       <description>I never thought I&amp;rsquo;d write &amp;ldquo;Microsoft&amp;rdquo; and &amp;ldquo;exciting&amp;rdquo; in the same sentence.
 I started my data career using Excel, which is a great tool for prototyping and sharing data quickly, and has been used by many people as a gateway to learning programming through VBA, but has none of the features someone serious about working with data could get behind: version control, testing, code review,cross-platform compatibility, or more than 1 million rows.</description>
     </item>
     
     <item>
       <title>Why doesn&#39;t MySQL have window functions?</title>
-      <link>https://veekaybee.github.io/hugo-test/why-doesnt-mysql-have-window-functions/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/07/07/why-doesnt-mysql-have-window-functions/</link>
       <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/why-doesnt-mysql-have-window-functions/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/07/07/why-doesnt-mysql-have-window-functions/</guid>
       <description>*Updated with comments from MySQL at end of post. *
 I&amp;rsquo;ve worked with a lot of the different flavors of SQL, including Oracle, SQL Server, Postgres, and SQLite, so I thought I knew all nuances of different SQL syntaxes. But I&amp;rsquo;ve recently been working with a project that&amp;rsquo;s using a LAMP stack, so I&amp;rsquo;ve gotten a lot more understanding of the MySQL&amp;rsquo;s caveats.
 I&amp;rsquo;m working on some data manipulation that requires window functions in MySQL, and I learned the hard way that MySQL doesn&amp;rsquo;t support them.</description>
@@ -492,19 +492,19 @@ I&amp;rsquo;m working on some data manipulation that requires window functions i
     
     <item>
       <title>Data strategy in 2016</title>
-      <link>https://veekaybee.github.io/hugo-test/data-strategy-in-2016/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/07/04/data-strategy-in-2016/</link>
       <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/data-strategy-in-2016/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/07/04/data-strategy-in-2016/</guid>
       <description>I gave a talk in May about how to pick a data architecture strategy in 2016. Thanks to Promptworks for hosting and recording! All the slides are here.</description>
     </item>
     
     <item>
       <title>How to keep up with the data industry today?</title>
-      <link>https://veekaybee.github.io/hugo-test/how-to-keep-up-with-the-data-industry-today/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/06/23/how-to-keep-up-with-the-data-industry-today/</link>
       <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-to-keep-up-with-the-data-industry-today/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/06/23/how-to-keep-up-with-the-data-industry-today/</guid>
       <description>A coworker recently asked how people keep up with everything that&amp;rsquo;s going on in Big Data, and I ended up writing a lot, which I thought I&amp;rsquo;d post here.
 For reference, I do daily work as a data scientist mostly in Python these days, but I&amp;rsquo;ve done R and Hadoop in the past.
 I see Big Data as a subset of data engineering, which is really just a subset of overall development concepts, so while I try to read articles specific to new data technologies like Spark and Cassandra, I also read as many general development sources as I can to better understand systems.</description>
@@ -512,10 +512,10 @@ I see Big Data as a subset of data engineering, which is really just a subset of
     
     <item>
       <title>Building presentations the hard way with reveal.js and Jupyter</title>
-      <link>https://veekaybee.github.io/hugo-test/building-presentations-the-hard-way-with-reveal.js-and-jupyter/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/04/20/building-presentations-the-hard-way-with-reveal.js-and-jupyter/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/building-presentations-the-hard-way-with-reveal.js-and-jupyter/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/04/20/building-presentations-the-hard-way-with-reveal.js-and-jupyter/</guid>
       <description>I&amp;rsquo;ve been working for a presentation on a talk I&amp;rsquo;m giving in a couple weeks, and the audience is fairly technical. All the cool kids are using reveal.js for technical presentations for the past couple years.
 I&amp;rsquo;m thinking it&amp;rsquo;s for a couple reasons:
  clonable as a GitHub repo beautiful themes and typefaces capitalizing on increase in static pages/ Javascript trend free and available on every machine that&amp;rsquo;s connected to the internet (Powerpoint is not)  Although I was won over by how nice it looked, I wasn&amp;rsquo;t too familiar with reveal and didn&amp;rsquo;t feel like going through the documentation.</description>
@@ -523,10 +523,10 @@ I&amp;rsquo;m thinking it&amp;rsquo;s for a couple reasons:
     
     <item>
       <title>Learning tech by analogy</title>
-      <link>https://veekaybee.github.io/hugo-test/learning-tech-by-analogy/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/04/09/learning-tech-by-analogy/</link>
       <pubDate>Sat, 09 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/learning-tech-by-analogy/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/04/09/learning-tech-by-analogy/</guid>
       <description>I entered the tech industry through SQL. When I came to work as a business analyst, I was handed the credentials to an Oracle database, pointers to some tables, and let loose.
 Because SQL is declarative, it&amp;rsquo;s probably the least intimidating programming language to start with, and it remains one of my favorite technologies because what you see is mostly what you get.
 But coming from the world of consulting where all I knew were spreadsheets and manipulating tabs upon tabs of pivot tables, I had no clue what was going on.</description>
@@ -534,20 +534,20 @@ But coming from the world of consulting where all I knew were spreadsheets and m
     
     <item>
       <title></title>
-      <link>https://veekaybee.github.io/hugo-test/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/04/07/</link>
       <pubDate>Thu, 07 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/04/07/</guid>
       <description>It&amp;rsquo;s 2016. I shouldn&amp;rsquo;t have to write a scraping script to extract the information I need from the webpage of a magazine article. But that&amp;rsquo;s exactly what I had to do in February when I needed information on switching between Android and iOS.
 I was wondering what the transfer process was like (for phone numbers, specifically) from Android to iPhone, so I went to the Googles and searched for &amp;ldquo;&amp;ldquo;Android to iOS&amp;rdquo; or something similar.</description>
     </item>
     
     <item>
       <title>Starting to dig inside Spark RDDs</title>
-      <link>https://veekaybee.github.io/hugo-test/starting-to-dig-inside-spark-rdds/</link>
+      <link>https://veekaybee.github.io/hugo-test/2016/03/29/starting-to-dig-inside-spark-rdds/</link>
       <pubDate>Tue, 29 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/starting-to-dig-inside-spark-rdds/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2016/03/29/starting-to-dig-inside-spark-rdds/</guid>
       <description>A lot of the Spark documentation has examples using either the Scala spark-shell or the Python pyspark repl. These are really great to test out code fragments, especially for Scala, which needs to be packaged.
 So you get a lot of examples like this:
 textFile.map(line =&amp;gt; line.split(&amp;quot; &amp;quot;).size).reduce((a, b) =&amp;gt; if (a &amp;gt; b) a else b)
@@ -556,42 +556,85 @@ Let&amp;rsquo;s say we have some log data in HDFS already: Using some fake log d
     </item>
     
     <item>
+      <title>JJ Abrams opens the box of my childhood</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-12-28-jj-abrams-opens-the-box-of-my-childhood/</link>
+      <pubDate>Mon, 28 Dec 2015 21:55:46 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-12-28-jj-abrams-opens-the-box-of-my-childhood/</guid>
+      <description>[This post contains spoilers of Star Wars, Inside Out, and your childhood.]
+ “Luke, you’re going to find that many of the truths we cling to depend greatly on our own point of view. ”
+-Obi-Wan Kenobi, Return of the Jedi
+ When I was twelve, my family had been in America for seven years, and we could finally afford the American Dream. My parents sold our tiny, grimy duplex in exchange for a larger house in a much better school district.</description>
+    </item>
+    
+    <item>
+      <title>Diaper by diaper and bottle by bottle</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-10-07-diaper-by-diaper-and-bottle-by-bottle/</link>
+      <pubDate>Wed, 07 Oct 2015 07:20:28 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-10-07-diaper-by-diaper-and-bottle-by-bottle/</guid>
+      <description>I am reading about someone who has a lot of followers on Twitter. She just had a baby, and I am outraged. “Can you believe this,” I say to Mr. B. “She writes that childbirth was ‘beautiful,’ and that she’ll be offline for a bit because she, her husband, and her baby will be ‘falling in love with each other’ for the foreseeable future. ”
+Mr. B looks up from his computer.</description>
+    </item>
+    
+    <item>
       <title>Let&#39;s work on the hard stuff</title>
-      <link>https://veekaybee.github.io/hugo-test/lets-work-on-the-hard-stuff/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/09/09/lets-work-on-the-hard-stuff/</link>
       <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/lets-work-on-the-hard-stuff/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/09/09/lets-work-on-the-hard-stuff/</guid>
       <description>Last week, I got an email from a friend about a new startup that &amp;ldquo;hand-picks a box of snacks and sends it to your home,&amp;rdquo; started by a group of entrepreneurs who &amp;ldquo;wanted a better way to snack.&amp;rdquo;
 Several days after I read about this startup, I was watching my seven-month-old play on rug next to me, when I felt my chest tighten in a new and frightening way. I ignored the pain for several minutes while hoping with every fiber of my being that I wasn&amp;rsquo;t experiencing symptoms of cardiac arrest.</description>
     </item>
     
     <item>
+      <title>We are not getting the full story about the choices we make</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-09-02-we-are-not-getting-the-full-story-about-the-choices-we-make/</link>
+      <pubDate>Wed, 02 Sep 2015 07:43:49 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-09-02-we-are-not-getting-the-full-story-about-the-choices-we-make/</guid>
+      <description>My last semester of MBA classes started last week. Although I am still at home Thursday through Sunday with Baby B, I no longer see her on Mondays and Wednesdays after eight in the morning, the time I leave for work. Additionally, I now usually have class group work to do on the nights when I am home and we’ve put her to bed. People always say to me, “I don’t know how you do it,” and I answer truthfully.</description>
+    </item>
+    
+    <item>
       <title>How non-technical teams work together</title>
-      <link>https://veekaybee.github.io/hugo-test/how-non-technical-teams-work-together/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/08/26/how-non-technical-teams-work-together/</link>
       <pubDate>Wed, 26 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-non-technical-teams-work-together/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/08/26/how-non-technical-teams-work-together/</guid>
       <description>I work as a data scientist. I&amp;rsquo;m also in my last semester as an MBA student. One of the most important things I&amp;rsquo;ve learned over the course of the program is how differently technical and business people think.
 There is a huge push today for society to become technically literate, particularly given that the Robots are Coming. But the opposite is true as well. It is for technical people to understand the non-technical mindset, particularly given that most people, even if they work in the tech industry, report to executives who are well-versed in their industries and the nuances of corporate life, but are not necessarily technically savvy, at least in the way developers define it.</description>
     </item>
     
     <item>
       <title>Generating fake Hacker News headlines with Python</title>
-      <link>https://veekaybee.github.io/hugo-test/generating-fake-hacker-news-headlines-with-python/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/08/24/generating-fake-hacker-news-headlines-with-python/</link>
       <pubDate>Mon, 24 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/generating-fake-hacker-news-headlines-with-python/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/08/24/generating-fake-hacker-news-headlines-with-python/</guid>
       <description>###TL;DR: All the code for this post is here.
 One of my favorite hobbies is making up fake Hacker News headlines because they&amp;rsquo;re just so easy to parody (i.e. they follow a predictable pattern using most of the same topics and wording.)
  How to implement Rust in Go in a 3-line interpreter Ask HN: How do I serve better artisans beer at my startup? Javascript A [PDF] from some obscure industry journal from (1975) This outrageous thing is happening to our internet Isomorphic Javascript This outrageous thing is not happening to our internet Steve Jobs was a jerk Node.</description>
     </item>
     
     <item>
+      <title>How to think in two languages</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-08-07-how-to-think-in-two-languages/</link>
+      <pubDate>Fri, 07 Aug 2015 07:29:51 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-08-07-how-to-think-in-two-languages/</guid>
+      <description>This is one in what looks like is becoming a series of posts in how I reconcile growing up mostly in America but wanting to raise my child in Russian.
+I need to get something off my chest.
+I’ve never read War and Peace. Or Anna Karenina. Or The Brothers Karamazov.
+In all the years I’ve been pretending to be an expert on Russian culture, I’ve never read any of the great works of Russian literature.</description>
+    </item>
+    
+    <item>
       <title>How large should your sample size be?</title>
-      <link>https://veekaybee.github.io/hugo-test/how-large-should-your-sample-size-be/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/08/04/how-large-should-your-sample-size-be/</link>
       <pubDate>Tue, 04 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-large-should-your-sample-size-be/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/08/04/how-large-should-your-sample-size-be/</guid>
       <description>I read a recent interview with Hadley Wickham. Two things stood out to me.
 The first is how down-to-earth he seems, even given how well-known he is in the data science community.
 The second was this quote:
@@ -601,10 +644,10 @@ The second was this quote:
     
     <item>
       <title>Who is doing this to my internet?</title>
-      <link>https://veekaybee.github.io/hugo-test/who-is-doing-this-to-my-internet/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/07/28/who-is-doing-this-to-my-internet/</link>
       <pubDate>Tue, 28 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/who-is-doing-this-to-my-internet/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/07/28/who-is-doing-this-to-my-internet/</guid>
       <description>A couple of years ago, I went to a talk called &amp;ldquo;Who&amp;rsquo;s Doing This Horsesh-t to My Internet,&amp;quot;.
 I don&amp;rsquo;t remember much of the talk (it had to do with net neutrality and DMCA takedown notices, the two main things plaguing the spread of free internet at the time), but the title has stuck with me through the years.
 At the time of the talk, the internet was still relatively intact.</description>
@@ -612,10 +655,10 @@ At the time of the talk, the internet was still relatively intact.</description>
     
     <item>
       <title>Cumulative totals three different ways in data science</title>
-      <link>https://veekaybee.github.io/hugo-test/cumulative-totals-three-different-ways-in-data-science/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/07/08/cumulative-totals-three-different-ways-in-data-science/</link>
       <pubDate>Wed, 08 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/cumulative-totals-three-different-ways-in-data-science/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/07/08/cumulative-totals-three-different-ways-in-data-science/</guid>
       <description>The data analysis field has moved away from querying tools like Crystal Reports (shudder), OLAP cubes, and Excel, to programming languages closer to the raw data.
 I primarily work with IPython notebooks, R, and SQL these days, and I thought it would be interesting to look at the differences between these three tools and three ways of thinking through a single task.
 Something people often ask of data scientists (or analysts or engineers or what have you) is to just find out how many total customers the company has from the very beginning on a cumulative basis.</description>
@@ -623,21 +666,30 @@ Something people often ask of data scientists (or analysts or engineers or what 
     
     <item>
       <title>How many people are actually using your stuff?</title>
-      <link>https://veekaybee.github.io/hugo-test/how-many-people-are-actually-using-your-stuff/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/06/15/how-many-people-are-actually-using-your-stuff/</link>
       <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-many-people-are-actually-using-your-stuff/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/06/15/how-many-people-are-actually-using-your-stuff/</guid>
       <description>Five million years after it became popular, I&amp;rsquo;ve gotten into Spotify. The thing I like the most about the service is the curated content.
 When I was working with television viewing data, my boss at the time had a hypothesis that there are two viewing behaviors,
  Flipping through the channels to see what&amp;rsquo;s on or Actively seeking out a show.  The same is true for music: you&amp;rsquo;re either actively looking for a song, or you want to listen to a &amp;ldquo;channel.</description>
     </item>
     
     <item>
+      <title>Reddit was amazing</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-06-11-reddit-was-amazing/</link>
+      <pubDate>Thu, 11 Jun 2015 11:56:37 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-06-11-reddit-was-amazing/</guid>
+      <description>In its early years, the Soviet Union was not like what we think of the Soviet Union today: closed, totalitarian, single-minded. The fresh, new feel of the revolution made Russia feel like a whole new world for artists and writers alike. The government, just a baby itself and energized by this brave new world it had created, pushed for many progressive ideas. In addition to banning private property, it also gave women equal rights to men under marriage, legalized abortion, and gave legitimacy to children born out of wedlock.</description>
+    </item>
+    
+    <item>
       <title>Really easy data concepts that get abused all the time</title>
-      <link>https://veekaybee.github.io/hugo-test/really-easy-data-concepts-that-get-abused-all-the-time/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/06/09/really-easy-data-concepts-that-get-abused-all-the-time/</link>
       <pubDate>Tue, 09 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/really-easy-data-concepts-that-get-abused-all-the-time/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/06/09/really-easy-data-concepts-that-get-abused-all-the-time/</guid>
       <description>The more we make things easier for the human brain to understand, the easier it is to make data-driven decisions because we don&amp;rsquo;t have to spend time understanding the data.
 Two particular things that are abused a lot are:
  Not including percentages for comparison Comparing two completely different numbers  Amazon was guilty of this until very recently. So, I was pleasantly surprised when I logged into Amazon this morning.</description>
@@ -645,29 +697,29 @@ Two particular things that are abused a lot are:
     
     <item>
       <title>What do we do with all these photos?</title>
-      <link>https://veekaybee.github.io/hugo-test/what-do-we-do-with-all-these-photos/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/06/03/what-do-we-do-with-all-these-photos/</link>
       <pubDate>Wed, 03 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/what-do-we-do-with-all-these-photos/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/06/03/what-do-we-do-with-all-these-photos/</guid>
       <description>When I go to visit my grandfather, I often enjoy looking at our family photo album. He was born in the 1930s in the Soviet Union and the pictures start sometime in the 1950s, when he married my grandmother, and go all the way up to today.
 That photo album survived 40 years in communism, three apartments, a trans-Atlantic move to the United States, and two moves in Philadelphia. There are maybe 300 pictures in the album, and every single one of them is interesting.</description>
     </item>
     
     <item>
       <title>Creating readable SQL.</title>
-      <link>https://veekaybee.github.io/hugo-test/creating-readable-sql./</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/06/02/creating-readable-sql./</link>
       <pubDate>Tue, 02 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/creating-readable-sql./</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/06/02/creating-readable-sql./</guid>
       <description>Writing legible code is seen as the hallmark of a competent developer, and for good reason. If you can&amp;rsquo;t read what you wrote, you can&amp;rsquo;t change what you wrote. There are lots of organizations, especially once you get to larger companies where programming isn&amp;rsquo;t the core competency or value center, that are prime examples of this. The result is a mess that not only impacts the code, but the entire company or business.</description>
     </item>
     
     <item>
       <title>How to get into big data</title>
-      <link>https://veekaybee.github.io/hugo-test/how-to-get-into-big-data/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/06/01/how-to-get-into-big-data/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/how-to-get-into-big-data/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/06/01/how-to-get-into-big-data/</guid>
       <description>A couple of weeks ago, I gave a talk at Philly Women in Tech on how to get into the field of big data to a diverse group of women both in tech fields and not.
 The slides are here:
 but I didn&amp;rsquo;t take my own advice from my last post and didn&amp;rsquo;t add any context to each slide so you could tell what was going on without having been at my talk.</description>
@@ -675,10 +727,10 @@ but I didn&amp;rsquo;t take my own advice from my last post and didn&amp;rsquo;t
     
     <item>
       <title>I&#39;m not so sure about Tufte</title>
-      <link>https://veekaybee.github.io/hugo-test/im-not-so-sure-about-tufte/</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/05/31/im-not-so-sure-about-tufte/</link>
       <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/im-not-so-sure-about-tufte/</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/05/31/im-not-so-sure-about-tufte/</guid>
       <description>A couple years ago, I was fortunate enough to be able to catch Edward Tufte, the father of the current wave of thinking about data visualization, at a seminar he was giving in Philadelphia.
 I, like many people at the seminar, were really excited by the examples of visual presentation based on Tufte&amp;rsquo;s books, as well as his declaration that PowerPoint is evil.
 But, looking back on the seminar, I can&amp;rsquo;t say that I came away with anything practical to take back to work.</description>
@@ -686,20 +738,287 @@ But, looking back on the seminar, I can&amp;rsquo;t say that I came away with an
     
     <item>
       <title>Man, do static sites suck.</title>
-      <link>https://veekaybee.github.io/hugo-test/man-do-static-sites-suck./</link>
+      <link>https://veekaybee.github.io/hugo-test/2015/05/30/man-do-static-sites-suck./</link>
       <pubDate>Sat, 30 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/man-do-static-sites-suck./</guid>
+      <guid>https://veekaybee.github.io/hugo-test/2015/05/30/man-do-static-sites-suck./</guid>
       <description>Whenever I click on HackerNews links these days, I see a TON of statically-generated sites either through Jekyll or Octopress or (in the Python community) Pelican. This trend has been particularly strong over the past three years or so. These themes always look really clean and, for some reason, the essays/thoughts come through more well-organized and cleaner than on Wordpress, which has been my blogging platform of choice [for over 6 years] (http://blog.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://veekaybee.github.io/hugo-test/essays/</link>
+      <title>It is hard to talk to my baby in Russian</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-05-28-it-is-hard-to-talk-to-my-baby-in-russian/</link>
+      <pubDate>Thu, 28 May 2015 07:56:44 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-05-28-it-is-hard-to-talk-to-my-baby-in-russian/</guid>
+      <description>There is a meme going around the internet that is a picture with two eggs on it. The first, on the left, is a whole egg, round and white and smooth. The second, on the right, is the egg smashed into tiny bits and pieces. The whole egg is your brain before kids, and the right egg is your brain after kids.
+I’ve found this to be accurate. Before I thought about all kinds of esoteric things, like the Kurdish oil region in Iraq, random blogs I used to read three years ago (what happened to Gubbi of Arabia?</description>
+    </item>
+    
+    <item>
+      <title>No, I will not enjoy every moment</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2015-03-25-no-i-will-not-enjoy-every-moment/</link>
+      <pubDate>Wed, 25 Mar 2015 07:24:12 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2015-03-25-no-i-will-not-enjoy-every-moment/</guid>
+      <description>When your baby is born, people will tell you “enjoy every moment.” This has always irritated me, but I couldn’t figure out why. Something I saw recently helped me understand why this phrase has always bothered me so much.
+The first couple weeks after our baby girl was born in January, Mr. B and I could not physically or emotionally summon up the energy to leave the house. Instead, we watched a lot of TV, especially whole seasons of shows that are available on every streaming service possible.</description>
+    </item>
+    
+    <item>
+      <title>Pushing to production</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2014-12-15-pushing-to-production/</link>
+      <pubDate>Mon, 15 Dec 2014 12:56:44 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2014-12-15-pushing-to-production/</guid>
+      <description>In the IT world, large software development projects happen in stages. The first stage is a blueprint, sketched out hastily on a whiteboard. The second stage is in development, where developers actually write the code. The third stage is integration, where the new, fresh code is blended into existing, working code to make sure there are no compatibility issues. In integration, code can break, compatibility can break, and whole parts of software functions can be rewritten without consequence.</description>
+    </item>
+    
+    <item>
+      <title>Just make the damn meal</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2014-09-25-just-make-the-damn-meal/</link>
+      <pubDate>Thu, 25 Sep 2014 07:19:21 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2014-09-25-just-make-the-damn-meal/</guid>
+      <description>Inspired by thisand other NYT hijinks. Just cook. Just cook dinner. We’re all crunched for time, but please, just cook dinner. It’s never easy to cook. We at the New York Times realize this. You might have a million other things going on in your life. You might have just dragged your ass in from night class that lasts from 6-9:30. Your ass, because it is pregnant, may not even feel like it is attached to your body anymore because you sat in a chair designed for a much less pregnant woman for three hours and tried to thoughtfully participate in class discussion even though oh my god you felt like maybe your midregion was detaching from your body.</description>
+    </item>
+    
+    <item>
+      <title>America Online and off</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-08-23-america-online-and-off/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://veekaybee.github.io/hugo-test/essays/</guid>
-      <description>asdfsa asdfsadf asdfsafd</description>
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-08-23-america-online-and-off/</guid>
+      <description>In December of 1777, after weeks of drawn-out fighting near Philadelphia, George Washington and his miserable, cowered soldiers, and their families, came to Valley Forge to nurse their wounds for the winter. The mood could not have been bleaker. Philadelphia was occupied by the British. Less than a quarter of the men had shoes. The rest left bloody footprints in the snow. With their little remaining strength, they built cramped, uninsulated, wooden huts for shelter.</description>
+    </item>
+    
+    <item>
+      <title>Democracy in the dark</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-12-20-democracy-in-the-dark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-12-20-democracy-in-the-dark/</guid>
+      <description>Source. 
+&amp;ldquo;Where do you think they&amp;rsquo;ll send us when The Deportations start,&amp;rdquo; I ask Mr. B, taking a bite of baklava. It&amp;rsquo;s a weeknight in early December and the cold comes quickly and permeates the dark corners of the house. We are sitting in the kitchen, drinking tea. The toddler is upstairs fast asleep, firmly clutching her lovey in one hand.
+It&amp;rsquo;s a blasé, sarcastic question, but like all of my jokes these days, it holds a grain of uncomfortable truth, because I&amp;rsquo;m not really sure what the future has in store for me, my family, my kid who doesn&amp;rsquo;t speak English yet, and this entire country.</description>
+    </item>
+    
+    <item>
+      <title>Fix the internet by writing good stuff and being nice to people</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-11-20-fix-the-internet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-11-20-fix-the-internet/</guid>
+      <description>Today&amp;rsquo;s internet is mean. It&amp;rsquo;s hard to pinpoint exactly when everyone online became a jerk, but to me it seems that the tipping point occurred right when making money off content started being worth more than the content itself. I wrote the following post before the election but never got around to publishing it. Now, it seems more necessary than ever.
+from http://www.boweryboyshistory.com/
+One Times Square used to be the headquarters of the New York Times in the early 1900s.</description>
+    </item>
+    
+    <item>
+      <title>Good things don&#39;t scale</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2017-05-10-good-things-dont-scale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2017-05-10-good-things-dont-scale/</guid>
+      <description>Table of Contents
+ Flyover Country Welcome to Iceland. Here&amp;rsquo;s some Júníus Meyvant Iceland is for humans From lice to nice Small is weird. Small is good. Big is hard - for countries, and the internet, too Where to now? This is where I leave you Further Reading on Iceland  Flyover Country When I was younger and my family finally made it to the American middle class, we went on vacations to Europe.</description>
+    </item>
+    
+    <item>
+      <title>It didn&#39;t taste like Pamplemousse</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-02-18-pamplemousse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-02-18-pamplemousse/</guid>
+      <description>Everyone I know has been talking about LaCroix. The hipster sparkling water has been everywhere lately, from tech startups, to the millennial female-oriented newsletter I subscribe to to pretend I&amp;rsquo;m still in my 20s and see what all the kids are up to these days.
+Recently, I decided to try it and see if I could indeed ascend to a higher spiritual plane while drinking it. I went specifically to my local Whole Foods, where they are super-heavy on selling the stuff recently, picked out a six-pack, and brought it home.</description>
+    </item>
+    
+    <item>
+      <title>Keeping the world away</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2019-06-04-kharms-for-kids/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2019-06-04-kharms-for-kids/</guid>
+      <description>One of the best parts of having a four-year-old is that she&amp;rsquo;s finally old enough to request her own bedtime reading. Usually Mr. B does the bedtime routine and reading, but some nights it&amp;rsquo;s me, and we&amp;rsquo;ll turn on her soft, yellow chicken nightlight, and I&amp;rsquo;ll pull up a chair right next to her bed and read.
+She has her own tastes and preferences, and lately, she&amp;rsquo;s been requesting Daniil Kharms&amp;rsquo;s &amp;ldquo;Everyone runs, flies, and hops&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Me and Markov</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-06-03-me-and-markov/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-06-03-me-and-markov/</guid>
+      <description>One Friday when I was in fifth grade, I bombed a math test. I&amp;rsquo;d gotten something like an 81, an unforgivable grade in a Russian immigrant family. I remember sitting on the bus, my whole stomach filling with dread at the thought of sharing this grade with my parents.
+Kids sat around me on the bus, laughing, the whole weekend full of promise ahead of them. Mine stretched out bleakly before me, my fate and entire future uncertain, the exam with the bad grade sitting there quietly in the backpack next to me.</description>
+    </item>
+    
+    <item>
+      <title>Meghan Markle&#39;s heels</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2019-03-06-meghan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2019-03-06-meghan/</guid>
+      <description>A couple weeks ago, as Mr. B was putting our preschooler to bed, I was lying on the couch, balancing a container of creamy Icelandic yogurt on my lap, and scrolling through People.com. It&amp;rsquo;s something I do a lot these days because I&amp;rsquo;m four and a half months pregnant, and my brain has completely turned to mush.
+In order to grow a human being, one of the first things you grow is a placenta, the protective sack of nutritious lifeblood that makes its appearance at the end of a pregnancy as an unimpressive blob.</description>
+    </item>
+    
+    <item>
+      <title>My favorite books of 2016</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-12-26-books-of-2016/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-12-26-books-of-2016/</guid>
+      <description>Recent studies that show it takes two years to fully recover mentally from pregnancy and childbirth, and boy do I believe it.
+Last year, with a newborn and a new job, I had zero time for, or interest in, reading. It was like my brain turned off. This year, the toddler started going to bed at 7:30 and sleeping through the night, and I swam in literature. I luxuriated over having hours and hours of uninterrupted time at night to read books.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Books of 2017</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-01-02-favorite-books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-01-02-favorite-books/</guid>
+      <description>Every year, it seems like the books I read are completely random. But, what I&amp;rsquo;ve learned over time is that I love books that teach me something about the invisible systems that govern how the world works.
+My first revelation was many years ago, when I first read Confessions of an Economic Hitman and understood better how international financial systems really work under the covers. Ever since then, I&amp;rsquo;ve been on the look out for both fiction and non-fiction books that peel back the curtain and show the world for what it really is.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Books of 2018</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-12-27-best-books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-12-27-best-books/</guid>
+      <description>This year, in reading, I was looking for an escape in great writing. It didn&amp;rsquo;t matter to me whether the writing was fiction or non-fiction, it needed to transport and inspire me. I read nearly 70 books, and for some reason, I had to put down quite a few of them because they weren&amp;rsquo;t getting to the point. Here are my favorites.
+Educated by Tara Westover
+It seems like everyone&amp;rsquo;s been talking about this book, and for good reason.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Books of 2019</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2020-01-01-books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2020-01-01-books/</guid>
+      <description>This year, I knew I wouldn&amp;rsquo;t have a lot of time. The first half of the year, my pregnancy took a lot of time away from me in the form of body-numbing exhaustion. After working and taking care of my daughter all day, I simply collapsed into bed and fell asleep at 7 at night.
+In the second half of the year, my baby was born, thus taking away all of the other time I had.</description>
+    </item>
+    
+    <item>
+      <title>My Favorite Books of 2020</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2021-04-16-favorite-books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2021-04-16-favorite-books/</guid>
+      <description>Reading was really hard going in 2020. I was home with two kids of a good chunk of the year and worried that the world was ending the rest of the time. When I did read, I wanted to read things where people who were competent solved problems. I didn&amp;rsquo;t want to read about (unattainable) travel or anything that felt like life moving foward, and I didn&amp;rsquo;t want to read anything about the apocalypse.</description>
+    </item>
+    
+    <item>
+      <title>On competence</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-03-07-on-competence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-03-07-on-competence/</guid>
+      <description>Cosette Sweeping, Emile Bayard 1862
+I&amp;rsquo;ve watched at least ten different versions of the musical Les Miserables, including the movie and a junior high performance in a middle school in nowhere, Pennsylvania. Ostensibly the songs and roles are always the same, but each production has its own energy, its own highs, and its own flaws.
+The best and worst version of Les Mis is &amp;ldquo;Les Miserables in Concert: The 25th Anniversary.</description>
+    </item>
+    
+    <item>
+      <title>Russia&#39;s window to the West</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-06-22-russia-window-to-the-west/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-06-22-russia-window-to-the-west/</guid>
+      <description>I am trying to teach my daughter Russian as her first language, so most mornings while she sits in her high chair and I spoon feed her yogurt, we listen to Russian radio news. While the sun is just rising over Philadelphia and the day is fresh here, it&amp;rsquo;s already closing in on mid-afternoon in Moscow, and both the news and announcers seem stale, worn.
+A traffic jam on the Garden Ring, administrative graft and bribes at a hospital in Podmoskovye.</description>
+    </item>
+    
+    <item>
+      <title>Some like it hot</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2018-01-018-some-like-it-hot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2018-01-018-some-like-it-hot/</guid>
+      <description>For most people, winter means holiday lights, the warmth of family, and having fun in the snow.
+For me, winter means the existential fear of being judged for the way my child is dressed at daycare.
+To preserve our family’s language and culture, we send my daughter to a Russian-language daycare. This is all very beautiful and noble, until you realize two things about Russian daycare. The first is that your child can never be warm enough because, if they’re underdressed, they’ll go outside and catch a cold.</description>
+    </item>
+    
+    <item>
+      <title>Talk at Skeptech - Manuscripts don&#39;t burn</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2017-06-19-skeptech/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2017-06-19-skeptech/</guid>
+      <description>In April, I gave a talk at Skeptech, a fantastic event put together by Mark Hurst to question what the internet&amp;rsquo;s become lately.
+The video of the talk is here. My section starts around 1:12:00, but I really encourage you to listen to all of it.
+Thank you to WFMU for hosting.
+This is the transcript I wrote for my speaker&amp;rsquo;s notes. It doesn&amp;rsquo;t 100% match up with what I talked about, but follows the spirit of the talk.</description>
+    </item>
+    
+    <item>
+      <title>The luxury of opting out of digital noise</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2019-04-25-digital-noise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2019-04-25-digital-noise/</guid>
+      <description>Recently, Ottessa Moshfegh released a new critically-acclaimed novel, &amp;ldquo;My Year of Rest and Relaxation&amp;rdquo;. The story is about a young, thin, and pretty (as she tells us herself many times) Columbia graduate in her mid-20s, in the year 2000. In the midst of a booming and glittering New York City, she&amp;rsquo;s still consumed by the deaths of her hideously neglectful parents, her abusive on-again/off-again boyfriend, and her meaningless job at an art gallery.</description>
+    </item>
+    
+    <item>
+      <title>This, too, shall pass</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2016-04-19-this-too-shall-pass/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2016-04-19-this-too-shall-pass/</guid>
+      <description>The street I used to work on in D.C.
+I first moved to Washington, D.C. in the fall of 2007, as soon as I graduated from college. I had just landed my dream job and I was absolutely miserable.
+It wasn&amp;rsquo;t my first time living away from my family, but the times before, including college, had been temporary.
+The high-rise apartment I moved to in Alexandria was spacious by post-graduate standards: a bedroom, small dining room, kitchen.</description>
+    </item>
+    
+    <item>
+      <title>Three tradeoffs</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2017-03-21-three-tradeoffs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2017-03-21-three-tradeoffs/</guid>
+      <description>People always ask me how I manage to have work, a family, and still have time to write. I always tell them I give up stuff, but they never believe me. Here&amp;rsquo;s a list of things I&amp;rsquo;ve given up recently. Please, friends, step into the creepiness that is my life.
+  I work hard, study up on my field, and make enough money that I can look really nice and buy actual grown-up jewelry.</description>
+    </item>
+    
+    <item>
+      <title>We know the way</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2017-06-27-moana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2017-06-27-moana/</guid>
+      <description>It&amp;rsquo;s 10:37 PM on a Wednesday night, and I should be asleep. But I&amp;rsquo;m lying on the edge of my bed at an extremely uncomfortable angle, watching this video with the sound softly turned down so Mr. B, who is downstairs, doesn&amp;rsquo;t hear my secret shame.
+(clicky-click on the image)
+
+I cannot express how much joy this video clip, set to this song, brings me. Each time I watch it, I become more hopeful and jubilant about the idea of self-determination, hard work, and human progress.</description>
+    </item>
+    
+    <item>
+      <title>What we&#39;ve lost</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2020-12-24-what-weve-lost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2020-12-24-what-weve-lost/</guid>
+      <description>This started as a Twitter thread, but one of my long-time goals has been to not put stuff in Twitter threads, so here it is in longer form. Hopefully this is the start of a nice return to blogging for 2021!
+A few days ago, I was putting together our physical photo album for 2020. I do this every year because I&amp;rsquo;m terrified that I&amp;rsquo;m going to lose all of our photos into the digital ether.</description>
+    </item>
+    
+    <item>
+      <title>Wonder woman</title>
+      <link>https://veekaybee.github.io/hugo-test/essays/2017-06-13-wonder-woman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://veekaybee.github.io/hugo-test/essays/2017-06-13-wonder-woman/</guid>
+      <description>I don&amp;rsquo;t know if I&amp;rsquo;ll see Wonder Woman, but I was interested in Gal Gadot, and read up a bit about her.
+She just had her second daughter at the end of March. March! Which means, just as she was gearing up for a full-on press tour for the movie, she was recovering from childbirth, which, even if you&amp;rsquo;re very in-shape and &amp;ldquo;on&amp;rdquo;, is immensely hard on the body and mind.</description>
     </item>
     
   </channel>
