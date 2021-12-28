@@ -8,10 +8,10 @@ title: Recsys 2021 Recap
 <meta name="twitter:creator" content="@vboykis">
 <meta name="twitter:title" content="A few quick notes on Recsys 2021">
 <meta name="twitter:description" content="What's up in recommender systems">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/april.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png">
 
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/april.png" alt="wheat field" width="300px"/>
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png" alt="wheat field" width="300px">}}
 April, Allan D'Arcangelo
 
 [Recsys 2021](https://recsys.acm.org/recsys21/) was in October. Since I'm now [focusing on this area of ML at work](https://applyingml.com/mentors/vicki-boykis/), I attended (virtually only, unfortunately, but the online experience was as good as it could be at a hybrid conference, so major hats off to the organizers!) at took around 30 pages of notes. 
