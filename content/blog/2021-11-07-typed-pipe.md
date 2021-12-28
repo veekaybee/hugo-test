@@ -9,11 +9,10 @@ card = "summary"
 site = "@vboykis"
 creator = "@vboykis"
 description = "How working with data-driven programs requires two different contexts"
-image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
-
+images = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
 +++
 
-{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png" alt="wheat field" width="600px">}}
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png" width="600px">}}
 
 
 A lot of my brain space lately has been occupied by [TypedPipes](https://appdoc.app/artifact/com.twitter/scalding-core_2.9.3/0.9.0/com/twitter/scalding/typed/TypedPipe.html). A TypedPipe is the main object type that you work with in [Scalding](https://www.cascading.org/projects/scalding/), a distributed data framework written as a wrapper in Scala around [Cascading](https://www.cascading.org/). Scalding was originally developed at Twitter, and adopted by many companies around the same time [Apache Spark](https://spark.apache.org/) became popular. 

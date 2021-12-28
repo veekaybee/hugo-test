@@ -1,14 +1,16 @@
----
-date: "2021-10-28T00:00:00Z"
-title: Recsys 2021 Recap
----
++++
+date = '2021-10-28'
+title = "Recsys 2021 Recap"
+aliases = [
+    "2021/10/28/recsys-recap/"
+]
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="A few quick notes on Recsys 2021">
-<meta name="twitter:description" content="What's up in recommender systems">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png">
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "What's up in recommender systems"
+images = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png"
++++
 
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png" alt="wheat field" width="300px">}}
