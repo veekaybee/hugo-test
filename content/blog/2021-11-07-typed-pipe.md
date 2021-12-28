@@ -1,16 +1,17 @@
 +++
 date = '2021-11-07'
 title = "The programmer's brain in the lands of exploration and production"
-description = "How working with data-driven programs requires two different contexts"
 
 aliases = [
     "/2021/11/07/typed-pipe/"
 ]
 
-card = "summary"
-site = "@vboykis"
-creator = "@vboykis"
-image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
+[twitter]
+    card = "summary"
+    site = "@vboykis"
+    creator = "@vboykis"
+    description = "How working with data-driven programs requires two different contexts"
+    image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png"
 +++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png" alt="wheat field" width="600px">}}
