@@ -1,17 +1,19 @@
----
-date: "2021-03-26T00:00:00Z"
-title: The ghosts in the data
----
++++
+date = '2021-03-26'
+title = "The ghosts in the data"
+aliases = [
+    "/2021/03/26/data-ghosts/"
+]
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="The ghosts in the data.">
-<meta name="twitter:description" content="What I've learned about implicit knowledge after spending time in industry.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ghosts.png">
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "What I've learned about implicit knowledge after spending time in industry"
 
+twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ghosts.png"
++++
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ghosts.png" alt="drawing" width="300px"/>
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ghosts.png" width="300px" >}}
 
 **Bernadette Resha, Gathering of Ghosts (2014)**
 
@@ -26,10 +28,12 @@ Explicit knowledge is anything that you can read about, knowledge that's easy to
  
  
 Some time ago, Caitlin tweeted,
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The summation of my decade of data work is that the data matters more than the model. Every time.</p>&mdash; Caitlin Hudon 👩‍💻 (@beeonaposy) <a href="https://twitter.com/beeonaposy/status/1353735905962577920?ref_src=twsrc%5Etfw">January 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+{< tweet 1353735905962577920 >}}
 
 I've tweeted similar observations a while back:
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The difference between data science and MLE is that you go from spending 80% of your time cleaning data to spending 80% of your time cleaning Dockerfiles.</p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1306671146541215744?ref_src=twsrc%5Etfw">September 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+{< tweet 1306671146541215744 >}}
 
 The basic block of labor of machine learning is [cleaning data and setting up engineering pipelines, the detailed and tedious work of making all the pieces fit together]( https://vicki.substack.com/p/neural-nets-are-just-people-all-the).
  
@@ -55,7 +59,7 @@ This is probably the first time I've personally seen something formally stated a
 
 Mulling over this fact, I wondered what else was ghost knowledge in the data community, [and so I asked.](https://twitter.com/vboykis/status/1358126499489058819)
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">What is something that you know to important and true about data work (could be DS, DE, MLE, stats,etc) that you’ve never seen written in a book, blog post, or covered in a course? In other words, you learned it only at work.</p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1358126499489058819?ref_src=twsrc%5Etfw">February 6, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+{< tweet 1358126499489058819 >}}
 
 What I found was a wealth of learnings that people wrote from painful personal experience. The replies generally fall into two categories: the ghost knowledge in dealing with data and the ghost knowledge in dealing with people.
  

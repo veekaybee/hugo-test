@@ -29,7 +29,8 @@ You can write print statements in any language pretty quickly (given that [you g
 
 So how do we get everyone on our teams to that place? How do we help others get out of the dark, frustrating place that is the local minima of suckiness that is the expert beginner, past the stars, and into the cloud? And, how can we help ourselves become better developers?
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I.e if you are good at writing code but not at reviewing it, you’re gonna be writing a lot of code and not doing a lot of reviews since the initial feedback to your reviews will be negative. You have to overcome that local minima of suckiness.</p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1419630880813879298?ref_src=twsrc%5Etfw">July 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+{< tweet 1419630880813879298? >}}
+
 
 There are three things that I've noticed in my own career that developers need to become better:
 
@@ -41,15 +42,17 @@ There are three things that I've noticed in my own career that developers need t
 
 This is the best recent description I've found of the phenomenon we now call psychological safety:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Counterintuitive but true:<br><br>You’ll do your smartest work with people you’re comfortable being dumb around</p>&mdash; jckbtchr (@jackbutcher) <a href="https://twitter.com/jackbutcher/status/1416606239392403458?ref_src=twsrc%5Etfw">July 18, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/safety.jpg" alt="handandkey" width="300px"/>
+{< tweet 1416606239392403458 >}}
+
+
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/safety.png" width="300px" >}}
 
 The simple story is that, in a good, productive software environment, you have the room to mess up. The apocryphal story about how this works is the one where the junior developer breaks production, costing the company thousands of dollars. After he sees this, he starts putting everything on his desk in a box. The CEO comes up to him and says, "Where are you going?" "I just cost the company so much money, I figured I was fired." "We just paid thousands of dollars to train you. Why would we let you go?"
 
 Here's another real one one, from an amazing book I'm reading, Gerald Weinberg's ["The Psychology of Computer Programming"](https://books.google.com/books/about/The_Psychology_of_Computer_Programming.html?id=j_MJAQAAMAAJ), which I strongly encourage everyone who works in or near development to read because it addresses most of the issues we think about when we think about programming on a daily basis  - project planning, team structure, and blockers,  with the additional mindblowing caveat that all of this was already discussed and written about in 1971.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I cannot recommend The Psychology of Computer Programming any more strongly. It covers every single thing we talk about in industry today. It is from 1971. For example, here is psychological safety. <a href="https://t.co/I0jltWWZwx">pic.twitter.com/I0jltWWZwx</a></p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1421631165891555330?ref_src=twsrc%5Etfw">August 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{< tweet 1421631165891555330? >}}
 
 The anecdote is about a developer, Bill, who was working on (ostensibly) a missile defense system, with instructions written in machine code. He got to a point where he thought he figured it out, but since you probably need a second set of eyes on a missile defense system, he asked Marilyn to review his code.
 
@@ -87,7 +90,7 @@ We've so far talked about the role of the organization, the team, and senior-lev
 Especially as a junior, it can be very daunting to ask good questions.
 Something I realized recently is that one of the reasons senior people are good at asking questions is that they already know the shape of their expertise.  
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;I&#39;m a senior developer and I just looked up how to create a NumPy array, etc.&quot; But there&#39;s a problem here that I just realized from this comment: As senior people we can do this because we know what we need to look up. <a href="https://t.co/KZT6nrWyaC">https://t.co/KZT6nrWyaC</a> <a href="https://t.co/iZsQZIHzCl">pic.twitter.com/iZsQZIHzCl</a></p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1420704079035109384?ref_src=twsrc%5Etfw">July 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{< tweet 1420704079035109384? >}}
 
 This is why an evnironment where it's ok to ask stupid questions is important. One of the best ways I've seen of dealing with this is having a #dumbquestions channel on Slack. Another is having the Good Senior People ask seemingly simple questions in meetings to empower others.
 

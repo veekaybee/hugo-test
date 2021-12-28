@@ -1,20 +1,25 @@
----
-date: "2021-06-06T00:00:00Z"
-title: The humble hash aggregate
----
- 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="The humble hash aggregate">
-<meta name="twitter:description" content="Data work has its own unique architecture we should be aware of.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/checkers.png">
- 
-![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/checkers.png)
++++
+date = '2021-06-06'
+title = "The humble hash aggregate"
+aliases = [
+    "/2021/06/06/hashaggregate/"
+]
+
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "Data work has its own unique architecture we should be aware of"
+
+twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/checkers.png"
++++
+
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/checkers.png" width="300px" >}}
+
  
 This post is an expansion of this tweet:
+
+{< tweet 1280911880157093888 >}}
  
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If I had to pick a single programming concept where understanding it is like a superpower, it would probably be the hash map (aka in Python, the humble dictionary) because I&#39;ve seen the pattern come up in almost every kind of data/programming work I&#39;ve ever done.</p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1280911880157093888?ref_src=twsrc%5Etfw">July 8, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  
 ***
  

@@ -2,7 +2,7 @@
 date = '2021-06-20'
 title = "The ritual of the deploy"
 aliases = [
-    "2021/06/20/the-ritual-of-the-deploy/"
+    "/2021/06/20/the-ritual-of-the-deploy/"
 ]
 
 card = "summary"
