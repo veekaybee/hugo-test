@@ -1,15 +1,18 @@
----
-date: "2021-10-10T00:00:00Z"
-title: Doing small, fun projects
----
++++
+date = '2021-10-10'
+title = "Doing small, fun projects"
+aliases = [
+    "2021/10/10/plane-lmao/"
+]
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="Doing small, fun projects">
-<meta name="twitter:description" content="with Streamlit">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/airplane_on_train.png">
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "with Streamlit"
 
+image  = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/airplane_on_train.png"
+
++++
 
 {{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/airplane_on_train.png" width="300px">}}
 

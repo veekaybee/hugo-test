@@ -1,4 +1,3 @@
-
 +++
 date = '2021-09-23'
 title = "Reaching MLE (machine learning enlightenment)"
@@ -11,11 +10,10 @@ site = "@vboykis"
 creator = "@vboykis"
 description = "What is this job about really?"
 
-[twitter]
-    image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png"
+image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png"
 +++
 
-{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png" alt="wheat field" width="300px"}}
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/thefieldofwheat.png" alt="wheat field" width="300px" >}}
 Ivan Shishkin, The Field of Wheat
 
 
@@ -64,7 +62,7 @@ But first, [we didn’t even know that customers were churning](https://vicki.su
 
 “Once I had that data available to me, I needed a place that our security team allowed so that I could combine the two data sources. They suggested using Spark on AWS to write out to S3, which they’d then send back to HDFS. Our Spark workloads run on K8s on AWS Spot Instances, but some of the pods were hanging, so I used kubectl to take a look at them and figure out what the issue was.”
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just realized you can make fake magazines with Canva. <a href="https://t.co/Yu0HO8NYmL">pic.twitter.com/Yu0HO8NYmL</a></p>&mdash; Vicki Boykis (@vboykis) <a href="https://twitter.com/vboykis/status/1438900066949939206?ref_src=twsrc%5Etfw">September 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+{{< tweet 1438900066949939206 >}}
 
 “Now, I had all of the data in a single place, and it was time to build my XGBoost model and iterate on it . But the Python available to me on the machine that could access the HDFS server didn’t have all the dependencies I needed to run XGBoost, so I-”
 
@@ -105,7 +103,7 @@ The machine learning engineer frowned. “But how can it be?”
 
 “Machine learning systems are new. [We’re still in the steam-powered days of machine learning](https://vicki.substack.com/p/were-still-in-the-steam-powered-days), and yet machine learning is not simply machine learning. It is, at this stage, more [engineering](http://veekaybee.github.io/2019/02/13/data-science-is-different/) than simply machine learning. We’re building more and more on older systems, [abstracting away complexity and in the process creating newer and newer levels of it](http://veekaybee.github.io/2019/04/11/attic-compsci/) that we now have to manage and hold in our heads. Many of the algorithms have been written. Much of the work we do, both in machine learning, and in development today in general, will be [glue work and vendor work.](https://rachelbythebay.com/w/2020/08/14/jobs/) 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Knuth: &quot;I’m worried about the present state of programming. Programmers now are supposed to mostly just use libraries. Programmers aren’t allowed to do their own thing from scratch anymore. They’re supposed to have reusable code that somebody else has written.</p>&mdash; Tim Hopper (@tdhopper) <a href="https://twitter.com/tdhopper/status/1113512466795900929?ref_src=twsrc%5Etfw">April 3, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+{{< tweet 1113512466795900929 >}}
 
 “So what does this mean for me?”
 
