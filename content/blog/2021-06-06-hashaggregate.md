@@ -18,7 +18,7 @@ twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/
  
 This post is an expansion of this tweet:
 
-{< tweet 1280911880157093888 >}}
+{{< tweet 1280911880157093888 >}}
  
  
 ***
@@ -47,7 +47,9 @@ But the issue is that [all this data stuff is new](https://vicki.substack.com/p/
 ## Hash Aggregate Here
 But data work also has its own unique patterns, and I want to talk about one of these that I think is important for all of us to carry around in our back pockets: the humble hash aggregate.  The hash aggregate [works like this](https://jakevdp.github.io/blog/2017/03/22/group-by-from-scratch/):
  
-![](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/split-apply-combine.png)
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/split-apply-combine.png" width="600px">}}
+
+
  
 You have a multidimensional array (or, as us plebes say, table) that contains numerous instances of similar labels. What you want to know is the distinct counts of each category. The implemented algorithm splits the matrix by key and sums the values and then returns the reduced matrix that has only unique keys and the sum values to the user.
  

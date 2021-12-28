@@ -29,11 +29,11 @@ Explicit knowledge is anything that you can read about, knowledge that's easy to
  
 Some time ago, Caitlin tweeted,
 
-{< tweet 1353735905962577920 >}}
+{{< tweet 1353735905962577920 >}}
 
 I've tweeted similar observations a while back:
 
-{< tweet 1306671146541215744 >}}
+{{< tweet 1306671146541215744 >}}
 
 The basic block of labor of machine learning is [cleaning data and setting up engineering pipelines, the detailed and tedious work of making all the pieces fit together]( https://vicki.substack.com/p/neural-nets-are-just-people-all-the).
  
@@ -59,7 +59,7 @@ This is probably the first time I've personally seen something formally stated a
 
 Mulling over this fact, I wondered what else was ghost knowledge in the data community, [and so I asked.](https://twitter.com/vboykis/status/1358126499489058819)
 
-{< tweet 1358126499489058819 >}}
+{{< tweet 1358126499489058819 >}}
 
 What I found was a wealth of learnings that people wrote from painful personal experience. The replies generally fall into two categories: the ghost knowledge in dealing with data and the ghost knowledge in dealing with people.
  
