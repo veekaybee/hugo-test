@@ -3,7 +3,7 @@ date: "2015-05-30T00:00:00Z"
 title: Man, do static sites suck.
 ---
 
-![Ducreux knows.](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ducreux.png)
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ducreux.png" width="600px">}}
 
 Whenever I click on HackerNews links these days, I see a TON of statically-generated sites either through Jekyll or Octopress or (in the Python community) Pelican. This trend has been particularly strong over the past three years or so. These themes always look really clean and, for some reason, the essays/thoughts come through more well-organized and cleaner than on Wordpress, which has been my blogging platform of choice [for over 6 years] (http://blog.vickiboykis.com). 
 
