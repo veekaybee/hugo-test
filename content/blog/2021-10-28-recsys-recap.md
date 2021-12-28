@@ -9,7 +9,10 @@ card = "summary"
 site = "@vboykis"
 creator = "@vboykis"
 description = "What's up in recommender systems"
-images = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png"
+
+[twitter]
+    image  = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/april.png"
+
 +++
 
 
