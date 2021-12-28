@@ -1,18 +1,19 @@
 ---
 date: "2021-11-07T00:00:00Z"
 title: The programmer's brain in the lands of exploration and production
+aliases = [
+    "/2021/11/07/typed-pipe/"
+]
+[twitter]
+  card = "summary"
+  site = "@vboykis"
+  creator = "@vboykis"
+  title = "The programmer's brain in the lands of exploration and production"
+  description = "How working with data-driven programs requires two different contexts"
+  image = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png">
 ---
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="The programmer's brain in the lands of exploration and production">
-<meta name="twitter:description" content="How working with data-driven programs requires two different contexts">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png">
-
-
-
-{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/typed_pipe.png" alt="wheat field" width="600px">}}
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/typed_pipe.png" alt="wheat field" width="600px">}}
 
 
 A lot of my brain space lately has been occupied by [TypedPipes](https://appdoc.app/artifact/com.twitter/scalding-core_2.9.3/0.9.0/com/twitter/scalding/typed/TypedPipe.html). A TypedPipe is the main object type that you work with in [Scalding](https://www.cascading.org/projects/scalding/), a distributed data framework written as a wrapper in Scala around [Cascading](https://www.cascading.org/). Scalding was originally developed at Twitter, and adopted by many companies around the same time [Apache Spark](https://spark.apache.org/) became popular. 
