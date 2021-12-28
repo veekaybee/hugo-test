@@ -6,12 +6,10 @@
 <link rel="shortcut icon" href=https://veekaybee.github.io/hugo-test/static/images/favicon.png>
 <title>Getting machine learning to production | ★★Vicki Boykis★★</title>
 <meta name=title content="Getting machine learning to production">
-<meta name=description content="Table of Contents
- Intro The Mystery of Deploying ML Trying to Create Gandinsky Trying to Create Venti Venti Architecture  Generating Venti Inferences   Putting Venti on Streamlit Splitting out inference and front-end Deploying to the Cloud Lessons Learned  Deploying is hard Deep learning is deceptively easy Go for prebuilt as much as possible Understand networking and scale Iterate quickly    Art: The Other Side of the Rainbow, Roland Petersen, 1972">
+<meta name=description content="There are a lot, a lot of moving pieces.">
 <meta name=keywords content>
 <meta property="og:title" content="Getting machine learning to production">
-<meta property="og:description" content="Table of Contents
- Intro The Mystery of Deploying ML Trying to Create Gandinsky Trying to Create Venti Venti Architecture  Generating Venti Inferences   Putting Venti on Streamlit Splitting out inference and front-end Deploying to the Cloud Lessons Learned  Deploying is hard Deep learning is deceptively easy Go for prebuilt as much as possible Understand networking and scale Iterate quickly    Art: The Other Side of the Rainbow, Roland Petersen, 1972">
+<meta property="og:description" content="There are a lot, a lot of moving pieces.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://veekaybee.github.io/hugo-test/2020/06/09/getting-machine-learning-to-production/"><meta property="og:image" content="https://veekaybee.github.io/hugo-test/images/favicon.png"><meta property="article:section" content="blog">
 <meta property="article:published_time" content="2020-06-09T00:00:00+00:00">
@@ -19,14 +17,12 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://veekaybee.github.io/hugo-test/images/favicon.png">
 <meta name=twitter:title content="Getting machine learning to production">
-<meta name=twitter:description content="Table of Contents
- Intro The Mystery of Deploying ML Trying to Create Gandinsky Trying to Create Venti Venti Architecture  Generating Venti Inferences   Putting Venti on Streamlit Splitting out inference and front-end Deploying to the Cloud Lessons Learned  Deploying is hard Deep learning is deceptively easy Go for prebuilt as much as possible Understand networking and scale Iterate quickly    Art: The Other Side of the Rainbow, Roland Petersen, 1972">
+<meta name=twitter:description content="There are a lot, a lot of moving pieces.">
 <meta name=twitter:site content="@vboykis">
 <meta itemprop=name content="Getting machine learning to production">
-<meta itemprop=description content="Table of Contents
- Intro The Mystery of Deploying ML Trying to Create Gandinsky Trying to Create Venti Venti Architecture  Generating Venti Inferences   Putting Venti on Streamlit Splitting out inference and front-end Deploying to the Cloud Lessons Learned  Deploying is hard Deep learning is deceptively easy Go for prebuilt as much as possible Understand networking and scale Iterate quickly    Art: The Other Side of the Rainbow, Roland Petersen, 1972"><meta itemprop=datePublished content="2020-06-09T00:00:00+00:00">
+<meta itemprop=description content="There are a lot, a lot of moving pieces."><meta itemprop=datePublished content="2020-06-09T00:00:00+00:00">
 <meta itemprop=dateModified content="2020-06-09T00:00:00+00:00">
-<meta itemprop=wordCount content="4515"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/favicon.png">
+<meta itemprop=wordCount content="4531"><meta itemprop=image content="https://veekaybee.github.io/hugo-test/images/favicon.png">
 <meta itemprop=keywords content>
 <meta name=referrer content="no-referrer-when-downgrade">
 <style>body{font-family:Verdana,sans-serif;margin:auto;padding:20px;max-width:720px;text-align:left;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:#444}h1,h2,h3,h4,h5,h6,strong,b{color:#222}a{color:#3273dc}.title{text-decoration:none;border:0}.title span{font-weight:400}nav a{margin-right:10px}textarea{width:100%;font-size:16px}input{font-size:16px}content{line-height:1.6}table{width:100%}img{max-width:100%}code{padding:2px 5px;background-color:#f2f2f2}pre code{color:#222;display:block;padding:20px;white-space:pre-wrap;font-size:14px}div.highlight pre{background-color:initial;color:initial}div.highlight code{background-color:unset;color:unset}blockquote{border-left:1px solid #999;color:#222;padding-left:20px;font-style:italic}footer{padding:25px;text-align:center}.helptext{color:#777;font-size:small}.errorlist{color:#eba613;font-size:small}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:#8b6fcb}@media(prefers-color-scheme:dark){body{background-color:#333;color:#ddd}h1,h2,h3,h4,h5,h6,strong,b{color:#eee}a{color:#8cc2dd}code{background-color:#777}pre code{color:#ddd}blockquote{color:#ccc}textarea,input{background-color:#252525;color:#ddd}.helptext{color:#aaa}}</style>
@@ -52,6 +48,8 @@ Jun 6 2020
 </i>
 </p>
 <content>
+<figure><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/rainbow.png width=300px>
+</figure>
 <p><strong>Table of Contents</strong></p>
 <ul>
 <li><a href=#intro>Intro</a></li>
@@ -84,6 +82,7 @@ Jun 6 2020
 <p></p>
 <h1 id=intro>Intro</h1>
 <p>A few months ago, <a href=https://twitter.com/mlpowered>Emmanuel Amiesen</a> sent me a copy of his book, <a href=https://www.amazon.com/Building-Machine-Learning-Powered-Applications/dp/149204511X>Building Machine Learning Applications</a>.</p>
+<p>{&lt; tweet 1227016624240254982 >}}</p>
 <p>I read it with a lot of interest because there is not a lot of &ldquo;official&rdquo; literature out in the field about what machine learning orchestration and pipelines should look like.</p>
 <p>As I wrote in a newsletter <a href=https://vicki.substack.com/p/were-still-in-the-steam-powered-days>a while back</a>,</p>
 <p>There really is no good, generalized single system of best practices for creating machine learning platforms. There’s not even a textbook on it. (Other than Designing Data-Intensive Applications, which is good but doesn’t necessarily fit the bill.)</p>
@@ -109,6 +108,7 @@ Jun 6 2020
 </blockquote>
 <p>But my experience has been that <a href=https://towardsdatascience.com/we-tried-to-build-an-end-to-end-ml-platform-heres-why-it-failed-190c0f503536>deploying a machine learning model is always much harder</a> than building it or reasoning about the technical, mathematical parts of the model, and that there is not a lot of literature about this specific piece out there.</p>
 <p>Many blog posts assume you know how to get from 0 to production.</p>
+<p>{&lt; tweet 1235999032574648321 >}}</p>
 <p>As I write this, several projects have arisen that are looking to deal with this, including <a href=https://madewithml.com/>Made with ML</a> and <a href=http://featurestore.org/>Feature Stores for ML</a>, which talk specifically about the data needed for the model, but the landscape for best practices is still a little sparse.</p>
 <p>So, this post goes into the nitty-gritty reasoning that I&rsquo;d like to see in other examples on this topic.</p>
 <p></p>
@@ -232,6 +232,8 @@ Jun 6 2020
 <p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ventiflow.png alt></p>
 <p></p>
 <h1 id=deploying-to-the-cloud>Deploying to the Cloud</h1>
+<p>{&lt; tweet 1237909940305571840 >}}</p>
+<p>{&lt; tweet 1235999032574648321 >}}</p>
 <p>Deploying machine learning products to production is always the trickiest part of the process. It&rsquo;s very, very, very hard, <a href=https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf>as this paper covers in really good detail.</a></p>
 <p><img src=https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/infra.png alt></p>
 <p>Why? Because you&rsquo;re not only deploying software, you&rsquo;re also, in essence deploying data, that moves between various departments, in various formats, that changes as the model changes, and there are a ton of moving variables in the system that impact the other variables.</p>
