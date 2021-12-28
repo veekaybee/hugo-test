@@ -2,7 +2,7 @@
 date = '2021-09-23'
 title = "Reaching MLE (machine learning enlightenment)"
 aliases = [
-    "2021/09/23/enlightenment/"
+    "/2021/09/23/enlightenment/"
 ]
 
 card = "summary"

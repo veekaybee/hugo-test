@@ -2,7 +2,7 @@
 date = '2021-10-28'
 title = "Recsys 2021 Recap"
 aliases = [
-    "2021/10/28/recsys-recap/"
+    "/2021/10/28/recsys-recap/"
 ]
 
 card = "summary"

@@ -9,7 +9,7 @@ Whenever I click on HackerNews links these days, I see a TON of statically-gener
 
 I like clean stuff and I like tech blogs. So, I decided to give Jekyll, the most popular of the static sites, a try. At the same time, I've been revamping my [main website](http://www.vickiboykis.com) to include some other Wordpress blogs, so I decided to see how long it would take to install Wordpress on Bluehost versus Jekyll on Gitpages.  
 
-The extra-super bonus challenge was working  around a four-month-old's schedule. 
+The extra-super bonus challenge was working around a four-month-old's schedule. 
 
 ## Here are the steps to set up a Wordpress blog:
 
@@ -24,7 +24,7 @@ The extra-super bonus challenge was working  around a four-month-old's schedule.
 
 
 
-##Here's how to set up a static blog with Jekyll: 
+## Here's how to set up a static blog with Jekyll: 
 
 Here are the steps I started following three days ago for Jekyll. I started pretty much from scratch:  Googling how to set up Jekyll on GitPages. The Jekyll Bootstrap tutorial was the top hit, so I started [follwing it](http://jekyllbootstrap.com/usage/jekyll-quick-start.html). 
 
@@ -84,7 +84,7 @@ Here are the steps I started following three days ago for Jekyll. I started pret
     + Liquid
     + Markdown
     + Git (including private and public keys)
-    +Github
+    + Github
     + command line
     + YAML
     + CSS

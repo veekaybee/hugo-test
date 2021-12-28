@@ -1,17 +1,19 @@
----
-date: "2021-08-05T00:00:00Z"
-title: The local minima of suckiness
----
++++
+date = '2021-08-05'
+title = "The local minima of suckiness"
+aliases = [
+    "/2021/09/23/enlightenment/"
+]
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="The local minima of suckiness">
-<meta name="twitter:description" content="How to become good by getting slowly less bad">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/handandkey.png">
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "How to become good by getting slowly less bad?"
 
+twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/handandkey.png"
++++
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/handandkey.png" alt="handandkey" width="300px"/>
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/handandkey.png" width="300px" >}}
 
 **Key and Hand, Tamara Lempicka, 1941**
 

@@ -1,25 +1,6 @@
 ---
-id: 9851
 title: Just make the damn meal
 date: 2014-09-25T07:19:21+00:00
-author: Vicki
-layout: post
-guid: https://vkblog.github.io/?p=9851
-permalink: /2014/09/just-make-the-damn-meal/
-categories:
-  - America
-  - culture
-  - family
-  - feminism
-  - marriage
-  - women
-tags:
-  - chicken
-  - cock
-  - cooking
-  - nyt
-  - spatch
-  - white people
 ---
 [<img class="aligncenter size-medium wp-image-9854" src="https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2014/09/making-jam-1876.jpgLarge-580x395.jpg" alt="making-jam-1876.jpg!Large" width="580" height="395" />](https://raw.githubusercontent.com/vkblog/vkblog.github.io/master/public/img/2014/09/making-jam-1876.jpgLarge.jpg)
 

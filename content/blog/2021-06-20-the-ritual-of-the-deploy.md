@@ -1,17 +1,21 @@
----
-date: "2021-06-20T00:00:00Z"
-title: The ritual of the deploy
----
++++
+date = '2021-06-20'
+title = "The ritual of the deploy"
+aliases = [
+    "2021/06/20/the-ritual-of-the-deploy/"
+]
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@vboykis">
-<meta name="twitter:creator" content="@vboykis">
-<meta name="twitter:title" content="The ritual of the deploy">
-<meta name="twitter:description" content="We are powerful with our computers and also powerless against them">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ship.png">
+card = "summary"
+site = "@vboykis"
+creator = "@vboykis"
+description = "We are powerful with our computers and also powerless against them"
+
+twitterImage = "https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ship.png"
++++
+
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/ship.png" width="300px" >}}
 
 
-<img src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/ship.png" alt="ship" width="300px"/>
 The Ship The Twelve Apostles, Ivan Aiazovsky
 
 Humans have always been terrible at dealing with uncertainty. Historically, we used to cope with it by inventing superstitions. The ancient world is filled with rituals to ward off potential ill omens during times that were especially out of the control of human capability.

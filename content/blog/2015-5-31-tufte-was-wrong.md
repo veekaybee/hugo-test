@@ -1,10 +1,9 @@
----
-date: "2015-05-31T00:00:00Z"
-title: I'm not so sure about Tufte
----
++++
+title = "I'm not so sure about Tufte"
+date = '2015-05-31'
++++
 
-![Kandinsky](https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/images/kandinsky.jpg)
-
+{{< figure src="https://raw.githubusercontent.com/veekaybee/veekaybee.github.io/master/static/images/kandinsky.jpg" width="600px">}}
 
 A couple years ago, I was fortunate enough to be able to catch [Edward Tufte](http://en.wikipedia.org/wiki/Edward_Tufte), the father of the current wave of thinking about data visualization, at a seminar he was giving in Philadelphia. 
 
