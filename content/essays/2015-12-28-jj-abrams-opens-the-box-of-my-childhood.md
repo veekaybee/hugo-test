@@ -1,16 +1,6 @@
 ---
-id: 10099
 title: JJ Abrams opens the box of my childhood
 date: 2015-12-28T21:55:46+00:00
-author: Vicki
-excerpt: 'The dismantling of the heart of Star Wars by MBAs eager to cash in on the $4 billion merchandising machine that is, at its core, a genuine human story of triumph, is a horrible thing to watch. '
-layout: post
-guid: https://vkblog.github.io/?p=10099
-permalink: /2015/12/jj-abrams-opens-the-box-of-my-childhood/
-dsq_thread_id:
-  - 4665396510
-categories:
-  - Uncategorized
 ---
 [_This post contains spoilers of Star Wars, Inside Out, and your childhood._]
 

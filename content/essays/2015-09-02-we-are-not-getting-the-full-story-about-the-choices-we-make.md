@@ -1,14 +1,6 @@
 ---
-id: 10074
 title: We are not getting the full story about the choices we make
 date: 2015-09-02T07:43:49+00:00
-author: Vicki
-excerpt: We all make choices and we all make trade-offs because the laws of physics say you cannot create more time. But what I think is interesting is that this is not the message society gives us, because we never see what other people are giving up.
-layout: post
-guid: https://vkblog.github.io/?p=10074
-permalink: /2015/09/we-are-not-getting-the-full-story-about-the-choices-we-make/
-categories:
-  - Uncategorized
 ---
 My last semester of MBA classes started last week. Although I am still at home Thursday through Sunday with Baby B, I no longer see her on Mondays and Wednesdays after eight in the morning, the time I leave for work. Additionally, I now usually have  class group work to do on the nights when I am home and we&#8217;ve put her to bed. People always say to me, &#8220;I don&#8217;t know how you do it,&#8221; and I answer truthfully. I give up stuff, and I have a lot of help.
 

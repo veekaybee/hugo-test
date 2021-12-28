@@ -1,6 +1,7 @@
 ---
 title: My Favorite Books of 2020
 layout: post
+date: "2021-04-16T00:00:00Z"
 ---
 
 <meta name="twitter:card" content="summary" />
